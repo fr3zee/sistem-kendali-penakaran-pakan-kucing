@@ -2,9 +2,9 @@
 
 **Penulis:** Naufal Hilmi  
 **Program Studi:** Teknik Komputer, UNNES  
-**Repository Version:** v1.0-draft  
-**Last Updated:** 2026-07-27  
-**Status:** Pre-release
+**Repository Version:** v1.0  
+**Release Date:** 2026-07-27  
+**Status:** Final
 
 ---
 
@@ -18,7 +18,7 @@
 | Tahap 4 | Sintesis Multidimensi & Pareto | ✅ |
 | Tahap 5 | Generator Bab IV DOCX | ✅ |
 | Audit DOCX | 17/17 check PASS | ✅ |
-| Repositori | Pre-release | 🔶 |
+| Repositori | https://github.com/fr3zee/sistem-kendali-penakaran-pakan-kucing | ✅ |
 
 ---
 

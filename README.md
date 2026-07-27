@@ -1,6 +1,6 @@
-# Perancangan dan Implementasi Kontrol PID dengan Gain Scheduling Berbasis Aturan pada Sistem Pakan Kucing Otomatis Terintegrasi IoT
+# Perancangan dan Implementasi Kontrol PID dengan Gain Scheduling Berbasis Aturan pada Sistem Penakaran Pakan Kucing Otomatis 
 
-**Penulis:** Naufal Hilmi  
+**Penulis:** Naufal Hilmi Fathul Ihsan  
 **Program Studi:** Teknik Komputer, UNNES  
 **Repository Version:** v1.0  
 **Release Date:** 2026-07-27  

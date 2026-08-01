@@ -1,0 +1,45 @@
+                                                                =
+[SKENARIO 1 - OPEN LOOP CEPAT]
+Setpoint   : 15.0g
+Sudut      : 40deg (tetap, open loop)
+EARLY_STOP : SP - 0.40g
+STOP saat  : 14.60g
+Mode       : Tidak ada kontrol — servo penuh dari awal
+=================================
+RESET. Servo tutup. Tare selesai. Siap.
+=== TRIAL START ===
+Controller: Manual Cepat
+TrialNo: 6
+Setpoint_g 1.00
+EalyStop_g: 0.40
+StopTarget_g: 14.60
+Servo_deg: 40
+DataFormat: DATA,ms,mass_g,error_g,error_pct,mode,servo_deg,zone
+=== DATA START ===
+DATA,100,0.00,15.00,100.0%,OPEN,40,Z1
+DATA,217,1.46,13.54,90.2%,OPEN,40,Z1
+DATA,475,5.43,9.57,63.8%,OPEN,40,Z1
+DATA,734,9.42,5.58,37.2%,OPEN,40,Z2
+=== SUMMARY TRIAL ===
+Controller: Manual Cepat
+TrialNo: 6
+Setpoint_g: 15.00
+EarlyStop_g: 0.40
+StopTarget_g: 14.60
+FinalMass_g: 16.10
+FinalError_g: 1.10
+FinalError_pct: 7.33
+Duration_ms: 1250
+Duration_s: 1.25
+TimeTo90_ms: 992
+RiseTime_10_90_ms: 517
+SettlingTime_ms: -1
+MaxMass_g: 16.10
+MaxOvershoot_g: 1.10
+MaxOvershoot_pct: 7.33
+BridgingCount: 0
+Status: OVERSHOOT
+Valid: TRUE
+StopReason: TARGET
+=== TRIAL END ===
+r=reset | g=ulangi | c=parameter

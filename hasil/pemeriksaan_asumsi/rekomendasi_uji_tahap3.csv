@@ -1,0 +1,17 @@
+Metric,Setpoint_g,Normalitas_residual,Homogenitas_varians,Kondisi_jumlah_sampel,Uji_yang_direkomendasikan,Post_hoc_yang_direkomendasikan,Alasan_singkat
+AbsError_pct,15,Tidak terpenuhi,Tidak terpenuhi,Seimbang,Kruskal-Wallis,Dunn dengan koreksi Holm,Residual tidak normal dan varians tidak homogen
+AbsError_pct,20,Tidak terpenuhi,Terpenuhi,Seimbang,Kruskal-Wallis,Dunn dengan koreksi Holm,Residual tidak normal dengan skewness sedang-berat
+AbsError_pct,25,Tidak terpenuhi,Terpenuhi,Seimbang,Kruskal-Wallis,Dunn dengan koreksi Holm,Distribusi sangat menceng dan residual tidak normal
+AbsError_pct,30,Tidak terpenuhi,Terpenuhi,Seimbang,Kruskal-Wallis,Dunn dengan koreksi Holm,Distribusi sangat menceng dan residual tidak normal
+MaxOvershoot_pct,15,Tidak terpenuhi,Tidak terpenuhi,Seimbang,Kruskal-Wallis,Dunn dengan koreksi Holm,Residual tidak normal dan varians tidak homogen
+MaxOvershoot_pct,20,Tidak terpenuhi,Terpenuhi,Seimbang,Kruskal-Wallis,Dunn dengan koreksi Holm,"Residual tidak normal, terdapat proporsi nilai nol yang cukup tinggi, dan distribusi beberapa kelompok menceng"
+MaxOvershoot_pct,25,Tidak terpenuhi,Terpenuhi,Seimbang,Kruskal-Wallis,Dunn dengan koreksi Holm,Residual tidak normal dengan skewness sedang-berat
+MaxOvershoot_pct,30,Tidak terpenuhi,Terpenuhi,Seimbang,Kruskal-Wallis,Dunn dengan koreksi Holm,Distribusi sangat menceng dan residual tidak normal
+Duration_s,15,Tidak terpenuhi,Terpenuhi,Seimbang,Kruskal-Wallis,Dunn dengan koreksi Holm,Residual tidak normal (SW p<0.001); skewness GS PID 2.16 pada n=10 tidak memenuhi syarat robustness ANOVA
+Duration_s,20,Tidak terpenuhi,Terpenuhi,Seimbang,Kruskal-Wallis,Dunn dengan koreksi Holm,Residual tidak normal dengan skewness sedang-berat
+Duration_s,25,Terpenuhi,Tidak terpenuhi,Seimbang,Welch ANOVA,Games-Howell,Residual cukup layak tetapi varians tidak homogen
+Duration_s,30,Tidak terpenuhi,Terpenuhi,Seimbang,Kruskal-Wallis,Dunn dengan koreksi Holm,Residual tidak normal (SW p=0.028); skewness GS PID 2.48 pada n=10 tidak memenuhi syarat robustness ANOVA
+RiseTime_10_90_s,15,Tidak terpenuhi,Tidak terpenuhi,Seimbang,Kruskal-Wallis,Dunn dengan koreksi Holm,Residual tidak normal dan varians tidak homogen
+RiseTime_10_90_s,20,Tidak terpenuhi,Tidak terpenuhi,Seimbang,Kruskal-Wallis,Dunn dengan koreksi Holm,Residual tidak normal dan varians tidak homogen
+RiseTime_10_90_s,25,Terpenuhi,Tidak terpenuhi,Seimbang,Welch ANOVA,Games-Howell,Residual cukup layak tetapi varians tidak homogen
+RiseTime_10_90_s,30,Terpenuhi,Tidak terpenuhi,Seimbang,Welch ANOVA,Games-Howell,Residual cukup layak tetapi varians tidak homogen

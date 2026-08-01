@@ -1,0 +1,70 @@
+======== PARAMETER AKTIF ========
+[SKENARIO 1 - OPEN LOOP CEPAT]
+Setpoint   : 30.0g
+Sudut      : 40deg (tetap, open loop)
+EARLY_STOP : SP - 0.40g
+STOP saat  : 29.60g
+Mode       : Tidak ada kontrol — servo penuh dari awal
+=================================
+RESET. Servo tutup. Tare selesai. Siap.
+=== TRIAL START ===
+Controller: Manual Cepat
+TrialNo: 4
+Setpoint_g: 30.00
+EarlyStop_g: 0.40
+StopTarget_g: 29.60
+Servo_deg: 40
+DataFormat: DATA,ms,mass_g,error_g,error_pct,mode,servo_deg,zone
+=== DATA START ===
+DATA,100,0.03,29.97,99.9%,OPEN,40,Z1
+DATA,218,0.99,29.01,96.7%,OPEN,40,Z1
+DATA,476,2.90,27.10,90.3%,OPEN,40,Z1
+DATA,735,2.66,27.34,91.1%,OPEN,40,Z1
+DATA,993,2.69,27.31,91.0%,OPEN,40,Z1
+DATA,1251,2.67,27.33,91.1%,OPEN,40,Z1
+DATA,1510,2.68,27.32,91.1%,OPEN,40,Z1
+DATA,1768,2.62,27.38,91.3%,OPEN,40,Z1
+DATA,2026,2.67,27.33,91.1%,OPEN,40,Z1
+DATA,2285,2.75,27.25,90.8%,OPEN,40,Z1
+DATA,2543,6.53,23.47,78.2%,OPEN,40,Z1
+DATA,2801,8.22,21.78,72.6%,OPEN,40,Z1
+DATA,3060,8.11,21.89,73.0%,OPEN,40,Z1
+DATA,3318,8.09,21.91,73.0%,OPEN,40,Z1
+DATA,3576,8.13,21.87,72.9%,OPEN,40,Z1
+DATA,3835,8.11,21.89,73.0%,OPEN,40,Z1
+DATA,4093,8.06,21.94,73.1%,OPEN,40,Z1
+DATA,4352,8.14,21.86,72.9%,OPEN,40,Z1
+DATA,4610,13.46,16.54,55.1%,OPEN,40,Z1
+DATA,4868,18.01,11.99,40.0%,OPEN,40,Z2
+DATA,5127,17.61,12.39,41.3%,OPEN,40,Z2
+DATA,5385,17.63,12.37,41.2%,OPEN,40,Z2
+DATA,5643,17.62,12.38,41.3%,OPEN,40,Z2
+DATA,5902,17.64,12.36,41.2%,OPEN,40,Z2
+DATA,6160,17.62,12.38,41.3%,OPEN,40,Z2
+DATA,6418,17.67,12.33,41.1%,OPEN,40,Z2
+DATA,6677,20.37,9.63,32.1%,OPEN,40,Z2
+DATA,6935,24.20,5.80,19.3%,OPEN,40,Z2
+DATA,7193,27.58,2.42,8.1%,OPEN,40,Z3
+=== SUMMARY TRIAL ===
+Controller: Manual Cepat
+TrialNo: 4
+Setpoint_g: 30.00
+EarlyStop_g: 0.40
+StopTarget_g: 29.60
+FinalMass_g: 30.41
+FinalError_g: 0.41
+FinalError_pct: 1.37
+Duration_ms: 7710
+Duration_s: 7.71
+TimeTo90_ms: 7193
+RiseTime_10_90_ms: 4650
+SettlingTime_ms: 7452
+MaxMass_g: 30.41
+MaxOvershoot_g: 0.41
+MaxOvershoot_pct: 1.37
+BridgingCount: 0
+Status: AKURAT
+Valid: TRUE
+StopReason: TARGET
+=== TRIAL END ===
+r=reset | g=ulangi | c=parameter

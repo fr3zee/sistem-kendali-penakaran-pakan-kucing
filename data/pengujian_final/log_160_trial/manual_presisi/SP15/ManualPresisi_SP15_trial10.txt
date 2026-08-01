@@ -1,0 +1,75 @@
+======== PARAMETER AKTIF ========
+[SKENARIO 2 - OPEN LOOP PRESISI]
+Setpoint   : 15.0g
+Sudut      : 20deg (tetap, open loop presisi)
+EARLY_STOP : SP - 0.40g
+STOP saat  : 14.60g
+TIMEOUT    : 120s (diperpanjang)
+Mode       : Tidak ada kontrol — servo minimum dari awal
+=================================
+RESET. Servo tutup. Tare selesai. Siap.
+=== TRIAL START ===
+Controller: Manual Presisi
+TrialNo: 10
+Setpoint_g: 15.00
+EarlyStop_g: 0.40
+StopTarget_g: 14.60
+Servo_deg: 20
+DataFormat: DATA,ms,mass_g,error_g,error_pct,mode,servo_deg,zone
+=== DATA START ===
+DATA,100,0.00,15.00,100.0%,OPEN_SLOW,20,Z1
+DATA,218,0.00,15.00,100.0%,OPEN_SLOW,20,Z1
+DATA,476,0.00,15.00,100.0%,OPEN_SLOW,20,Z1
+DATA,734,0.00,15.00,100.0%,OPEN_SLOW,20,Z1
+DATA,993,0.00,15.00,100.0%,OPEN_SLOW,20,Z1
+DATA,1251,0.00,15.00,100.0%,OPEN_SLOW,20,Z1
+DATA,1509,0.00,15.00,100.0%,OPEN_SLOW,20,Z1
+DATA,1768,0.00,15.00,100.0%,OPEN_SLOW,20,Z1
+DATA,2026,0.06,14.94,99.6%,OPEN_SLOW,20,Z1
+DATA,2284,0.00,15.00,100.0%,OPEN_SLOW,20,Z1
+DATA,2543,0.78,14.22,94.8%,OPEN_SLOW,20,Z1
+DATA,2801,0.84,14.16,94.4%,OPEN_SLOW,20,Z1
+DATA,3059,0.82,14.18,94.5%,OPEN_SLOW,20,Z1
+DATA,3317,0.81,14.19,94.6%,OPEN_SLOW,20,Z1
+DATA,3576,0.80,14.20,94.6%,OPEN_SLOW,20,Z1
+DATA,3834,0.78,14.22,94.8%,OPEN_SLOW,20,Z1
+DATA,4092,0.84,14.16,94.4%,OPEN_SLOW,20,Z1
+DATA,4351,0.82,14.18,94.5%,OPEN_SLOW,20,Z1
+DATA,4609,1.05,13.95,93.0%,OPEN_SLOW,20,Z1
+DATA,4867,1.18,13.82,92.1%,OPEN_SLOW,20,Z1
+DATA,5125,1.22,13.78,91.9%,OPEN_SLOW,20,Z1
+DATA,5384,1.18,13.82,92.1%,OPEN_SLOW,20,Z1
+DATA,5642,1.17,13.83,92.2%,OPEN_SLOW,20,Z1
+DATA,5900,1.16,13.84,92.3%,OPEN_SLOW,20,Z1
+BRIDGING #1 @1.16g hammer
+DATA,6159,1.16,13.84,92.2%,OPEN_SLOW,20,Z1
+DATA,6417,1.21,13.79,91.9%,OPEN_SLOW,20,Z1
+DATA,6675,1.13,13.87,92.5%,OPEN_SLOW,20,Z1
+DATA,6933,1.21,13.79,91.9%,OPEN_SLOW,20,Z1
+DATA,7192,2.38,12.62,84.2%,OPEN_SLOW,20,Z1
+DATA,7450,6.22,8.78,58.5%,OPEN_SLOW,20,Z1
+DATA,7708,10.62,4.38,29.2%,OPEN_SLOW,20,Z2
+DATA,7966,12.88,2.12,14.1%,OPEN_SLOW,20,Z3
+=== SUMMARY TRIAL ===
+Controller: Manual Presisi
+TrialNo: 10
+Setpoint_g: 15.00
+EarlyStop_g: 0.40
+StopTarget_g: 14.60
+FinalMass_g: 21.01
+FinalError_g: 6.01
+FinalError_pct: 40.06
+Duration_ms: 8483
+Duration_s: 8.48
+TimeTo90_ms: 8225
+RiseTime_10_90_ms: 1033
+SettlingTime_ms: -1
+MaxMass_g: 21.01
+MaxOvershoot_g: 6.01
+MaxOvershoot_pct: 40.06
+BridgingCount: 1
+Status: OVERSHOOT
+Valid: TRUE
+StopReason: TARGET
+=== TRIAL END ===
+r=reset | g=ulangi | c=parameter

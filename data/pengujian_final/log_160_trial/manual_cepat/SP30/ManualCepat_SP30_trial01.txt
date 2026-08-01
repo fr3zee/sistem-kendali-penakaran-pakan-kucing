@@ -1,0 +1,78 @@
+======== PARAMETER AKTIF ========
+[SKENARIO 1 - OPEN LOOP CEPAT]
+Setpoint   : 30.0g
+Sudut      : 40deg (tetap, open loop)
+EARLY_STOP : SP - 0.40g
+STOP saat  : 29.60g
+Mode       : Tidak ada kontrol — servo penuh dari awal
+=================================
+RESET. Servo tutup. Tare selesai. Siap.
+=== TRIAL START ===
+Controller: Manual Cepat
+TrialNo: 1
+Setpoint_g: 30.00
+EarlyStop_g: 0.40
+StopTarget_g: 29.60
+Servo_deg: 40
+DataFormat: DATA,ms,mass_g,error_g,error_pct,mode,servo_deg,zone
+=== DATA START ===
+DATA,100,0.03,29.97,99.9%,OPEN,40,Z1
+DATA,218,1.56,28.44,94.8%,OPEN,40,Z1
+DATA,476,4.54,25.46,84.9%,OPEN,40,Z1
+DATA,735,4.32,25.68,85.6%,OPEN,40,Z1
+DATA,993,4.29,25.71,85.7%,OPEN,40,Z1
+DATA,1251,4.29,25.71,85.7%,OPEN,40,Z1
+DATA,1510,4.29,25.71,85.7%,OPEN,40,Z1
+DATA,1768,4.30,25.70,85.7%,OPEN,40,Z1
+DATA,2026,4.31,25.69,85.6%,OPEN,40,Z1
+DATA,2285,4.32,25.68,85.6%,OPEN,40,Z1
+DATA,2543,5.92,24.08,80.3%,OPEN,40,Z1
+DATA,2801,6.13,23.87,79.6%,OPEN,40,Z1
+DATA,3060,6.13,23.87,79.6%,OPEN,40,Z1
+DATA,3318,6.13,23.87,79.6%,OPEN,40,Z1
+DATA,3576,6.11,23.89,79.6%,OPEN,40,Z1
+DATA,3835,6.14,23.86,79.5%,OPEN,40,Z1
+DATA,4093,6.14,23.86,79.5%,OPEN,40,Z1
+DATA,4351,6.15,23.85,79.5%,OPEN,40,Z1
+DATA,4610,6.55,23.45,78.2%,OPEN,40,Z1
+DATA,4868,7.85,22.15,73.8%,OPEN,40,Z1
+DATA,5126,8.53,21.47,71.6%,OPEN,40,Z1
+DATA,5385,8.42,21.58,71.9%,OPEN,40,Z1
+DATA,5643,8.42,21.58,71.9%,OPEN,40,Z1
+DATA,5901,8.36,21.64,72.1%,OPEN,40,Z1
+DATA,6160,8.39,21.61,72.0%,OPEN,40,Z1
+DATA,6418,8.40,21.60,72.0%,OPEN,40,Z1
+DATA,6676,10.77,19.23,64.1%,OPEN,40,Z1
+DATA,6935,16.47,13.53,45.1%,OPEN,40,Z2
+DATA,7193,16.68,13.32,44.4%,OPEN,40,Z2
+DATA,7451,16.59,13.41,44.7%,OPEN,40,Z2
+DATA,7710,16.65,13.35,44.5%,OPEN,40,Z2
+DATA,7968,16.61,13.39,44.6%,OPEN,40,Z2
+DATA,8226,16.57,13.43,44.8%,OPEN,40,Z2
+DATA,8485,16.59,13.41,44.7%,OPEN,40,Z2
+DATA,8743,19.45,10.55,35.2%,OPEN,40,Z2
+DATA,9001,24.19,5.81,19.4%,OPEN,40,Z2
+DATA,9260,26.13,3.87,12.9%,OPEN,40,Z3
+=== SUMMARY TRIAL ===
+Controller: Manual Cepat
+TrialNo: 1
+Setpoint_g: 30.00
+EarlyStop_g: 0.40
+StopTarget_g: 29.60
+FinalMass_g: 33.19
+FinalError_g: 3.19
+FinalError_pct: 10.64
+Duration_ms: 9776
+Duration_s: 9.78
+TimeTo90_ms: 9518
+RiseTime_10_90_ms: 9042
+SettlingTime_ms: -1
+MaxMass_g: 33.19
+MaxOvershoot_g: 3.19
+MaxOvershoot_pct: 10.64
+BridgingCount: 0
+Status: OVERSHOOT
+Valid: TRUE
+StopReason: TARGET
+=== TRIAL END ===
+r=reset | g=ulangi | c=parameter

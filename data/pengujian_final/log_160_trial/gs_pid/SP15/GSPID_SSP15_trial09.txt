@@ -1,0 +1,138 @@
+======== PARAMETER AKTIF ========
+Setpoint    : 15.0g
+- Zona 1 Besar (eNorm >50%) -
+  Kp1=1.65  Ki1=3.088  Kd1=0.279
+- Zona 2 Sedang (15-50%) -
+  Kp2=2.30  Ki2=0.753  Kd2=0.563
+- Zona 3 Kecil (<=15%) -
+  Kp3=2.50  Ki3=0.181  Kd3=0.030
+- Sistem -
+  SUDUT_MIN : 20deg
+  SUDUT_BUKA: 40deg
+  EARLY_STOP: SP - 0.40g
+  STOP saat : 14.60g
+  HAMMER_TH : error > 3.0g
+=================================
+RESET. Servo tutup. Tare selesai. Siap.
+=== TRIAL START ===
+Controller: Gain Scheduling PID
+TrialNo: 9
+Setpoint_g: 15.00
+EarlyStop_g: 0.40
+StopTarget_g: 14.60
+Z1_Rule: eNorm_gt_50
+Z1_Kp: 1.650
+Z1_Ki: 3.088
+Z1_Kd: 0.279
+Z1_IntMax: 15.00
+Z2_Rule: 15_lt_eNorm_le_50
+Z2_Kp: 2.300
+Z2_Ki: 0.753
+Z2_Kd: 0.563
+Z2_IntMax: 30.00
+Z3_Rule: eNorm_le_15_or_abs_error_le_2g
+Z3_Kp: 2.500
+Z3_Ki: 0.181
+Z3_Kd: 0.030
+Z3_IntMax: 30.00
+ServoMin_deg: 20
+ServoMax_deg: 40
+HammerThreshold_g: 3.00
+Sampling_ms: 100
+DataFormat: DATA,ms,mass_g,error_g,error_pct,output,servo_deg,zone,I,D,flow_gps,bridging_count
+=== DATA START ===
+>> GANTI ZONA: 0 -> 1 @0.00g
+DATA,100,0.00,15.00,100.0,71.2,34,Z1,1.500,150.000,0.00,0
+DATA,218,0.11,14.89,99.3,33.5,26,Z1,2.989,-1.080,1.08,0
+DATA,476,0.68,14.32,95.5,35.7,26,Z1,4.421,-5.742,5.74,0
+DATA,734,0.72,14.28,95.2,41.5,28,Z1,5.849,-0.414,0.41,0
+DATA,992,0.76,14.24,94.9,45.8,28,Z1,7.273,-0.374,0.37,0
+DATA,1250,0.76,14.24,95.0,50.4,29,Z1,8.697,0.041,0.00,0
+DATA,1508,0.74,14.26,95.1,54.8,30,Z1,10.123,0.163,0.00,0
+DATA,1767,0.83,14.17,94.5,58.8,31,Z1,11.540,-0.899,0.90,0
+DATA,2025,0.79,14.21,94.7,63.6,32,Z1,12.961,0.426,0.00,0
+DATA,2283,0.72,14.28,95.2,68.2,33,Z1,14.389,0.644,0.00,0
+DATA,2541,2.24,12.76,85.1,63.1,32,Z1,15.000,-15.161,15.16,0
+DATA,2799,3.78,11.22,74.8,60.6,31,Z1,15.000,-15.368,15.37,0
+DATA,3058,3.62,11.38,75.8,65.5,32,Z1,15.000,1.524,0.00,0
+DATA,3316,3.83,11.17,74.4,64.2,32,Z1,15.000,-2.094,2.09,0
+DATA,3574,3.96,11.04,73.6,64.2,32,Z1,15.000,-1.295,1.29,0
+DATA,3832,3.95,11.05,73.7,64.6,32,Z1,15.000,0.140,0.00,0
+DATA,4091,3.78,11.22,74.8,65.3,32,Z1,15.000,1.683,0.00,0
+DATA,4349,3.77,11.23,74.8,64.9,32,Z1,15.000,0.059,0.00,0
+>> GANTI ZONA: 1 -> 2 @9.48g
+DATA,4607,9.48,5.52,36.8,0.0,0,Z2,0.552,-57.003,57.00,0
+DATA,4865,12.38,2.62,17.5,0.0,0,Z2,0.815,-29.012,29.01,0
+DATA,5123,12.30,2.70,18.0,7.5,21,Z2,1.085,0.777,0.00,0
+DATA,5381,11.93,3.07,20.5,10.2,21,Z2,1.392,3.696,0.00,0
+DATA,5640,12.01,2.99,19.9,7.7,21,Z2,1.691,-0.817,0.82,0
+DATA,5898,11.96,3.04,20.2,8.8,21,Z2,1.995,0.481,0.00,0
+DATA,6156,11.83,3.17,21.1,9.8,21,Z2,2.312,1.325,0.00,0
+DATA,6414,11.80,3.20,21.3,9.5,21,Z2,2.632,0.277,0.00,0
+DATA,6672,12.49,2.51,16.7,4.0,20,Z2,2.882,-6.918,6.92,0
+>> GANTI ZONA: 2 -> 3 @12.76g
+DATA,6931,12.76,2.24,14.9,5.6,20,Z3,0.224,-2.686,2.69,0
+DATA,7189,12.97,2.03,13.5,5.1,20,Z3,0.427,-2.064,2.06,0
+DATA,7447,12.88,2.12,14.1,5.4,20,Z3,0.639,0.907,0.00,0
+DATA,7705,12.91,2.09,13.9,5.4,20,Z3,0.848,-0.329,0.33,0
+>> GANTI ZONA: 3 -> 2 @12.73g
+DATA,7964,12.73,2.27,15.1,6.4,21,Z2,0.227,1.783,0.00,0
+DATA,8222,12.75,2.25,15.0,5.4,20,Z2,0.452,-0.141,0.14,0
+>> GANTI ZONA: 2 -> 3 @12.82g
+DATA,8480,12.82,2.18,14.5,5.5,20,Z3,0.218,-0.718,0.72,0
+DATA,8738,13.39,1.61,10.7,3.9,20,Z3,0.379,-5.727,5.73,0
+--------------------------------------------
+STOP       : TARGET
+Setpoint   : 15.0g
+Massa akhir: 14.82g
+Error akhir: -0.18g
+Error%     : -1.2%
+Durasi     : 10459ms
+Bridging   : 0x
+Zona hits  : Z1=18 Z2=11 Z3=6
+STATUS     : AKURAT
+=== SUMMARY TRIAL ===
+Controller: Gain Scheduling PID
+TrialNo: 9
+Setpoint_g: 15.00
+EarlyStop_g: 0.40
+StopTarget_g: 14.60
+Z1_Kp: 1.650
+Z1_Ki: 3.088
+Z1_Kd: 0.279
+Z1_IntMax: 15.00
+Z2_Kp: 2.300
+Z2_Ki: 0.753
+Z2_Kd: 0.563
+Z2_IntMax: 30.00
+Z3_Kp: 2.500
+Z3_Ki: 0.181
+Z3_Kd: 0.030
+Z3_IntMax: 30.00
+ServoMin_deg: 20
+ServoMax_deg: 40
+HammerThreshold_g: 3.00
+FinalMass_g: 14.82
+FinalError_g: -0.18
+FinalError_pct: -1.17
+Duration_ms: 10459
+Duration_s: 10.46
+TimeTo90_ms: 8996
+RiseTime_10_90_ms: 6455
+TimeToTolerance_ms: 8996
+SettlingTime_ms: 8996
+SettlingTol_pct: 5.00
+SettlingTol_g: 0.75
+MaxMass_g: 14.90
+MaxOvershoot_g: 0.00
+MaxOvershoot_pct: 0.00
+BridgingCount: 0
+ZonaHit_Z1: 18
+ZonaHit_Z2: 11
+ZonaHit_Z3: 6
+Status: AKURAT
+Valid: TRUE
+StopReason: TARGET
+=== TRIAL END ===
+--------------------------------------------
+r=reset | g=ulangi | c=parameter

@@ -17,4 +17,4 @@ Branch asal: `restructure-repository-canonical` → di-merge ke `master` (ca731b
 | code/tahap5/tahap5_visualisasi_bab4.py | code/finalisasi/ | Gambar Bab IV |
 | data/master_dataset_160.csv | data/pengujian_final/master_dataset_160.csv | Satu lokasi kanonis |
 
-> Catatan: folder `archive/legacy_tahap_structure/` berisi subdirektori kosong (tahap4/, tahap5/, matlab/). File asli tidak tersedia.
+> Folder `archive/legacy_tahap_structure/` tidak disertakan karena file lama tidak tersedia dan Git tidak menyimpan direktori kosong.

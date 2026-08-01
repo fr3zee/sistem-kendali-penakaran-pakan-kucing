@@ -1,23 +1,18 @@
 #!/usr/bin/env python3
 """
-Tahap 5 — Koreksi Final: Visualisasi, Audit, dan Narasi Bab IV
-================================================================
-Empat gambar:
-  4.1  Panel empat outcome primer (TIDAK DIUBAH secara substantif)
-  4.2  Diagram relasi dominasi 4D + legenda bentuk node
-  4.3  Profil RiseTime (TIDAK DIUBAH secara substantif)
+Tahap 5 — Visualisasi Bab IV
+=============================================================
+Tiga gambar:
+  4.1  Panel empat outcome primer
+  4.3  Profil RiseTime
   4.4  WithinTolerance + SettlingTime — grouped per setpoint
 
 Audit:
-  - SHA-256 11 input sebelum/sesudah
-  - Validasi key 4×4×10, overshoot 10 trial (assert, bukan WARN)
-  - 24 pasangan unik matriks; directed edge hanya dari flag dominasi
-  - Edge digambar == edge sumber per setpoint (assert)
-  - Tick/legenda/anotasi count; overlap geometris terbatas
+  - SHA-256 9 input sebelum/sesudah
+  - Validasi key 4×4×10, overshoot 10 trial
+  - Tick/legenda/anotasi count
   - Metadata PNG dpi 299–301
   - Determinisme dua-pass PNG
-  - Registry angka + regression angka lama
-  - Scan placeholder/klaim terlarang pada narasi aktual
 
 Prinsip:
   - Read-only terhadap Tahap 3/4; tidak menghitung statistik baru.
@@ -47,7 +42,7 @@ TAHAP4_DIR = BASE_DIR / "hasil" / "sintesis_hasil"
 import os as _os5v
 _out5v = _os5v.environ.get("PIPELINE_OUTPUT_DIR", str(BASE_DIR / "hasil" / "finalisasi"))
 
-# 11 input read-only
+# 9 input read-only
 INPUT_MANIFEST = {
     'master':              MASTER_CSV,
     'omnibus_t3':          TAHAP3_DIR / "hasil_omnibus_tahap3.csv",
@@ -71,8 +66,7 @@ MARKERS = ['o', 's', '^', 'D']
 LINESTYLES = ['-', '--', '-.', ':']
 COLORS_GRAY = ['#000000', '#404040', '#808080', '#A0A0A0']
 
-# Jumlah edge dominasi yang diharapkan per setpoint (dari matriks final)
-EXPECTED_EDGES = {15: 3, 20: 2, 25: 3, 30: 3}
+
 
 plt.rcParams.update({
     'font.family': 'sans-serif',
@@ -389,7 +383,11 @@ def main():
     gambar_4_4(src)
 
     # 4. Hash PNG run 1
-    png_files = sorted(OUTPUT_DIR.glob("gambar_4_*.png"))
+    png_files = [
+        OUTPUT_DIR / "gambar_4_1_outcome_primer.png",
+        OUTPUT_DIR / "gambar_4_3_risetime.png",
+        OUTPUT_DIR / "gambar_4_4_tolerance_settling.png",
+    ]
     hashes_run1 = {p.name: sha256_file(p) for p in png_files}
     for name, h in hashes_run1.items():
         log_audit(f"PNG run1 hash {name}", "PASS", h)
@@ -411,7 +409,7 @@ def main():
     if not deterministic:
         log_audit("Determinism overall", "FAIL", "Not all PNGs deterministic")
     else:
-        log_audit("Determinism overall", "PASS", "All 4 PNGs deterministic")
+        log_audit("Determinism overall", "PASS", f"All {len(png_files)} PNGs deterministic")
 
     # 6. Check PNG dpi
     for p in png_files:

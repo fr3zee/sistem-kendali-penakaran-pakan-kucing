@@ -1,0 +1,22 @@
+step,status,details
+Load inputs,PASS,12 files
+narasi_bab4.md,PASS,reproducibility\test_run\finalisasi\narasi_bab4.md
+Dataset 160 baris,PASS,160
+Forbidden terms,PASS,"['MAE%', 'open-loop', 'Fisher-Freeman-Halton', 'f2*', 'Pareto', 'dominated', 'non-dominated']"
+Duration Fixed vs GS sig SP25 only,PASS,[25]
+RiseTime Fixed vs GS sig SP25 only,PASS,[25]
+WithinTolerance sig SP25+SP30,PASS,"[25, 30]"
+GS PID SD FinalError terendah semua SP,PASS,
+Audit narasi,PASS,semua cek lolos
+Input integrity shapiro,PASS,UNCHANGED
+Input integrity bf,PASS,UNCHANGED
+Input integrity omnibus,PASS,UNCHANGED
+Input integrity posthoc,PASS,UNCHANGED
+Input integrity konsistensi,PASS,UNCHANGED
+Input integrity proporsi_omni,PASS,UNCHANGED
+Input integrity proporsi_post,PASS,UNCHANGED
+Input integrity settling,PASS,UNCHANGED
+Input integrity bridging,PASS,UNCHANGED
+Input integrity primer,PASS,UNCHANGED
+Input integrity tambahan,PASS,UNCHANGED
+Input integrity master,PASS,UNCHANGED

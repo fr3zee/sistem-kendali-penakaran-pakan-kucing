@@ -4,8 +4,8 @@ Tahap 5 — Visualisasi Bab IV
 =============================================================
 Tiga gambar:
   4.1  Panel empat outcome primer
-  4.3  Profil RiseTime
-  4.4  WithinTolerance + SettlingTime — grouped per setpoint
+  4.2  Profil Rise Time
+  4.3  WithinTolerance + SettlingTime — grouped per setpoint
 
 Audit:
   - SHA-256 9 input sebelum/sesudah
@@ -223,8 +223,8 @@ def gambar_4_1(src):
     log_audit("Gambar 4.1", "PASS", f"{png.name}, {svg.name}")
     return png, svg
 
-# ── Gambar 4.3 (tidak diubah secara substantif) ───────────────
-def gambar_4_3(src):
+# ── Gambar 4.2 — Profil Rise Time ────────────────────────────
+def gambar_4_2(src):
     tambahan = src['tambahan']
     fig, ax = plt.subplots(figsize=(12/2.54, 9/2.54))
     for i, scen in enumerate(SCENARIOS):
@@ -237,16 +237,16 @@ def gambar_4_3(src):
     ax.legend(frameon=False, loc='best')
     ax.grid(True, alpha=0.3, linestyle=':', linewidth=0.5); ax.set_xticks(SETPOINTS)
     plt.tight_layout()
-    png = OUTPUT_DIR / "gambar_4_3_risetime.png"
-    svg = OUTPUT_DIR / "gambar_4_3_risetime.svg"
+    png = OUTPUT_DIR / "gambar_4_2_risetime.png"
+    svg = OUTPUT_DIR / "gambar_4_2_risetime.svg"
     fig.savefig(png, dpi=300, bbox_inches='tight')
     fig.savefig(svg, format='svg', bbox_inches='tight')
     plt.close(fig)
-    log_audit("Gambar 4.3", "PASS", f"{png.name}, {svg.name}")
+    log_audit("Gambar 4.2", "PASS", f"{png.name}, {svg.name}")
     return png, svg
 
-# ── Gambar 4.4 — REVISED: grouped per setpoint ────────────────
-def gambar_4_4(src):
+# ── Gambar 4.3 — WithinTolerance + SettlingTime ──────────────
+def gambar_4_3(src):
     tambahan = src['tambahan']
     fig, axes = plt.subplots(1, 2, figsize=(17/2.54, 10/2.54))
 
@@ -322,8 +322,8 @@ def gambar_4_4(src):
     ax.grid(True, alpha=0.3, linestyle=':', linewidth=0.5, axis='y')
 
     plt.tight_layout()
-    png = OUTPUT_DIR / "gambar_4_4_tolerance_settling.png"
-    svg = OUTPUT_DIR / "gambar_4_4_tolerance_settling.svg"
+    png = OUTPUT_DIR / "gambar_4_3_tolerance_settling.png"
+    svg = OUTPUT_DIR / "gambar_4_3_tolerance_settling.svg"
     fig.savefig(png, dpi=300, bbox_inches='tight')
     fig.savefig(svg, format='svg', bbox_inches='tight')
     plt.close(fig)
@@ -332,16 +332,16 @@ def gambar_4_4(src):
     assert annotation_count_a == 16, f"Panel A annotations: {annotation_count_a}"
     assert annotation_count_b == 16, f"Panel B annotations: {annotation_count_b}"
     assert staggered_label_count == 3, f"Panel A staggered labels: {staggered_label_count}"
-    log_audit("Gambar 4.4 annotations", "PASS", f"A={annotation_count_a}, B={annotation_count_b}")
-    log_audit("Gambar 4.4 equal-height labels", "PASS", "SP15=stagger, SP20=8/10 dan SP25=9/10 distagger")
+    log_audit("Gambar 4.3 annotations", "PASS", f"A={annotation_count_a}, B={annotation_count_b}")
+    log_audit("Gambar 4.3 equal-height labels", "PASS", "SP15=stagger, SP20=8/10 dan SP25=9/10 distagger")
 
     # Verify tick count
     for i, ax in enumerate(axes):
         n_ticks = len(ax.get_xticks())
         assert n_ticks == 4, f"Panel {'AB'[i]} xticks: {n_ticks}"
-    log_audit("Gambar 4.4 ticks", "PASS", "4 ticks per panel")
+    log_audit("Gambar 4.3 ticks", "PASS", "4 ticks per panel")
 
-    log_audit("Gambar 4.4", "PASS", f"{png.name}, {svg.name}")
+    log_audit("Gambar 4.3", "PASS", f"{png.name}, {svg.name}")
     return png, svg
 
 # ── Audit PNG metadata dpi ─────────────────────────────────────
@@ -379,14 +379,14 @@ def main():
 
     # 3. Generate figures (run 1)
     gambar_4_1(src)
+    gambar_4_2(src)
     gambar_4_3(src)
-    gambar_4_4(src)
 
     # 4. Hash PNG run 1
     png_files = [
         OUTPUT_DIR / "gambar_4_1_outcome_primer.png",
-        OUTPUT_DIR / "gambar_4_3_risetime.png",
-        OUTPUT_DIR / "gambar_4_4_tolerance_settling.png",
+        OUTPUT_DIR / "gambar_4_2_risetime.png",
+        OUTPUT_DIR / "gambar_4_3_tolerance_settling.png",
     ]
     hashes_run1 = {p.name: sha256_file(p) for p in png_files}
     for name, h in hashes_run1.items():
@@ -394,8 +394,8 @@ def main():
 
     # 5. Run 2 for determinism
     gambar_4_1(src)
+    gambar_4_2(src)
     gambar_4_3(src)
-    gambar_4_4(src)
 
     hashes_run2 = {p.name: sha256_file(p) for p in png_files}
     deterministic = True

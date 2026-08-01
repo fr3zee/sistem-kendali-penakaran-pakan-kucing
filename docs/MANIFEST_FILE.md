@@ -27,5 +27,6 @@
 - `hasil/finalisasi/` — gambar Bab IV, narasi, DOCX (dihasilkan oleh tahap5; jalankan script untuk mengisi)
 
 ## Reproduksibilitas
-- `reproducibility/audit.json` + `walkthrough.md` — artefak audit
 - `reproducibility/manifest_sha256.csv` — SHA-256 dataset kanonis
+- `reproducibility/README.md` — status reproduksibilitas
+- `archive/legacy_reproducibility/` — audit artefak lama (bukan audit dataset kanonis)

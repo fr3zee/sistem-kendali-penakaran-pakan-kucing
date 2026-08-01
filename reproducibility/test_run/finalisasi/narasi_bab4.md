@@ -46,7 +46,7 @@ Pengujian dilaksanakan dengan 160 trial (4 skenario, 4 setpoint, 10 ulangan). Ke
 
 ## 4.3 Pemeriksaan Asumsi Statistik
 
-**MAPE / AbsError_pct**: Shapiro-Wilk: 4/4 setpoint menyimpang dari normalitas. Brown-Forsythe: 1/4 setpoint varians tidak homogen.
+**Galat absolut persentase per trial (AbsError_pct)**: Shapiro-Wilk: 4/4 setpoint menyimpang dari normalitas. Brown-Forsythe: 1/4 setpoint varians tidak homogen.
 
 **Overshoot maksimum (%)**: Shapiro-Wilk: 4/4 setpoint menyimpang dari normalitas. Brown-Forsythe: 1/4 setpoint varians tidak homogen.
 
@@ -58,7 +58,7 @@ Berdasarkan hasil pemeriksaan asumsi, Kruskal-Wallis dipilih untuk kondisi yang 
 
 ## 4.4 Analisis Inferensial Omnibus
 
-### MAPE / AbsError_pct
+### Galat absolut persentase per trial (AbsError_pct)
 
 | SP | Uji | Statistik | df | p_raw | p_holm | Sig | ES |
 |---|---|---|---|---|---|---|---|
@@ -104,7 +104,7 @@ Terdapat perbedaan signifikan antarkelompok pada SP15, SP20, SP25, SP30 (p_holm 
 
 ## 4.5 Analisis Post-hoc
 
-### MAPE / AbsError_pct
+### Galat absolut persentase per trial (AbsError_pct)
 
 | SP | A | B | p_adjusted | ES | Arah |
 |---|---|---|---|---|---|

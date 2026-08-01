@@ -37,7 +37,7 @@ SCENARIOS = ["Manual Cepat", "Manual Presisi", "Fixed PID", "GS PID"]
 SETPOINTS  = [15, 20, 25, 30]
 METRICS_INF = ["AbsError_pct", "MaxOvershoot_pct", "Duration_s", "RiseTime_10_90_s"]
 METRIC_LABEL = {
-    "AbsError_pct":     "MAPE / AbsError_pct",
+    "AbsError_pct":     "Galat absolut persentase per trial (AbsError_pct)",
     "MaxOvershoot_pct": "Overshoot maksimum (%)",
     "Duration_s":       "Durasi (s)",
     "RiseTime_10_90_s": "Rise time 10-90% (s)",

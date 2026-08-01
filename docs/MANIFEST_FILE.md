@@ -10,7 +10,7 @@
 - `firmware/fixed_pid/` — Fixed PID v8 (Kp=2.50, Ki=0.15, Kd=0.03, ES=0.4g)
 - `firmware/gain_scheduling_pid/` — GS PID v3 (3-zona, ES=0.4g)
 - `firmware/manual_cepat/` — Manual Cepat (bukaan servo utama tetap dengan early stop berbasis massa)
-- `firmware/manual_presisi/` — Open-loop presisi
+- `firmware/manual_presisi/` — Manual Presisi (bukaan servo utama tetap dengan early stop berbasis massa)
 
 ## Identifikasi Plant
 - `data/identifikasi_plant/` — 4 file step response (25/30/35/40 derajat)
@@ -24,8 +24,8 @@
 - `hasil/pemeriksaan_asumsi/` — Shapiro, BF, rekomendasi uji
 - `hasil/analisis_inferensial/` — omnibus, posthoc, within-tolerance
 - `hasil/sintesis_hasil/` — deskriptif, profil primer/tambahan
-- `hasil/finalisasi/` — gambar Bab IV, DOCX, narasi
+- `hasil/finalisasi/` — gambar Bab IV, narasi, DOCX (dihasilkan oleh tahap5; jalankan script untuk mengisi)
 
 ## Reproduksibilitas
 - `reproducibility/audit.json` + `walkthrough.md` — artefak audit
-- `reproducibility/manifest_sha256.csv` — hash semua file kanonis
+- `reproducibility/manifest_sha256.csv` — SHA-256 dataset kanonis

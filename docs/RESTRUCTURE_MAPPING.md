@@ -1,6 +1,6 @@
 # Pemetaan Restrukturisasi
 
-Branch: `restructure-repository-canonical`
+Branch asal: `restructure-repository-canonical` → di-merge ke `master` (ca731b1)
 
 | Lokasi Lama | Lokasi Baru | Keterangan |
 |-------------|-------------|-----------|

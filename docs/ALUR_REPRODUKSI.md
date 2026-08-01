@@ -23,7 +23,7 @@ code/pemeriksaan_asumsi/          → Shapiro-Wilk, Brown-Forsythe, rekomendasi 
     ↓
 code/analisis_inferensial/        → KW, Welch ANOVA, Holm, Dunn, Games-Howell, ES
     ↓
-code/sintesis_hasil/ (tahap4)     → profil primer, tambahan kondisional, dominasi
+code/sintesis_hasil/ (tahap4)     → profil primer, tambahan kondisional
     ↓
 code/finalisasi/                  → narasi Bab IV, gambar, DOCX
 ```

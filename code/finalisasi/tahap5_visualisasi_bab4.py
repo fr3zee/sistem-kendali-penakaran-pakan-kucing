@@ -57,8 +57,6 @@ INPUT_MANIFEST = {
     'proporsi_post':       TAHAP3_DIR / "hasil_proporsi_within_tolerance_posthoc.csv",
     'bridging':            TAHAP3_DIR / "hasil_bridging_deskriptif.csv",
     'primer_t4':           TAHAP4_DIR / "tahap4_profil_primer.csv",
-    'pareto_t4':           TAHAP4_DIR / "tahap4_pareto_per_setpoint.csv",
-    'matriks_t4':          TAHAP4_DIR / "tahap4_matriks_dominasi.csv",
     'tambahan_t4':         TAHAP4_DIR / "tahap4_profil_tambahan_kondisional.csv",
 }
 
@@ -114,8 +112,8 @@ def load_and_verify():
     src = {}
     src['master'] = pd.read_csv(INPUT_MANIFEST['master'])
     src['primer'] = pd.read_csv(INPUT_MANIFEST['primer_t4'])
-    src['pareto'] = pd.read_csv(INPUT_MANIFEST['pareto_t4'])
-    src['matriks'] = pd.read_csv(INPUT_MANIFEST['matriks_t4'])
+    src['matriks'] = pd.read_csv(BASE_DIR / "archive" / "archived_outputs" / "tahap4_matriks_dominasi.csv")
+    src['pareto']   = pd.read_csv(BASE_DIR / "archive" / "archived_outputs" / "tahap4_pareto_per_setpoint.csv")
     src['tambahan'] = pd.read_csv(INPUT_MANIFEST['tambahan_t4'])
     src['posthoc'] = pd.read_csv(INPUT_MANIFEST['posthoc_t3'])
     src['proporsi_post'] = pd.read_csv(INPUT_MANIFEST['proporsi_post'])
@@ -144,36 +142,6 @@ def load_and_verify():
     assert len(src['tambahan']) == 16, f"Tambahan bukan 16: {len(src['tambahan'])}"
     log_audit("Verify tambahan count", "PASS", "16 baris")
 
-    # Pareto 16 baris
-    assert len(src['pareto']) == 16, f"Pareto bukan 16: {len(src['pareto'])}"
-    log_audit("Verify pareto count", "PASS", "16 baris")
-
-    # Matriks 24 pasangan unik
-    mat = src['matriks']
-    assert len(mat) == 24, f"Matriks bukan 24: {len(mat)}"
-    for sp in SETPOINTS:
-        n_sp = len(mat[mat['Setpoint_g'] == sp])
-        assert n_sp == 6, f"SP{sp} matriks bukan 6 pasangan: {n_sp}"
-    log_audit("Verify matriks 24 pasangan", "PASS", "6 per SP, 24 total")
-
-    # Directed edges
-    total_edges = 0
-    for sp in SETPOINTS:
-        df_sp = mat[mat['Setpoint_g'] == sp]
-        edges = set()
-        for _, row in df_sp.iterrows():
-            a_dom = row['A_dominates_B']
-            b_dom = row['B_dominates_A']
-            if a_dom == True or str(a_dom).strip() == 'True':
-                edges.add((row['Scenario_A'], row['Scenario_B']))
-            if b_dom == True or str(b_dom).strip() == 'True':
-                edges.add((row['Scenario_B'], row['Scenario_A']))
-        n_edges = len(edges)
-        exp = EXPECTED_EDGES[sp]
-        assert n_edges == exp, f"SP{sp}: {n_edges} edge, expected {exp}"
-        total_edges += n_edges
-    assert total_edges == 11, f"Total edge {total_edges}, expected 11"
-    log_audit("Verify directed edges", "PASS", f"SP15=3,SP20=2,SP25=3,SP30=3, total=11")
 
     return src
 

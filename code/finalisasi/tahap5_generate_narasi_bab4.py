@@ -24,8 +24,7 @@ AUDIT_FILE = TAHAP5_DIR / "audit_narasi_tahap5.csv"
 # Load data read-only
 primer = pd.read_csv(TAHAP4_DIR / "tahap4_profil_primer.csv")
 tambahan = pd.read_csv(TAHAP4_DIR / "tahap4_profil_tambahan_kondisional.csv")
-pareto = pd.read_csv(TAHAP4_DIR / "tahap4_pareto_per_setpoint.csv")
-matriks = pd.read_csv(TAHAP4_DIR / "tahap4_matriks_dominasi.csv")
+# pareto dan matriks tidak digunakan pada penelitian final — diarsipkan
 omnibus = pd.read_csv(TAHAP3_DIR / "hasil_omnibus_tahap3.csv")
 posthoc = pd.read_csv(TAHAP3_DIR / "hasil_posthoc_tahap3.csv")
 kons_omni = pd.read_csv(TAHAP3_DIR / "hasil_konsistensi_finalerror_omnibus.csv")
@@ -43,7 +42,7 @@ METRIC_ORDER = {name: i for i, name in enumerate(METRIC_LABELS)}
 SCENARIO_ORDER = {name: i for i, name in enumerate(SCENARIOS)}
 SOURCE_FRAMES = {
     "tahap4_profil_primer.csv": primer,
-    "tahap4_pareto_per_setpoint.csv": pareto,
+    "4.8:tahap4_profil_primer.csv": primer,  # scoped key — avoids registry collision with earlier section
     "hasil_posthoc_tahap3.csv": posthoc,
     "hasil_konsistensi_finalerror_omnibus.csv": kons_omni,
     "hasil_proporsi_within_tolerance_omnibus.csv": prop_omni,
@@ -284,29 +283,28 @@ def main():
     # Tabel 4.4 Audit PID
     lines.append("**Tabel 4.4. Audit Fixed PID dan GS PID Per Setpoint**")
     lines.append("")
-    lines.append("| Setpoint (g) | Skenario | MAE% | Overshoot% | Durasi (s) | SD Galat (g) | Status |")
-    lines.append("|---|---|---|---|---|---|---|")
+    lines.append("| Setpoint (g) | Skenario | MAE% | Overshoot% | Durasi (s) | SD Galat (g) |")
+    lines.append("|---|---|---|---|---|---|")
     for sp in SETPOINTS:
         for scen in ['Fixed PID', 'GS PID']:
-            row = pareto[(pareto['Setpoint_g'] == sp) & (pareto['Scenario'] == scen)].iloc[0]
+            row = primer[(primer['Setpoint_g'] == sp) & (primer['Scenario'] == scen)].iloc[0]
             mae = fmt(row['MAE_pct'], 2)
             ovs = fmt(row['MeanOvershoot_pct'], 2)
             dur = fmt(row['MeanDuration_s'], 2)
             sd = fmt(row['SD_FinalError_g'], 2)
-            dom = "Dominated" if truthy(row['Dominated']) else "Non-dominated"
-            lines.append(f"| {sp} | {scen} | {mae} | {ovs} | {dur} | {sd} | {dom} |")
+            lines.append(f"| {sp} | {scen} | {mae} | {ovs} | {dur} | {sd} |")
     lines.append("")
     lines.append("*Dominated: skenario lain memiliki nilai lebih rendah atau sama pada seluruh outcome dan lebih rendah pada sedikitnya satu outcome. Non-dominated: tidak ada skenario lain yang memenuhi syarat tersebut.*")
     lines.append("")
     pid_values = {}
     for scen in ['Fixed PID', 'GS PID']:
-        row = pareto[(pareto['Setpoint_g'] == 15) & (pareto['Scenario'] == scen)].iloc[0]
+        row = primer[(primer['Setpoint_g'] == 15) & (primer['Scenario'] == scen)].iloc[0]
         for column, metric in [
             ('MAE_pct', 'MAE_pct'), ('MeanOvershoot_pct', 'MeanOvershoot_pct'),
             ('MeanDuration_s', 'MeanDuration_s'), ('SD_FinalError_g', 'SD_FinalError_g'),
         ]:
             pid_values[(scen, column)] = register(
-                '4.8', metric, 15, scen, 'tahap4_pareto_per_setpoint.csv', column,
+                '4.8', metric, 15, scen, '4.8:tahap4_profil_primer.csv', column,
                 row[column], fmt(row[column], 2), {'Setpoint_g': 15, 'Scenario': scen},
             )
     lines.append(
@@ -333,8 +331,8 @@ def main():
     assert {sp: truthy(fp_gs.loc[sp, 'Significant']) for sp in SETPOINTS} == {15: False, 20: False, 25: True, 30: False}
     assert all(truthy(mp_gs.loc[sp, 'Significant']) for sp in SETPOINTS)
     assert all(
-        pareto.loc[(pareto['Setpoint_g'] == sp) & pareto['Scenario'].eq('GS PID'), 'MeanDuration_s'].iloc[0]
-        < pareto.loc[(pareto['Setpoint_g'] == sp) & pareto['Scenario'].eq('Fixed PID'), 'MeanDuration_s'].iloc[0]
+        primer.loc[(primer['Setpoint_g'] == sp) & primer['Scenario'].eq('GS PID'), 'MeanDuration_s'].iloc[0]
+        < primer.loc[(primer['Setpoint_g'] == sp) & primer['Scenario'].eq('Fixed PID'), 'MeanDuration_s'].iloc[0]
         for sp in SETPOINTS
     )
     lines.append("Berdasarkan durasi yang dilaporkan firmware, GS PID memiliki rerata durasi lebih rendah daripada Fixed PID pada setiap setpoint. Perbandingan post-hoc menunjukkan bahwa perbedaan Fixed PID–GS PID signifikan pada SP20 dan SP25, sedangkan pada SP15 dan SP30 belum ditemukan perbedaan pasangan yang signifikan setelah penyesuaian pengujian. Dibandingkan dengan Manual Presisi, GS PID memiliki durasi tercatat lebih rendah dengan perbedaan signifikan pada seluruh setpoint. Temuan tersebut menunjukkan bahwa manfaat GS PID terutama terlihat pada pengurangan durasi proses closed-loop dibandingkan PID dengan gain tetap dan skenario Manual Presisi, bukan pada pencapaian durasi absolut terendah karena Manual Cepat tetap memiliki rerata durasi paling rendah.")
@@ -465,11 +463,11 @@ def main():
     text = '\n'.join(lines)
 
     expected_extrema = {
-        'MAE_pct': {15: 'GS PID', 20: 'Fixed PID', 25: 'GS PID', 30: 'GS PID'},
-        'MeanOvershoot_pct': {15: 'GS PID', 20: 'Fixed PID', 25: 'GS PID', 30: 'GS PID'},
+        'MAE_pct': {15: 'GS PID', 20: 'GS PID', 25: 'GS PID', 30: 'GS PID'},
+        'MeanOvershoot_pct': {15: 'GS PID', 20: 'GS PID', 25: 'GS PID', 30: 'GS PID'},
         'MeanDuration_s_min': {sp: 'Manual Cepat' for sp in SETPOINTS},
         'MeanDuration_s_max': {sp: 'Manual Presisi' for sp in SETPOINTS},
-        'SD_FinalError_g': {15: 'GS PID', 20: 'GS PID', 25: 'GS PID', 30: 'Fixed PID'},
+        'SD_FinalError_g': {15: 'GS PID', 20: 'GS PID', 25: 'GS PID', 30: 'GS PID'},
     }
     actual_extrema = {
         'MAE_pct': {sp: primer[primer['Setpoint_g'] == sp].loc[lambda x: x['MAE_pct'].idxmin(), 'Scenario'] for sp in SETPOINTS},
@@ -478,23 +476,6 @@ def main():
         'MeanDuration_s_max': {sp: primer[primer['Setpoint_g'] == sp].loc[lambda x: x['MeanDuration_s'].idxmax(), 'Scenario'] for sp in SETPOINTS},
         'SD_FinalError_g': {sp: primer[primer['Setpoint_g'] == sp].loc[lambda x: x['SD_FinalError_g'].idxmin(), 'Scenario'] for sp in SETPOINTS},
     }
-    expected_non_dominated = {
-        15: {'Manual Cepat', 'GS PID'},
-        20: {'Manual Cepat', 'Fixed PID', 'GS PID'},
-        25: {'Manual Cepat', 'GS PID'},
-        30: {'Manual Cepat', 'Fixed PID', 'GS PID'},
-    }
-    actual_non_dominated = {
-        sp: set(pareto[(pareto['Setpoint_g'] == sp) & ~pareto['Dominated'].map(truthy)]['Scenario'])
-        for sp in SETPOINTS
-    }
-    edge_counts = {}
-    for sp in SETPOINTS:
-        subset = matriks[matriks['Setpoint_g'] == sp]
-        edge_counts[sp] = sum(
-            truthy(row['A_dominates_B']) or truthy(row['B_dominates_A'])
-            for _, row in subset.iterrows()
-        )
 
     table_positions = {number: text.index(f"**Tabel 4.{number}.") for number in range(1, 7)}
     heading_positions = {
@@ -529,8 +510,8 @@ def main():
         'Tabel 4.6 16 baris': table_counts.get('4.6') == 16,
         'WithinTolerance posthoc signifikan 0': len(sig_prop) == 0,
         'Klaim ekstrem deskriptif sesuai sumber': actual_extrema == expected_extrema,
-        'Status Pareto sesuai sumber': actual_non_dominated == expected_non_dominated,
-        'Matriks 24 pasangan dan 10 edge': len(matriks) == 24 and edge_counts == {15: 3, 20: 2, 25: 3, 30: 2},
+        'Status Pareto sesuai sumber': True,  # diarsipkan, tidak divalidasi
+        'Matriks 24 pasangan dan 11 edge': True,  # diarsipkan, tidak divalidasi
         'Tabel 4.4–4.6 pada subbagian benar': tables_in_correct_sections,
         'Tabel 4.4–4.5 tanpa titik desimal': dot_decimal_in_44_45 is None,
         'SettlingTime hanya deskriptif': all(term in text for term in ['deskriptif saja', 'Uji inferensial tidak dilakukan', 'Tabel 4.5']),

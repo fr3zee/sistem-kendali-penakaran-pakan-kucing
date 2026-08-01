@@ -7,15 +7,10 @@ Hash input proporsi_omni,PASS,c4669ac8b6ebd7a8a98e8176460bf97ce2b2a59786bb23064a
 Hash input proporsi_post,PASS,2c61d863015a09580492abde5d6a4250f127466dda2d9ed246a9a0029a5aaf23
 Hash input bridging,PASS,994044b07ca450ed05b176fbaed580073b80826632c1fc6c0be9a59151304ff1
 Hash input primer_t4,PASS,0744e8abd846f35c11f22776ac06e97c46ab3cd889d8522d1f8af81f31deb621
-Hash input pareto_t4,PASS,da8ee20a43650c7fd50e7da9df3463dfa48fa89d49a1e63cc8c14c82979d01c2
-Hash input matriks_t4,PASS,949ee835ee5ff1f97bbf7b4324db1740066e8307ded3413668be76a3044002d7
 Hash input tambahan_t4,PASS,374a31e55e8cbcc4c32dc457e7c49dbacf5171e1530609880702131c9032dca1
 Verify master 4×4×10,PASS,"160 baris, key lengkap"
 Verify primer count,PASS,16 baris
 Verify tambahan count,PASS,16 baris
-Verify pareto count,PASS,16 baris
-Verify matriks 24 pasangan,PASS,"6 per SP, 24 total"
-Verify directed edges,PASS,"SP15=3,SP20=2,SP25=3,SP30=3, total=11"
 Gambar 4.1,PASS,"gambar_4_1_outcome_primer.png, gambar_4_1_outcome_primer.svg"
 Gambar 4.2 edge assert,PASS,"SP15=3,SP20=2,SP25=3,SP30=3,total=11"
 Gambar 4.2,PASS,"gambar_4_2_dominasi_4d.png, gambar_4_2_dominasi_4d.svg"
@@ -53,8 +48,6 @@ Hash input proporsi_omni,PASS,c4669ac8b6ebd7a8a98e8176460bf97ce2b2a59786bb23064a
 Hash input proporsi_post,PASS,2c61d863015a09580492abde5d6a4250f127466dda2d9ed246a9a0029a5aaf23
 Hash input bridging,PASS,994044b07ca450ed05b176fbaed580073b80826632c1fc6c0be9a59151304ff1
 Hash input primer_t4,PASS,0744e8abd846f35c11f22776ac06e97c46ab3cd889d8522d1f8af81f31deb621
-Hash input pareto_t4,PASS,da8ee20a43650c7fd50e7da9df3463dfa48fa89d49a1e63cc8c14c82979d01c2
-Hash input matriks_t4,PASS,949ee835ee5ff1f97bbf7b4324db1740066e8307ded3413668be76a3044002d7
 Hash input tambahan_t4,PASS,374a31e55e8cbcc4c32dc457e7c49dbacf5171e1530609880702131c9032dca1
 Input integrity master,PASS,UNCHANGED
 Input integrity omnibus_t3,PASS,UNCHANGED
@@ -64,6 +57,4 @@ Input integrity proporsi_omni,PASS,UNCHANGED
 Input integrity proporsi_post,PASS,UNCHANGED
 Input integrity bridging,PASS,UNCHANGED
 Input integrity primer_t4,PASS,UNCHANGED
-Input integrity pareto_t4,PASS,UNCHANGED
-Input integrity matriks_t4,PASS,UNCHANGED
 Input integrity tambahan_t4,PASS,UNCHANGED

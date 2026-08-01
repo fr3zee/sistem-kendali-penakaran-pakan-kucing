@@ -31,7 +31,10 @@ BASE = Path(__file__).resolve().parents[2]
 DATA_ROOT = BASE
 TAHAP3 = BASE / "hasil" / "analisis_inferensial"
 import os as _os
-OUTPUT = Path(_os.environ.get("PIPELINE_OUTPUT_DIR", str(BASE / "hasil" / "sintesis_hasil")))
+_raw_out = _os.environ.get("PIPELINE_OUTPUT_DIR",
+           str(BASE / "hasil" / "sintesis_hasil"))
+OUTPUT = (Path(_raw_out) if Path(_raw_out).is_absolute()
+          else BASE / _raw_out).resolve()
 OUTPUT.mkdir(parents=True, exist_ok=True)
 
 MASTER_DATASET = DATA_ROOT / "data" / "pengujian_final" / "master_dataset_160.csv"

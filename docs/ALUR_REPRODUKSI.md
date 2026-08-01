@@ -46,4 +46,4 @@ code/finalisasi/                  → narasi Bab IV, gambar, DOCX
 - 160 baris, 16 kombinasi (4 skenario × 4 setpoint), 10 trial per kombinasi
 
 > Artefak audit tersedia di `reproducibility/audit.json` dan `reproducibility/walkthrough.md`.
-> Skrip audit log–dataset tidak ditemukan (lihat `docs/MISSING_CORE_FILES.md`).
+> Tahap audit log–dataset belum dapat direproduksi; proses analisis lainnya tersedia.

@@ -43,10 +43,12 @@ N_BOOTSTRAP = 10000
 N_MC  = 100_000
 np.random.seed(SEED)
 
-BASE_DIR = Path(r"d:\SKRIPSI\draft\3. dok trial hasil\Pengambilan Data\rekap data")
-DATASET_PATH = BASE_DIR / "antigravity (md & csv)" / "master_dataset_160.csv"
-REKOM_PATH = BASE_DIR / "Laporan" / "Tahap2" / "rekomendasi_uji_tahap3.csv"
-OUTPUT_DIR = BASE_DIR / "Laporan" / "Tahap3"
+import os as _os3
+BASE_DIR     = Path(__file__).resolve().parents[2]  # repo root
+DATASET_PATH = BASE_DIR / "data" / "pengujian_final" / "master_dataset_160.csv"
+REKOM_PATH   = BASE_DIR / "hasil" / "pemeriksaan_asumsi" / "rekomendasi_uji_tahap3.csv"
+OUTPUT_DIR   = Path(_os3.environ.get("PIPELINE_OUTPUT_DIR",
+               str(BASE_DIR / "hasil" / "analisis_inferensial")))
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
 SCENARIOS = ["Manual Cepat", "Manual Presisi", "Fixed PID", "GS PID"]
@@ -85,7 +87,7 @@ print(">>> 1. Audit Input")
 df    = pd.read_csv(DATASET_PATH)
 rekom = pd.read_csv(REKOM_PATH)
 
-TAHAP2_DIR = BASE_DIR / "Laporan" / "Tahap2"
+TAHAP2_DIR = BASE_DIR / "hasil" / "pemeriksaan_asumsi"
 df_shapiro_residual = pd.read_csv(TAHAP2_DIR / "hasil_shapiro_residual_per_setpoint.csv")
 df_homogeneity      = pd.read_csv(TAHAP2_DIR / "hasil_brown_forsythe_per_setpoint.csv")
 df_recommendation   = pd.read_csv(REKOM_PATH)

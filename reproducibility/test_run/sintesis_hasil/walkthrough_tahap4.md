@@ -45,7 +45,7 @@ Hash cocok menunjukkan file tidak berubah selama pipeline; bukan bukti permissio
 | tahap4_pareto_per_setpoint.csv | 5795 |
 | tahap4_matriks_dominasi.csv | 6707 |
 | tahap4_profil_tambahan_kondisional.csv | 7172 |
-| hasil_lengkap_tahap4.xlsx | 42459 |
+| hasil_lengkap_tahap4.xlsx | 42457 |
 | laporan_tahap4_sintesis_multidimensi.docx | 47584 |
 
 Workbook berisi 15 sheet. Tidak ada grafik Tahap 4.

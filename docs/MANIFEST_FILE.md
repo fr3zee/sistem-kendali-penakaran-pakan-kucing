@@ -9,7 +9,7 @@
 ## Firmware Final
 - `firmware/fixed_pid/` — Fixed PID v8 (Kp=2.50, Ki=0.15, Kd=0.03, ES=0.4g)
 - `firmware/gain_scheduling_pid/` — GS PID v3 (3-zona, ES=0.4g)
-- `firmware/manual_cepat/` — Open-loop cepat (ES sebagai safety)
+- `firmware/manual_cepat/` — Manual Cepat (bukaan servo utama tetap dengan early stop berbasis massa)
 - `firmware/manual_presisi/` — Open-loop presisi
 
 ## Identifikasi Plant
@@ -23,7 +23,7 @@
 ## Output Pipeline
 - `hasil/pemeriksaan_asumsi/` — Shapiro, BF, rekomendasi uji
 - `hasil/analisis_inferensial/` — omnibus, posthoc, within-tolerance
-- `hasil/sintesis_hasil/` — deskriptif, profil primer/tambahan, pareto
+- `hasil/sintesis_hasil/` — deskriptif, profil primer/tambahan
 - `hasil/finalisasi/` — gambar Bab IV, DOCX, narasi
 
 ## Reproduksibilitas

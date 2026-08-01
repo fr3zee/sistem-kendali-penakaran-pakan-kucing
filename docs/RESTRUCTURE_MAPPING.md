@@ -16,7 +16,5 @@ Branch asal: `restructure-repository-canonical` → di-merge ke `master` (ca731b
 | code/tahap5/tahap5_generate_docx_bab4_revisi_terbatas.py | code/finalisasi/ | DOCX Bab IV |
 | code/tahap5/tahap5_visualisasi_bab4.py | code/finalisasi/ | Gambar Bab IV |
 | data/master_dataset_160.csv | data/pengujian_final/master_dataset_160.csv | Satu lokasi kanonis |
-| code/tahap4/tahap4_sintesis_multidimensi_backup.py | archive/legacy_tahap_structure/tahap4/ | Arsip |
-| code/tahap5/tahap5_generate_docx_bab4.py | archive/legacy_tahap_structure/tahap5/ | Arsip (versi lama) |
-| code/tahap5/tmp_broken.py | archive/legacy_tahap_structure/tahap5/ | Arsip |
-| MATLAB/zn_integrating_process copy.m | archive/legacy_tahap_structure/matlab/ | Arsip duplikat |
+
+> Catatan: folder `archive/legacy_tahap_structure/` berisi subdirektori kosong (tahap4/, tahap5/, matlab/). File asli tidak tersedia.

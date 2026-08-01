@@ -78,7 +78,10 @@ code/finalisasi/                  → narasi Bab IV, gambar, DOCX
 │   └── finalisasi/               # gambar Bab IV, narasi, DOCX
 ├── docs/                         # ALUR_REPRODUKSI.md, MANIFEST_FILE.md, dll.
 ├── archive/                      # output arsip (Pareto, matriks dominasi)
-└── reproducibility/              # audit.json, manifest.csv, test_run/
+└── reproducibility/
+    ├── README.md
+    ├── manifest_sha256.csv
+    └── test_run/
 ```
 
 ---

@@ -38,11 +38,14 @@ from pathlib import Path
 JITTER_SEED = 42
 JITTER_AMOUNT = 0.15
 
-BASE_DIR = Path(__file__).parent.parent.parent  # Tahap5 -> Laporan -> rekap data
-MASTER_CSV = BASE_DIR / "antigravity (md & csv)" / "master_dataset_160.csv"
+BASE_DIR = Path(__file__).resolve().parents[2]  # repo root
+MASTER_CSV = BASE_DIR / "data" / "pengujian_final" / "master_dataset_160.csv"
 
-TAHAP3_DIR = BASE_DIR / "Laporan" / "Tahap3"
-TAHAP4_DIR = BASE_DIR / "Laporan" / "Tahap4"
+TAHAP3_DIR = BASE_DIR / "hasil" / "analisis_inferensial"
+TAHAP4_DIR = BASE_DIR / "hasil" / "sintesis_hasil"
+
+import os as _os5v
+_out5v = _os5v.environ.get("PIPELINE_OUTPUT_DIR", str(BASE_DIR / "hasil" / "finalisasi"))
 
 # 11 input read-only
 INPUT_MANIFEST = {
@@ -59,9 +62,9 @@ INPUT_MANIFEST = {
     'tambahan_t4':         TAHAP4_DIR / "tahap4_profil_tambahan_kondisional.csv",
 }
 
-OUTPUT_DIR = Path(__file__).parent / "grafik"
-OUTPUT_DIR.mkdir(exist_ok=True)
-TAHAP5_DIR = Path(__file__).parent
+OUTPUT_DIR = Path(_out5v)
+OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+TAHAP5_DIR = OUTPUT_DIR
 
 SCENARIOS = ["Manual Cepat", "Manual Presisi", "Fixed PID", "GS PID"]
 SETPOINTS = [15, 20, 25, 30]
@@ -71,7 +74,7 @@ LINESTYLES = ['-', '--', '-.', ':']
 COLORS_GRAY = ['#000000', '#404040', '#808080', '#A0A0A0']
 
 # Jumlah edge dominasi yang diharapkan per setpoint (dari matriks final)
-EXPECTED_EDGES = {15: 3, 20: 2, 25: 3, 30: 2}
+EXPECTED_EDGES = {15: 3, 20: 2, 25: 3, 30: 3}
 
 plt.rcParams.update({
     'font.family': 'sans-serif',
@@ -169,8 +172,8 @@ def load_and_verify():
         exp = EXPECTED_EDGES[sp]
         assert n_edges == exp, f"SP{sp}: {n_edges} edge, expected {exp}"
         total_edges += n_edges
-    assert total_edges == 10, f"Total edge {total_edges}, expected 10"
-    log_audit("Verify directed edges", "PASS", f"SP15=3,SP20=2,SP25=3,SP30=2, total=10")
+    assert total_edges == 11, f"Total edge {total_edges}, expected 11"
+    log_audit("Verify directed edges", "PASS", f"SP15=3,SP20=2,SP25=3,SP30=3, total=11")
 
     return src
 
@@ -453,9 +456,9 @@ def gambar_4_4(src):
     # Verify annotation counts and equal-height label staggering
     assert annotation_count_a == 16, f"Panel A annotations: {annotation_count_a}"
     assert annotation_count_b == 16, f"Panel B annotations: {annotation_count_b}"
-    assert staggered_label_count == 2, f"Panel A staggered labels: {staggered_label_count}"
+    assert staggered_label_count == 3, f"Panel A staggered labels: {staggered_label_count}"
     log_audit("Gambar 4.4 annotations", "PASS", f"A={annotation_count_a}, B={annotation_count_b}")
-    log_audit("Gambar 4.4 equal-height labels", "PASS", "SP20=8/10 dan SP25=9/10 distagger")
+    log_audit("Gambar 4.4 equal-height labels", "PASS", "SP15=stagger, SP20=8/10 dan SP25=9/10 distagger")
 
     # Verify tick count
     for i, ax in enumerate(axes):

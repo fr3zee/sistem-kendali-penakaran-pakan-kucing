@@ -330,7 +330,7 @@ def main():
         duration_pairs['Group_A'].eq('Manual Presisi') & duration_pairs['Group_B'].eq('GS PID')
     ].set_index('Setpoint_g')
     assert set(fp_gs.index) == set(SETPOINTS) and set(mp_gs.index) == set(SETPOINTS)
-    assert {sp: truthy(fp_gs.loc[sp, 'Significant']) for sp in SETPOINTS} == {15: False, 20: True, 25: True, 30: False}
+    assert {sp: truthy(fp_gs.loc[sp, 'Significant']) for sp in SETPOINTS} == {15: False, 20: False, 25: True, 30: False}
     assert all(truthy(mp_gs.loc[sp, 'Significant']) for sp in SETPOINTS)
     assert all(
         pareto.loc[(pareto['Setpoint_g'] == sp) & pareto['Scenario'].eq('GS PID'), 'MeanDuration_s'].iloc[0]

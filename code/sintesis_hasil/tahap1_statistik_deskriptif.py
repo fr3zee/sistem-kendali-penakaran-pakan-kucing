@@ -20,7 +20,7 @@ import pandas as pd
 ROOT   = pathlib.Path(__file__).resolve().parents[2]
 DATA   = ROOT / "data" / "pengujian_final" / "master_dataset_160.csv"
 import os
-OUT    = Path(os.environ.get("PIPELINE_OUTPUT_DIR", str(ROOT / "hasil" / "sintesis_hasil")))
+OUT    = pathlib.Path(os.environ.get("PIPELINE_OUTPUT_DIR", str(ROOT / "hasil" / "sintesis_hasil")))
 OUT.mkdir(parents=True, exist_ok=True)
 
 METRICS = ["AbsError_pct", "MaxOvershoot_pct", "Duration_s", "BridgingCount"]

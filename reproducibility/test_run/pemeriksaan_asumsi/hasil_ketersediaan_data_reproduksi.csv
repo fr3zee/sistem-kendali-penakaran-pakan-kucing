@@ -1,0 +1,81 @@
+Metric,Scenario,Setpoint_g,n_total,n_available,n_unavailable,Keterangan
+AbsError_pct,Manual Cepat,15,10,10,0,
+AbsError_pct,Manual Cepat,20,10,10,0,
+AbsError_pct,Manual Cepat,25,10,10,0,
+AbsError_pct,Manual Cepat,30,10,10,0,
+AbsError_pct,Manual Presisi,15,10,10,0,
+AbsError_pct,Manual Presisi,20,10,10,0,
+AbsError_pct,Manual Presisi,25,10,10,0,
+AbsError_pct,Manual Presisi,30,10,10,0,
+AbsError_pct,Fixed PID,15,10,10,0,
+AbsError_pct,Fixed PID,20,10,10,0,
+AbsError_pct,Fixed PID,25,10,10,0,
+AbsError_pct,Fixed PID,30,10,10,0,
+AbsError_pct,GS PID,15,10,10,0,
+AbsError_pct,GS PID,20,10,10,0,
+AbsError_pct,GS PID,25,10,10,0,
+AbsError_pct,GS PID,30,10,10,0,
+MaxOvershoot_pct,Manual Cepat,15,10,10,0,
+MaxOvershoot_pct,Manual Cepat,20,10,10,0,
+MaxOvershoot_pct,Manual Cepat,25,10,10,0,
+MaxOvershoot_pct,Manual Cepat,30,10,10,0,
+MaxOvershoot_pct,Manual Presisi,15,10,10,0,
+MaxOvershoot_pct,Manual Presisi,20,10,10,0,
+MaxOvershoot_pct,Manual Presisi,25,10,10,0,
+MaxOvershoot_pct,Manual Presisi,30,10,10,0,
+MaxOvershoot_pct,Fixed PID,15,10,10,0,
+MaxOvershoot_pct,Fixed PID,20,10,10,0,
+MaxOvershoot_pct,Fixed PID,25,10,10,0,
+MaxOvershoot_pct,Fixed PID,30,10,10,0,
+MaxOvershoot_pct,GS PID,15,10,10,0,
+MaxOvershoot_pct,GS PID,20,10,10,0,
+MaxOvershoot_pct,GS PID,25,10,10,0,
+MaxOvershoot_pct,GS PID,30,10,10,0,
+Duration_s,Manual Cepat,15,10,10,0,
+Duration_s,Manual Cepat,20,10,10,0,
+Duration_s,Manual Cepat,25,10,10,0,
+Duration_s,Manual Cepat,30,10,10,0,
+Duration_s,Manual Presisi,15,10,10,0,
+Duration_s,Manual Presisi,20,10,10,0,
+Duration_s,Manual Presisi,25,10,10,0,
+Duration_s,Manual Presisi,30,10,10,0,
+Duration_s,Fixed PID,15,10,10,0,
+Duration_s,Fixed PID,20,10,10,0,
+Duration_s,Fixed PID,25,10,10,0,
+Duration_s,Fixed PID,30,10,10,0,
+Duration_s,GS PID,15,10,10,0,
+Duration_s,GS PID,20,10,10,0,
+Duration_s,GS PID,25,10,10,0,
+Duration_s,GS PID,30,10,10,0,
+RiseTime_10_90_s,Manual Cepat,15,10,10,0,
+RiseTime_10_90_s,Manual Cepat,20,10,10,0,
+RiseTime_10_90_s,Manual Cepat,25,10,10,0,
+RiseTime_10_90_s,Manual Cepat,30,10,10,0,
+RiseTime_10_90_s,Manual Presisi,15,10,10,0,
+RiseTime_10_90_s,Manual Presisi,20,10,10,0,
+RiseTime_10_90_s,Manual Presisi,25,10,10,0,
+RiseTime_10_90_s,Manual Presisi,30,10,10,0,
+RiseTime_10_90_s,Fixed PID,15,10,10,0,
+RiseTime_10_90_s,Fixed PID,20,10,10,0,
+RiseTime_10_90_s,Fixed PID,25,10,10,0,
+RiseTime_10_90_s,Fixed PID,30,10,10,0,
+RiseTime_10_90_s,GS PID,15,10,10,0,
+RiseTime_10_90_s,GS PID,20,10,10,0,
+RiseTime_10_90_s,GS PID,25,10,10,0,
+RiseTime_10_90_s,GS PID,30,10,10,0,
+SettlingTime_s,Manual Cepat,15,10,3,7,Settling tidak tersedia pada 7 trial (kondisional)
+SettlingTime_s,Manual Cepat,20,10,4,6,Settling tidak tersedia pada 6 trial (kondisional)
+SettlingTime_s,Manual Cepat,25,10,3,7,Settling tidak tersedia pada 7 trial (kondisional)
+SettlingTime_s,Manual Cepat,30,10,4,6,Settling tidak tersedia pada 6 trial (kondisional)
+SettlingTime_s,Manual Presisi,15,10,6,4,Settling tidak tersedia pada 4 trial (kondisional)
+SettlingTime_s,Manual Presisi,20,10,6,4,Settling tidak tersedia pada 4 trial (kondisional)
+SettlingTime_s,Manual Presisi,25,10,6,4,Settling tidak tersedia pada 4 trial (kondisional)
+SettlingTime_s,Manual Presisi,30,10,7,3,Settling tidak tersedia pada 3 trial (kondisional)
+SettlingTime_s,Fixed PID,15,10,7,3,Settling tidak tersedia pada 3 trial (kondisional)
+SettlingTime_s,Fixed PID,20,10,8,2,Settling tidak tersedia pada 2 trial (kondisional)
+SettlingTime_s,Fixed PID,25,10,9,1,Settling tidak tersedia pada 1 trial (kondisional)
+SettlingTime_s,Fixed PID,30,10,10,0,
+SettlingTime_s,GS PID,15,10,9,1,Settling tidak tersedia pada 1 trial (kondisional)
+SettlingTime_s,GS PID,20,10,8,2,Settling tidak tersedia pada 2 trial (kondisional)
+SettlingTime_s,GS PID,25,10,9,1,Settling tidak tersedia pada 1 trial (kondisional)
+SettlingTime_s,GS PID,30,10,10,0,

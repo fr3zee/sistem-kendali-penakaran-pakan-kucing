@@ -32,6 +32,7 @@ DATA_ROOT = BASE
 TAHAP3 = BASE / "hasil" / "analisis_inferensial"
 import os as _os
 OUTPUT = Path(_os.environ.get("PIPELINE_OUTPUT_DIR", str(BASE / "hasil" / "sintesis_hasil")))
+OUTPUT.mkdir(parents=True, exist_ok=True)
 
 MASTER_DATASET = DATA_ROOT / "data" / "pengujian_final" / "master_dataset_160.csv"
 OMNIBUS_CSV = TAHAP3 / "hasil_omnibus_tahap3.csv"

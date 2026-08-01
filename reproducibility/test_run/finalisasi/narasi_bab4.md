@@ -54,7 +54,7 @@ Pengujian dilaksanakan dengan 160 trial (4 skenario, 4 setpoint, 10 ulangan). Ke
 
 **Rise time 10-90% (s)**: Shapiro-Wilk: 2/4 setpoint menyimpang dari normalitas. Brown-Forsythe: 4/4 setpoint varians tidak homogen.
 
-Berdasarkan hasil pemeriksaan asumsi, Kruskal-Wallis dipilih untuk kondisi yang melanggar asumsi, dan Welch ANOVA untuk kondisi yang memenuhi asumsi. Koreksi Holm diterapkan per metrik dengan empat setpoint sebagai satu keluarga.
+Kruskal-Wallis digunakan ketika terdapat penyimpangan normalitas, sedangkan Welch ANOVA digunakan ketika normalitas tidak ditolak dan tetap dapat mengakomodasi ketidakhomogenan varians. Koreksi Holm diterapkan per metrik dengan empat setpoint sebagai satu keluarga.
 
 ## 4.4 Analisis Inferensial Omnibus
 
@@ -62,10 +62,10 @@ Berdasarkan hasil pemeriksaan asumsi, Kruskal-Wallis dipilih untuk kondisi yang 
 
 | SP | Uji | Statistik | df | p_raw | p_holm | Sig | ES |
 |---|---|---|---|---|---|---|---|
-| SP15 | Kruskal-Wallis | 10.817 | 3/- | 0.0128 | 0.0383 | Ya | rank_epsilon_squared=0.277 |
-| SP20 | Kruskal-Wallis | 3.650 | 3/- | 0.3019 | 0.4542 | Tidak | rank_epsilon_squared=0.094 |
-| SP25 | Kruskal-Wallis | 4.339 | 3/- | 0.2271 | 0.4542 | Tidak | rank_epsilon_squared=0.111 |
-| SP30 | Kruskal-Wallis | 12.089 | 3/- | 0.0071 | 0.0283 | Ya | rank_epsilon_squared=0.310 |
+| SP15 | Kruskal-Wallis | 10.817 | 3/- | 0.0128 | 0.0383 | Ya | ε²=0.277 |
+| SP20 | Kruskal-Wallis | 3.650 | 3/- | 0.3019 | 0.4542 | Tidak | ε²=0.094 |
+| SP25 | Kruskal-Wallis | 4.339 | 3/- | 0.2271 | 0.4542 | Tidak | ε²=0.111 |
+| SP30 | Kruskal-Wallis | 12.089 | 3/- | 0.0071 | 0.0283 | Ya | ε²=0.310 |
 
 Terdapat perbedaan signifikan antarkelompok pada SP15, SP30 (p_holm < 0,05).
 
@@ -73,10 +73,10 @@ Terdapat perbedaan signifikan antarkelompok pada SP15, SP30 (p_holm < 0,05).
 
 | SP | Uji | Statistik | df | p_raw | p_holm | Sig | ES |
 |---|---|---|---|---|---|---|---|
-| SP15 | Kruskal-Wallis | 11.926 | 3/- | 0.0076 | 0.0229 | Ya | rank_epsilon_squared=0.306 |
-| SP20 | Kruskal-Wallis | 4.079 | 3/- | 0.2531 | 0.2531 | Tidak | rank_epsilon_squared=0.105 |
-| SP25 | Kruskal-Wallis | 6.000 | 3/- | 0.1116 | 0.2233 | Tidak | rank_epsilon_squared=0.154 |
-| SP30 | Kruskal-Wallis | 18.411 | 3/- | 0.0004 | 0.0014 | Ya | rank_epsilon_squared=0.472 |
+| SP15 | Kruskal-Wallis | 11.926 | 3/- | 0.0076 | 0.0229 | Ya | ε²=0.306 |
+| SP20 | Kruskal-Wallis | 4.079 | 3/- | 0.2531 | 0.2531 | Tidak | ε²=0.105 |
+| SP25 | Kruskal-Wallis | 6.000 | 3/- | 0.1116 | 0.2233 | Tidak | ε²=0.154 |
+| SP30 | Kruskal-Wallis | 18.411 | 3/- | 0.0004 | 0.0014 | Ya | ε²=0.472 |
 
 Terdapat perbedaan signifikan antarkelompok pada SP15, SP30 (p_holm < 0,05).
 
@@ -84,10 +84,10 @@ Terdapat perbedaan signifikan antarkelompok pada SP15, SP30 (p_holm < 0,05).
 
 | SP | Uji | Statistik | df | p_raw | p_holm | Sig | ES |
 |---|---|---|---|---|---|---|---|
-| SP15 | Kruskal-Wallis | 22.726 | 3/- | 0.0000 | 0.0000 | Ya | rank_epsilon_squared=0.583 |
-| SP20 | Kruskal-Wallis | 29.283 | 3/- | 0.0000 | 0.0000 | Ya | rank_epsilon_squared=0.751 |
-| SP25 | Welch ANOVA | 31.911 | 3/15.9 | 0.0000 | 0.0000 | Ya | eta_p2=0.597 |
-| SP30 | Kruskal-Wallis | 25.280 | 3/- | 0.0000 | 0.0000 | Ya | rank_epsilon_squared=0.648 |
+| SP15 | Kruskal-Wallis | 22.726 | 3/- | 0.0000 | 0.0000 | Ya | ε²=0.583 |
+| SP20 | Kruskal-Wallis | 29.283 | 3/- | 0.0000 | 0.0000 | Ya | ε²=0.751 |
+| SP25 | Welch ANOVA | 31.911 | 3/15.9 | 0.0000 | 0.0000 | Ya | ηp²=0.597 |
+| SP30 | Kruskal-Wallis | 25.280 | 3/- | 0.0000 | 0.0000 | Ya | ε²=0.648 |
 
 Terdapat perbedaan signifikan antarkelompok pada SP15, SP20, SP25, SP30 (p_holm < 0,05).
 
@@ -95,10 +95,10 @@ Terdapat perbedaan signifikan antarkelompok pada SP15, SP20, SP25, SP30 (p_holm 
 
 | SP | Uji | Statistik | df | p_raw | p_holm | Sig | ES |
 |---|---|---|---|---|---|---|---|
-| SP15 | Kruskal-Wallis | 15.056 | 3/- | 0.0018 | 0.0018 | Ya | rank_epsilon_squared=0.386 |
-| SP20 | Kruskal-Wallis | 22.841 | 3/- | 0.0000 | 0.0001 | Ya | rank_epsilon_squared=0.586 |
-| SP25 | Welch ANOVA | 27.168 | 3/17.3 | 0.0000 | 0.0000 | Ya | eta_p2=0.643 |
-| SP30 | Welch ANOVA | 10.288 | 3/19.3 | 0.0003 | 0.0006 | Ya | eta_p2=0.659 |
+| SP15 | Kruskal-Wallis | 15.056 | 3/- | 0.0018 | 0.0018 | Ya | ε²=0.386 |
+| SP20 | Kruskal-Wallis | 22.841 | 3/- | 0.0000 | 0.0001 | Ya | ε²=0.586 |
+| SP25 | Welch ANOVA | 27.168 | 3/17.3 | 0.0000 | 0.0000 | Ya | ηp²=0.643 |
+| SP30 | Welch ANOVA | 10.288 | 3/19.3 | 0.0003 | 0.0006 | Ya | ηp²=0.659 |
 
 Terdapat perbedaan signifikan antarkelompok pada SP15, SP20, SP25, SP30 (p_holm < 0,05).
 
@@ -182,7 +182,7 @@ Post-hoc Fisher: tidak ada pasangan signifikan setelah koreksi Holm.
 | SP25 | 1.183 | 0.3298 | 0.6596 | Tidak | 2.6617 | 2.7797 | 1.9755 | 0.7875 | GS PID |
 | SP30 | 3.136 | 0.0372 | 0.1117 | Tidak | 1.6564 | 2.2264 | 0.4840 | 0.4288 | GS PID |
 
-GS PID memiliki SD FinalError_g terendah secara deskriptif pada seluruh setpoint. Perbedaan varians signifikan hanya pada SP15 (Brown-Forsythe, Holm).
+GS PID memiliki SD FinalError_g terendah secara deskriptif pada 4/4 setpoint. Perbedaan varians signifikan pada SP15 (Brown-Forsythe, Holm).
 
 ## 4.8 Settling Time (Kondisional)
 

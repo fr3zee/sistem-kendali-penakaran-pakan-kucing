@@ -1,6 +1,5 @@
 step,status,details
 Load inputs,PASS,12 files
-narasi_bab4.md,PASS,reproducibility\test_run\finalisasi\narasi_bab4.md
 Dataset 160 baris,PASS,160
 Forbidden terms,PASS,"['MAE%', 'open-loop', 'Fisher-Freeman-Halton', 'f2*', 'Pareto', 'dominated', 'non-dominated']"
 Duration Fixed vs GS sig SP25 only,PASS,[25]
@@ -20,3 +19,4 @@ Input integrity bridging,PASS,UNCHANGED
 Input integrity primer,PASS,UNCHANGED
 Input integrity tambahan,PASS,UNCHANGED
 Input integrity master,PASS,UNCHANGED
+narasi_bab4.md,PASS,D:\SKRIPSI\repo-publikasi\reproducibility\test_run\finalisasi\narasi_bab4.md

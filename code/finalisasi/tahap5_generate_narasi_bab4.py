@@ -15,7 +15,8 @@ import pandas as pd
 BASE_DIR = Path(__file__).resolve().parents[2]
 import os as _os5n
 _out5n = _os5n.environ.get("PIPELINE_OUTPUT_DIR", str(BASE_DIR / "hasil" / "finalisasi"))
-OUTPUT_DIR = Path(_out5n)
+_out5n_path = Path(_out5n)
+OUTPUT_DIR = (_out5n_path if _out5n_path.is_absolute() else BASE_DIR / _out5n_path).resolve()
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
 INPUT_FILES = {
@@ -183,8 +184,9 @@ def sec_asumsi(D):
         )
         lines.append("")
     lines.append(
-        "Berdasarkan hasil pemeriksaan asumsi, Kruskal-Wallis dipilih untuk kondisi "
-        "yang melanggar asumsi, dan Welch ANOVA untuk kondisi yang memenuhi asumsi. "
+        "Kruskal-Wallis digunakan ketika terdapat penyimpangan normalitas, "
+        "sedangkan Welch ANOVA digunakan ketika normalitas tidak ditolak dan "
+        "tetap dapat mengakomodasi ketidakhomogenan varians. "
         "Koreksi Holm diterapkan per metrik dengan empat setpoint sebagai satu keluarga."
     )
     lines.append("")
@@ -204,7 +206,9 @@ def sec_omnibus(D):
         lines.append(tbl_sep(len(h)))
         for _, row in om.iterrows():
             df2  = fmt(row["df2"], 1) if pd.notna(row["df2"]) else "-"
-            es   = f"{row['EffectSize_name']}={fmt(row['EffectSize_value'],3)}"
+            es_raw  = str(row["EffectSize_name"])
+            es_disp = es_raw.replace("rank_epsilon_squared", "ε²").replace("eta_p2", "ηp²")
+            es      = f"{es_disp}={fmt(row['EffectSize_value'],3)}"
             sig  = "Ya" if row["Significant_holm"] else "Tidak"
             lines.append(
                 f"| SP{int(row['Setpoint_g'])} | {row['Test']} "
@@ -328,9 +332,15 @@ def sec_konsistensi(D):
             f"| {row['MinVar_scenario']} |"
         )
     lines.append("")
+    # Dynamic prose from CSV
+    min_scen_counts = ko.groupby("MinVar_scenario").size()
+    dominant = min_scen_counts.idxmax()
+    sig_sp = ko[ko["Significant_holm"]==True]["Setpoint_g"].astype(int).tolist()
+    sig_sp_str = ", ".join(f"SP{s}" for s in sorted(sig_sp)) if sig_sp else "tidak ada setpoint"
     lines.append(
-        "GS PID memiliki SD FinalError_g terendah secara deskriptif pada seluruh setpoint. "
-        "Perbedaan varians signifikan hanya pada SP15 (Brown-Forsythe, Holm)."
+        f"{dominant} memiliki SD FinalError_g terendah secara deskriptif "
+        f"pada {len(ko[ko['MinVar_scenario']==dominant])}/{len(SETPOINTS)} setpoint. "
+        f"Perbedaan varians signifikan pada {sig_sp_str} (Brown-Forsythe, Holm)."
     )
     lines.append("")
     return lines
@@ -420,11 +430,19 @@ def sec_sintesis(D):
         best_mape, mape_val = best_min(pr_sp, "MAE_pct")
         best_dur,  dur_val  = best_min(pr_sp, "Median_Duration_s")
         ko_sp = ko[ko["Setpoint_g"]==sp].iloc[0]
+        min_scen = ko_sp["MinVar_scenario"]
+        # Map scenario name to SD column
+        _sd_col_map = {
+            "Manual Cepat": "SD_ManualCepat",
+            "Manual Presisi": "SD_ManualPresisi",
+            "Fixed PID": "SD_FixedPID",
+            "GS PID": "SD_GSPID",
+        }
+        sd_col = _sd_col_map.get(min_scen, "SD_GSPID")
         lines.append(
             f"**SP{sp}**: MAPE terendah = {best_mape} ({fmt(mape_val,3)}%). "
             f"Durasi median terendah = {best_dur} ({fmt(dur_val,2)} s). "
-            f"SD FinalError terendah = {ko_sp['MinVar_scenario']} "
-            f"({fmt(ko_sp['SD_GSPID'],4)} g)."
+            f"SD FinalError terendah = {min_scen} ({fmt(ko_sp[sd_col],4)} g)."
         )
     lines.append("")
     return lines
@@ -455,7 +473,7 @@ def run_audit(narasi_text, D):
 
     wo = D["proporsi_omni"]
     sig_wt = sorted(wo[wo["Significant_holm"]==True]["Setpoint_g"].astype(int).tolist())
-    assert 25 in sig_wt and 30 in sig_wt, f"WithinTol sig: {sig_wt}"
+    assert sig_wt == [25, 30], f"WithinTol sig bukan [25,30]: {sig_wt}"
     log_audit("WithinTolerance sig SP25+SP30", "PASS", sig_wt)
 
     ko = D["konsistensi"]
@@ -488,16 +506,24 @@ def main():
     )
     narasi = "\n".join(sections)
 
-    out_md = OUTPUT_DIR / "narasi_bab4.md"
-    out_md.write_text(narasi, encoding="utf-8")
-    log_audit("narasi_bab4.md", "PASS", str(out_md))
-
+    # Audit FIRST, write output only if clean
     run_audit(narasi, D)
 
     hashes_after = hash_all()
+    changed = []
     for k in hashes_before:
-        status = "PASS" if hashes_before[k] == hashes_after[k] else "FAIL"
-        log_audit(f"Input integrity {k}", status, "UNCHANGED" if status=="PASS" else "CHANGED")
+        if hashes_before[k] != hashes_after[k]:
+            changed.append(k)
+            log_audit(f"Input integrity {k}", "FAIL", "CHANGED")
+        else:
+            log_audit(f"Input integrity {k}", "PASS", "UNCHANGED")
+    if changed:
+        sys.exit(f"Input diubah selama eksekusi: {changed}")
+
+    # Write output only after audit PASS
+    out_md = OUTPUT_DIR / "narasi_bab4.md"
+    out_md.write_text(narasi, encoding="utf-8")
+    log_audit("narasi_bab4.md", "PASS", str(out_md))
 
     out_csv = OUTPUT_DIR / "audit_narasi_tahap5.csv"
     with open(out_csv, "w", newline="", encoding="utf-8") as fh:

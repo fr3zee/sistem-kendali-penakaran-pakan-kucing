@@ -6,6 +6,10 @@ Uji normalitas residual dan homogenitas varians; hasilkan rekomendasi uji infere
 ## Input
 `data/pengujian_final/master_dataset_160.csv`
 
+## Prasyarat
+
+Skrip ini **membandingkan** output baru dengan baseline CSV yang sudah ada di `hasil/pemeriksaan_asumsi/`. Jalankan hanya setelah baseline tersedia (dihasilkan dari eksekusi awal). Tanpa baseline, skrip gagal dengan `FileNotFoundError`. Ini disengaja — bukan bug.
+
 ## Skrip Utama
 `tahap2_rekonstruksi_dan_verifikasi.py`
 

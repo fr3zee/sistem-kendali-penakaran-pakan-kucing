@@ -12,8 +12,6 @@ Verify master 4×4×10,PASS,"160 baris, key lengkap"
 Verify primer count,PASS,16 baris
 Verify tambahan count,PASS,16 baris
 Gambar 4.1,PASS,"gambar_4_1_outcome_primer.png, gambar_4_1_outcome_primer.svg"
-Gambar 4.2 edge assert,PASS,"SP15=3,SP20=2,SP25=3,SP30=3,total=11"
-Gambar 4.2,PASS,"gambar_4_2_dominasi_4d.png, gambar_4_2_dominasi_4d.svg"
 Gambar 4.3,PASS,"gambar_4_3_risetime.png, gambar_4_3_risetime.svg"
 Gambar 4.4 annotations,PASS,"A=16, B=16"
 Gambar 4.4 equal-height labels,PASS,"SP15=stagger, SP20=8/10 dan SP25=9/10 distagger"
@@ -24,8 +22,6 @@ PNG run1 hash gambar_4_2_dominasi_4d.png,PASS,9dd0e928f52b5c0863d14e46d0e542ecb7
 PNG run1 hash gambar_4_3_risetime.png,PASS,54133f33ac1d02b52a646bf44625f66ce1de4fec3783745fbe56c71ea02cb818
 PNG run1 hash gambar_4_4_tolerance_settling.png,PASS,eead66f6384797778ed2893fefd128db62c13c89d413ebee25cc18daffdb3bb4
 Gambar 4.1,PASS,"gambar_4_1_outcome_primer.png, gambar_4_1_outcome_primer.svg"
-Gambar 4.2 edge assert,PASS,"SP15=3,SP20=2,SP25=3,SP30=3,total=11"
-Gambar 4.2,PASS,"gambar_4_2_dominasi_4d.png, gambar_4_2_dominasi_4d.svg"
 Gambar 4.3,PASS,"gambar_4_3_risetime.png, gambar_4_3_risetime.svg"
 Gambar 4.4 annotations,PASS,"A=16, B=16"
 Gambar 4.4 equal-height labels,PASS,"SP15=stagger, SP20=8/10 dan SP25=9/10 distagger"

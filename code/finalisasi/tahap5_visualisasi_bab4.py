@@ -112,8 +112,6 @@ def load_and_verify():
     src = {}
     src['master'] = pd.read_csv(INPUT_MANIFEST['master'])
     src['primer'] = pd.read_csv(INPUT_MANIFEST['primer_t4'])
-    src['matriks'] = pd.read_csv(BASE_DIR / "archive" / "archived_outputs" / "tahap4_matriks_dominasi.csv")
-    src['pareto']   = pd.read_csv(BASE_DIR / "archive" / "archived_outputs" / "tahap4_pareto_per_setpoint.csv")
     src['tambahan'] = pd.read_csv(INPUT_MANIFEST['tambahan_t4'])
     src['posthoc'] = pd.read_csv(INPUT_MANIFEST['posthoc_t3'])
     src['proporsi_post'] = pd.read_csv(INPUT_MANIFEST['proporsi_post'])
@@ -229,91 +227,6 @@ def gambar_4_1(src):
     fig.savefig(svg, format='svg', bbox_inches='tight')
     plt.close(fig)
     log_audit("Gambar 4.1", "PASS", f"{png.name}, {svg.name}")
-    return png, svg
-
-# ── Gambar 4.2 + legenda + edge assert ────────────────────────
-def gambar_4_2(src):
-    import networkx as nx
-    matriks, pareto = src['matriks'], src['pareto']
-
-    fig, axes = plt.subplots(2, 2, figsize=(17/2.54, 17/2.54))
-    axes = axes.flatten()
-
-    pos_fixed = {"Manual Cepat": (0,1), "Manual Presisi": (1,1),
-                 "Fixed PID": (0,0), "GS PID": (1,0)}
-
-    all_drawn_edges = {}
-    for idx, sp in enumerate(SETPOINTS):
-        ax = axes[idx]
-        df_sp = matriks[matriks['Setpoint_g'] == sp]
-
-        # Build source edge set
-        source_edges = set()
-        for _, row in df_sp.iterrows():
-            if str(row['A_dominates_B']).strip() == 'True':
-                source_edges.add((row['Scenario_A'], row['Scenario_B']))
-            if str(row['B_dominates_A']).strip() == 'True':
-                source_edges.add((row['Scenario_B'], row['Scenario_A']))
-
-        G = nx.DiGraph()
-        G.add_nodes_from(SCENARIOS)
-        for e in source_edges:
-            G.add_edge(e[0], e[1])
-
-        drawn_edges = set(G.edges())
-        assert drawn_edges == source_edges, \
-            f"SP{sp}: drawn {drawn_edges} != source {source_edges}"
-        assert len(drawn_edges) == EXPECTED_EDGES[sp], \
-            f"SP{sp}: {len(drawn_edges)} edges, expected {EXPECTED_EDGES[sp]}"
-        all_drawn_edges[sp] = drawn_edges
-
-        # Dominated status
-        df_par = pareto[pareto['Setpoint_g'] == sp]
-        dom_map = dict(zip(df_par['Scenario'], df_par['Dominated'].astype(str)))
-
-        for scen in SCENARIOS:
-            x, y = pos_fixed[scen]
-            is_dom = dom_map.get(scen, 'True') == 'True'
-            mk = 'o' if is_dom else 's'
-            ax.plot(x, y, marker=mk, markersize=28,
-                    color='white', markeredgecolor='black', markeredgewidth=1.5, zorder=3)
-            ax.text(x, y, scen.replace(' ', '\n'), ha='center', va='center', fontsize=5.5, zorder=4)
-
-        for e in G.edges():
-            x0, y0 = pos_fixed[e[0]]
-            x1, y1 = pos_fixed[e[1]]
-            ax.annotate('', xy=(x1,y1), xytext=(x0,y0),
-                        arrowprops=dict(arrowstyle='->', lw=1.5, color='black',
-                                        shrinkA=18, shrinkB=18))
-
-        ax.set_xlim(-0.4, 1.4); ax.set_ylim(-0.5, 1.5)
-        ax.set_aspect('equal'); ax.axis('off')
-        ax.set_title(f'Setpoint {sp} g', fontweight='bold', fontsize=9)
-
-    # Legenda bentuk node
-    legend_elements = [
-        plt.Line2D([0],[0], marker='s', color='white', markeredgecolor='black',
-                   markeredgewidth=1.5, markersize=10, label='Non-dominated', linestyle=''),
-        plt.Line2D([0],[0], marker='o', color='white', markeredgecolor='black',
-                   markeredgewidth=1.5, markersize=10, label='Dominated', linestyle=''),
-        plt.Line2D([0],[0], color='black', linewidth=1.5, label='Dominasi 4D',
-                   marker='>', markersize=5),
-    ]
-    fig.legend(handles=legend_elements, loc='lower center', ncol=3,
-              frameon=False, fontsize=8, bbox_to_anchor=(0.5, -0.02))
-
-    plt.tight_layout(rect=[0, 0.05, 1, 1])
-    png = OUTPUT_DIR / "gambar_4_2_dominasi_4d.png"
-    svg = OUTPUT_DIR / "gambar_4_2_dominasi_4d.svg"
-    fig.savefig(png, dpi=300, bbox_inches='tight')
-    fig.savefig(svg, format='svg', bbox_inches='tight')
-    plt.close(fig)
-
-    total = sum(len(v) for v in all_drawn_edges.values())
-    log_audit("Gambar 4.2 edge assert", "PASS",
-              f"SP15={len(all_drawn_edges[15])},SP20={len(all_drawn_edges[20])},"
-              f"SP25={len(all_drawn_edges[25])},SP30={len(all_drawn_edges[30])},total={total}")
-    log_audit("Gambar 4.2", "PASS", f"{png.name}, {svg.name}")
     return png, svg
 
 # ── Gambar 4.3 (tidak diubah secara substantif) ───────────────
@@ -472,7 +385,6 @@ def main():
 
     # 3. Generate figures (run 1)
     gambar_4_1(src)
-    gambar_4_2(src)
     gambar_4_3(src)
     gambar_4_4(src)
 
@@ -484,7 +396,6 @@ def main():
 
     # 5. Run 2 for determinism
     gambar_4_1(src)
-    gambar_4_2(src)
     gambar_4_3(src)
     gambar_4_4(src)
 

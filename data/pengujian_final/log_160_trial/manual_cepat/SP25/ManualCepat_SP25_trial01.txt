@@ -1,0 +1,62 @@
+======== PARAMETER AKTIF ========
+[SKENARIO 1 - OPEN LOOP CEPAT]
+Setpoint   : 25.0g
+Sudut      : 40deg (tetap, open loop)
+EARLY_STOP : SP - 0.40g
+STOP saat  : 24.60g
+Mode       : Tidak ada kontrol — servo penuh dari awal
+=================================
+Siap.
+=== TRIAL START ===
+Controller: Manual Cepat
+TrialNo: 1
+Setpoint_g: 25.00
+EarlyStop_g: 0.40
+StopTarget_g: 24.60
+Servo_deg: 40
+DataFormat: DATA,ms,mass_g,error_g,error_pct,mode,servo_deg,zone
+=== DATA START ===
+DATA,100,0.03,24.97,99.9%,OPEN,40,Z1
+DATA,217,0.97,24.03,96.1%,OPEN,40,Z1
+DATA,475,2.64,22.36,89.4%,OPEN,40,Z1
+DATA,734,2.43,22.57,90.3%,OPEN,40,Z1
+DATA,992,2.50,22.50,90.0%,OPEN,40,Z1
+DATA,1250,2.48,22.52,90.1%,OPEN,40,Z1
+DATA,1508,2.49,22.51,90.0%,OPEN,40,Z1
+DATA,1767,2.49,22.51,90.0%,OPEN,40,Z1
+DATA,2025,2.57,22.43,89.7%,OPEN,40,Z1
+DATA,2283,2.63,22.37,89.5%,OPEN,40,Z1
+DATA,2542,5.13,19.87,79.5%,OPEN,40,Z1
+DATA,2800,9.24,15.76,63.0%,OPEN,40,Z1
+DATA,3058,9.20,15.80,63.2%,OPEN,40,Z1
+DATA,3316,9.42,15.58,62.3%,OPEN,40,Z1
+DATA,3575,9.43,15.57,62.3%,OPEN,40,Z1
+DATA,3833,9.26,15.74,63.0%,OPEN,40,Z1
+DATA,4091,9.24,15.76,63.1%,OPEN,40,Z1
+DATA,4349,9.43,15.57,62.3%,OPEN,40,Z1
+DATA,4608,12.70,12.30,49.2%,OPEN,40,Z2
+DATA,4866,17.77,7.23,28.9%,OPEN,40,Z2
+DATA,5124,22.02,2.98,11.9%,OPEN,40,Z3
+=== SUMMARY TRIAL ===
+Controller: Manual Cepat
+TrialNo: 1
+Setpoint_g: 25.00
+EarlyStop_g: 0.40
+StopTarget_g: 24.60
+FinalMass_g: 28.24
+FinalError_g: 3.24
+FinalError_pct: 12.94
+Duration_ms: 5640
+Duration_s: 5.64
+TimeTo90_ms: 5382
+RiseTime_10_90_ms: 4907
+SettlingTime_ms: -1
+MaxMass_g: 28.24
+MaxOvershoot_g: 3.24
+MaxOvershoot_pct: 12.94
+BridgingCount: 0
+Status: OVERSHOOT
+Valid: TRUE
+StopReason: TARGET
+=== TRIAL END ===
+r=reset | g=ulangi | c=parameter

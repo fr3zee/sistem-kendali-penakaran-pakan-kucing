@@ -1,0 +1,52 @@
+======== PARAMETER AKTIF ========
+[SKENARIO 1 - OPEN LOOP CEPAT]
+Setpoint   : 15.0g
+Sudut      : 40deg (tetap, open loop)
+EARLY_STOP : SP - 0.40g
+STOP saat  : 14.60g
+Mode       : Tidak ada kontrol — servo penuh dari awal
+=================================
+                                                                . Siap.
+=== TRIAL START ===
+Controller: Manual Cepat
+TrialNo: 9
+Setpoint_g: 15.00
+EarlyStop_g: 0.40
+StopTarget_g: 14.60
+Servo_deg: 40
+DataFormat: DATA,ms,mass_g,error_g,error_pct,mode,servo_deg,zone
+=== DATA START ===
+DATA,100,0.05,14.95,99.6%,OPEN,40,Z1
+DATA,217,1.16,13.84,92.3%,OPEN,40,Z1
+DATA,476,5.28,9.72,64.8%,OPEN,40,Z1
+DATA,734,7.95,7.05,47.0%,OPEN,40,Z2
+DATA,992,9.12,5.88,39.2%,OPEN,40,Z2
+DATA,1250,8.97,6.03,40.2%,OPEN,40,Z2
+DATA,1509,9.01,5.99,39.9%,OPEN,40,Z2
+DATA,1767,8.96,6.04,40.2%,OPEN,40,Z2
+DATA,2025,8.95,6.05,40.3%,OPEN,40,Z2
+DATA,2283,8.99,6.01,40.1%,OPEN,40,Z2
+DATA,2541,11.50,3.50,23.3%,OPEN,40,Z2
+=== SUMMARY TRIAL ===
+Controller: Manual Cepat
+TrialNo: 9
+Setpoint_g: 15.00
+EarlyStop_g: 0.40
+StopTarget_g: 14.60
+FinalMass_g: 18.01
+FinalError_g: 3.01
+FinalError_pct: 20.05
+Duration_ms: 3057
+Duration_s: 3.06
+TimeTo90_ms: 2800
+RiseTime_10_90_ms: 2324
+SettlingTime_ms: -1
+MaxMass_g: 18.01
+MaxOvershoot_g: 3.01
+MaxOvershoot_pct: 20.05
+BridgingCount: 0
+Status: OVERSHOOT
+Valid: TRUE
+StopReason: TARGET
+=== TRIAL END ===
+r=reset | g=ulangi | c=parameter

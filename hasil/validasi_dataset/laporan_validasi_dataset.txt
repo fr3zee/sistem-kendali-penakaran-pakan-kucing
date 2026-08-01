@@ -1,0 +1,14 @@
+TAHAP 0 — VALIDASI MASTER DATASET
+  OK    total_rows_160                           PASS
+  OK    scenario_Manual_Cepat                    PASS
+  OK    scenario_Manual_Presisi                  PASS
+  OK    scenario_Fixed_PID                       PASS
+  OK    scenario_GS_PID                          PASS
+  OK    all_16_combos_n10                        PASS
+  OK    no_duplicate_trialno                     PASS
+  OK    all_valid_true                           PASS
+  OK    all_stopreason_target                    PASS
+  OK    no_missing_required_cols                 PASS
+  OK    required_cols_exist                      PASS
+  OVERALL: PASS
+  Total trial terbaca: 160

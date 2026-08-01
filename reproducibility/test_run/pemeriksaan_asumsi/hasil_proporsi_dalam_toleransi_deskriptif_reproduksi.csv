@@ -1,0 +1,17 @@
+Scenario,Setpoint_g,n_total,n_within_tolerance,n_outside_tolerance,within_tolerance_pct,n_settlingtime_available,n_settlingtime_unavailable,mismatch_count,verification_status
+Manual Cepat,15,10,3,7,30.0,3,7,0,CONSISTENT
+Manual Cepat,20,10,4,6,40.0,4,6,0,CONSISTENT
+Manual Cepat,25,10,3,7,30.0,3,7,0,CONSISTENT
+Manual Cepat,30,10,4,6,40.0,4,6,0,CONSISTENT
+Manual Presisi,15,10,6,4,60.0,6,4,0,CONSISTENT
+Manual Presisi,20,10,6,4,60.0,6,4,0,CONSISTENT
+Manual Presisi,25,10,6,4,60.0,6,4,0,CONSISTENT
+Manual Presisi,30,10,7,3,70.0,7,3,0,CONSISTENT
+Fixed PID,15,10,7,3,70.0,7,3,0,CONSISTENT
+Fixed PID,20,10,8,2,80.0,8,2,0,CONSISTENT
+Fixed PID,25,10,9,1,90.0,9,1,0,CONSISTENT
+Fixed PID,30,10,10,0,100.0,10,0,0,CONSISTENT
+GS PID,15,10,9,1,90.0,9,1,0,CONSISTENT
+GS PID,20,10,8,2,80.0,8,2,0,CONSISTENT
+GS PID,25,10,9,1,90.0,9,1,0,CONSISTENT
+GS PID,30,10,10,0,100.0,10,0,0,CONSISTENT

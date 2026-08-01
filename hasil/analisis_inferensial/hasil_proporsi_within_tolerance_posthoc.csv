@@ -1,0 +1,13 @@
+Setpoint_g,Group_A,Group_B,Prop_A,Prop_B,Prop_diff,OddsRatio,p_fisher_raw,p_holm,Significant_holm
+25,Manual Cepat,Manual Presisi,0.3,0.6,-0.3,0.2857,0.3698499642772088,1.0,False
+25,Manual Cepat,Fixed PID,0.3,0.9,-0.6,0.0476,0.019766611097880443,0.1186,False
+25,Manual Cepat,GS PID,0.3,0.9,-0.6,0.0476,0.019766611097880443,0.1186,False
+25,Manual Presisi,Fixed PID,0.6,0.9,-0.3,0.1667,0.3034055727554179,1.0,False
+25,Manual Presisi,GS PID,0.6,0.9,-0.3,0.1667,0.3034055727554179,1.0,False
+25,Fixed PID,GS PID,0.9,0.9,0.0,1.0,1.0,1.0,False
+30,Manual Cepat,Manual Presisi,0.4,0.7,-0.3,0.2857,0.36984996427720884,0.842105,False
+30,Manual Cepat,Fixed PID,0.4,1.0,-0.6,0.0,0.010835913312693499,0.065015,False
+30,Manual Cepat,GS PID,0.4,1.0,-0.6,0.0,0.010835913312693499,0.065015,False
+30,Manual Presisi,Fixed PID,0.7,1.0,-0.3,0.0,0.21052631578947367,0.842105,False
+30,Manual Presisi,GS PID,0.7,1.0,-0.3,0.0,0.21052631578947367,0.842105,False
+30,Fixed PID,GS PID,1.0,1.0,0.0,,1.0,1.0,False

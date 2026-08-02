@@ -24,7 +24,7 @@
 - `hasil/pemeriksaan_asumsi/` — Shapiro, BF, rekomendasi uji
 - `hasil/analisis_inferensial/` — omnibus, posthoc, within-tolerance
 - `hasil/sintesis_hasil/` — deskriptif, profil primer/tambahan
-- `hasil/finalisasi/` — gambar Bab IV, narasi, DOCX (dihasilkan oleh tahap5; jalankan script untuk mengisi)
+- `hasil/finalisasi/` — gambar Bab IV dan narasi (dihasilkan oleh tahap5; generator DOCX kanonis belum tersedia)
 
 ## Reproduksibilitas
 - `reproducibility/manifest_sha256.csv` — SHA-256 dataset kanonis

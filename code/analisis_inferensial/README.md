@@ -20,4 +20,4 @@ python code/analisis_inferensial/tahap3_generate_reports.py
 ```
 
 ## Hubungan dengan Skripsi
-Keputusan uji dibekukan di `keputusan_analisis_statistik_final.md`. Bab IV tabel utama.
+Keputusan pemilihan uji (KW vs Welch) didasarkan pada hasil pemeriksaan asumsi di `hasil/pemeriksaan_asumsi/`. Bab IV tabel utama.

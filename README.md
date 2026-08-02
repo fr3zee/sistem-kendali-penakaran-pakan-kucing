@@ -43,7 +43,7 @@ code/analisis_inferensial/        → KW, Welch ANOVA, Holm, Dunn, Games-Howell,
     ↓
 code/sintesis_hasil/ (tahap4)     → profil primer, tambahan kondisional
     ↓
-code/finalisasi/                  → narasi Bab IV, gambar, DOCX
+code/finalisasi/                  → narasi Bab IV dan gambar
 ```
 
 ---

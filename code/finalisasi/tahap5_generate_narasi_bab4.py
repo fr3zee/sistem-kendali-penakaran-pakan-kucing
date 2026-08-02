@@ -75,6 +75,14 @@ def fmt(v, dec=3):
     except Exception:
         return str(v)
 
+def fmt_p(v):
+    """Format p-value: never show as 0.0000."""
+    try:
+        f = float(v)
+        return "<0.0001" if f < 0.0001 else f"{f:.4f}"
+    except Exception:
+        return str(v)
+
 def tbl_header(cols):
     return "| " + " | ".join(cols) + " |"
 
@@ -213,7 +221,7 @@ def sec_omnibus(D):
             lines.append(
                 f"| SP{int(row['Setpoint_g'])} | {row['Test']} "
                 f"| {fmt(row['Statistic'],3)} | {int(row['df1'])}/{df2} "
-                f"| {fmt(row['p_raw'],4)} | {fmt(row['p_holm'],4)} | {sig} | {es} |"
+                f"| {fmt_p(row['p_raw'])} | {fmt_p(row['p_holm'])} | {sig} | {es} |"
             )
         lines.append("")
         sig_sps = om[om["Significant_holm"]==True]["Setpoint_g"].astype(int).tolist()
@@ -249,7 +257,7 @@ def sec_posthoc(D):
                   f"CI[{fmt(row['CI_lo'],2)},{fmt(row['CI_hi'],2)}]")
             lines.append(
                 f"| SP{int(row['Setpoint_g'])} | {row['Group_A']} | {row['Group_B']} "
-                f"| {fmt(row['p_adjusted'],4)} | {es} | {row['Direction']} |"
+                f"| {fmt_p(row['p_adjusted'])} | {es} | {row['Direction']} |"
             )
         lines.append("")
 
@@ -279,7 +287,7 @@ def sec_tolerance(D):
         sig = "Ya" if row["Significant_holm"] else "Tidak"
         lines.append(
             f"| SP{int(row['Setpoint_g'])} | {fmt(row['Statistic'],3)} "
-            f"| {fmt(row['p_MonteCarlo'],4)} | {fmt(row['p_holm'],4)} | {sig} "
+            f"| {fmt_p(row['p_MonteCarlo'])} | {fmt_p(row['p_holm'])} | {sig} "
             f"| {fmt(row['CramersV'],3)} "
             f"| {int(round(row['Prop_ManualCepat']*100))}% "
             f"| {int(round(row['Prop_ManualPresisi']*100))}% "
@@ -305,7 +313,7 @@ def sec_tolerance(D):
         for _, row in sig_wp.iterrows():
             lines.append(
                 f"| SP{int(row['Setpoint_g'])} | {row['Group_A']} | {row['Group_B']} "
-                f"| {fmt(row['p_holm'],4)} |"
+                f"| {fmt_p(row['p_holm'])} |"
             )
         lines.append("")
     else:
@@ -326,7 +334,7 @@ def sec_konsistensi(D):
         sig = "Ya" if row["Significant_holm"] else "Tidak"
         lines.append(
             f"| SP{int(row['Setpoint_g'])} | {fmt(row['BF_statistic'],3)} "
-            f"| {fmt(row['p_raw'],4)} | {fmt(row['p_holm'],4)} | {sig} "
+            f"| {fmt_p(row['p_raw'])} | {fmt_p(row['p_holm'])} | {sig} "
             f"| {fmt(row['SD_ManualCepat'],4)} | {fmt(row['SD_ManualPresisi'],4)} "
             f"| {fmt(row['SD_FixedPID'],4)} | {fmt(row['SD_GSPID'],4)} "
             f"| {row['MinVar_scenario']} |"

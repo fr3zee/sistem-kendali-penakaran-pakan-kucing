@@ -84,10 +84,10 @@ Terdapat perbedaan signifikan antarkelompok pada SP15, SP30 (p_holm < 0,05).
 
 | SP | Uji | Statistik | df | p_raw | p_holm | Sig | ES |
 |---|---|---|---|---|---|---|---|
-| SP15 | Kruskal-Wallis | 22.726 | 3/- | 0.0000 | 0.0000 | Ya | ε²=0.583 |
-| SP20 | Kruskal-Wallis | 29.283 | 3/- | 0.0000 | 0.0000 | Ya | ε²=0.751 |
-| SP25 | Welch ANOVA | 31.911 | 3/15.9 | 0.0000 | 0.0000 | Ya | ηp²=0.597 |
-| SP30 | Kruskal-Wallis | 25.280 | 3/- | 0.0000 | 0.0000 | Ya | ε²=0.648 |
+| SP15 | Kruskal-Wallis | 22.726 | 3/- | <0.0001 | <0.0001 | Ya | ε²=0.583 |
+| SP20 | Kruskal-Wallis | 29.283 | 3/- | <0.0001 | <0.0001 | Ya | ε²=0.751 |
+| SP25 | Welch ANOVA | 31.911 | 3/15.9 | <0.0001 | <0.0001 | Ya | ηp²=0.597 |
+| SP30 | Kruskal-Wallis | 25.280 | 3/- | <0.0001 | <0.0001 | Ya | ε²=0.648 |
 
 Terdapat perbedaan signifikan antarkelompok pada SP15, SP20, SP25, SP30 (p_holm < 0,05).
 
@@ -96,8 +96,8 @@ Terdapat perbedaan signifikan antarkelompok pada SP15, SP20, SP25, SP30 (p_holm 
 | SP | Uji | Statistik | df | p_raw | p_holm | Sig | ES |
 |---|---|---|---|---|---|---|---|
 | SP15 | Kruskal-Wallis | 15.056 | 3/- | 0.0018 | 0.0018 | Ya | ε²=0.386 |
-| SP20 | Kruskal-Wallis | 22.841 | 3/- | 0.0000 | 0.0001 | Ya | ε²=0.586 |
-| SP25 | Welch ANOVA | 27.168 | 3/17.3 | 0.0000 | 0.0000 | Ya | ηp²=0.643 |
+| SP20 | Kruskal-Wallis | 22.841 | 3/- | <0.0001 | 0.0001 | Ya | ε²=0.586 |
+| SP25 | Welch ANOVA | 27.168 | 3/17.3 | <0.0001 | <0.0001 | Ya | ηp²=0.643 |
 | SP30 | Welch ANOVA | 10.288 | 3/19.3 | 0.0003 | 0.0006 | Ya | ηp²=0.659 |
 
 Terdapat perbedaan signifikan antarkelompok pada SP15, SP20, SP25, SP30 (p_holm < 0,05).
@@ -125,10 +125,10 @@ Terdapat perbedaan signifikan antarkelompok pada SP15, SP20, SP25, SP30 (p_holm 
 
 | SP | A | B | p_adjusted | ES | Arah |
 |---|---|---|---|---|---|
-| SP15 | Manual Cepat | Manual Presisi | 0.0000 | Cliff_delta=-0.920 CI[-1.00,-0.72] | Manual Presisi >= Manual Cepat |
+| SP15 | Manual Cepat | Manual Presisi | <0.0001 | Cliff_delta=-0.920 CI[-1.00,-0.72] | Manual Presisi >= Manual Cepat |
 | SP15 | Manual Cepat | Fixed PID | 0.0032 | Cliff_delta=-0.900 CI[-1.00,-0.64] | Fixed PID >= Manual Cepat |
 | SP15 | Manual Presisi | GS PID | 0.0449 | Cliff_delta=0.660 CI[0.20,1.00] | Manual Presisi > GS PID |
-| SP20 | Manual Cepat | Manual Presisi | 0.0000 | Cliff_delta=-1.000 CI[-1.00,-1.00] | Manual Presisi >= Manual Cepat |
+| SP20 | Manual Cepat | Manual Presisi | <0.0001 | Cliff_delta=-1.000 CI[-1.00,-1.00] | Manual Presisi >= Manual Cepat |
 | SP20 | Manual Cepat | Fixed PID | 0.0013 | Cliff_delta=-0.980 CI[-1.00,-0.88] | Fixed PID >= Manual Cepat |
 | SP20 | Manual Presisi | GS PID | 0.0051 | Cliff_delta=0.920 CI[0.70,1.00] | Manual Presisi > GS PID |
 | SP25 | Manual Cepat | Fixed PID | 0.0001 | Hedges_g=-3.263 CI[-4.60,-1.93] | Fixed PID >= Manual Cepat |
@@ -136,7 +136,7 @@ Terdapat perbedaan signifikan antarkelompok pada SP15, SP20, SP25, SP30 (p_holm 
 | SP25 | Manual Presisi | GS PID | 0.0157 | Hedges_g=1.482 CI[0.49,2.47] | Manual Presisi > GS PID |
 | SP25 | Fixed PID | GS PID | 0.0158 | Hedges_g=1.452 CI[0.47,2.44] | Fixed PID > GS PID |
 | SP25 | Manual Cepat | GS PID | 0.0357 | Hedges_g=-1.408 CI[-2.39,-0.43] | GS PID >= Manual Cepat |
-| SP30 | Manual Cepat | Manual Presisi | 0.0000 | Cliff_delta=-1.000 CI[-1.00,-1.00] | Manual Presisi >= Manual Cepat |
+| SP30 | Manual Cepat | Manual Presisi | <0.0001 | Cliff_delta=-1.000 CI[-1.00,-1.00] | Manual Presisi >= Manual Cepat |
 | SP30 | Manual Presisi | GS PID | 0.0050 | Cliff_delta=1.000 CI[1.00,1.00] | Manual Presisi > GS PID |
 | SP30 | Manual Presisi | Fixed PID | 0.0332 | Cliff_delta=0.840 CI[0.46,1.00] | Manual Presisi > Fixed PID |
 
@@ -146,7 +146,7 @@ Terdapat perbedaan signifikan antarkelompok pada SP15, SP20, SP25, SP30 (p_holm 
 |---|---|---|---|---|---|
 | SP15 | Manual Cepat | Manual Presisi | 0.0011 | Cliff_delta=-0.740 CI[-1.00,-0.34] | Manual Presisi >= Manual Cepat |
 | SP15 | Manual Cepat | Fixed PID | 0.0339 | Cliff_delta=-0.820 CI[-1.00,-0.46] | Fixed PID >= Manual Cepat |
-| SP20 | Manual Cepat | Manual Presisi | 0.0001 | Cliff_delta=-0.960 CI[-1.00,-0.82] | Manual Presisi >= Manual Cepat |
+| SP20 | Manual Cepat | Manual Presisi | <0.0001 | Cliff_delta=-0.960 CI[-1.00,-0.82] | Manual Presisi >= Manual Cepat |
 | SP20 | Manual Cepat | Fixed PID | 0.0037 | Cliff_delta=-0.880 CI[-1.00,-0.64] | Fixed PID >= Manual Cepat |
 | SP20 | Manual Presisi | GS PID | 0.0150 | Cliff_delta=0.800 CI[0.44,1.00] | Manual Presisi > GS PID |
 | SP25 | Manual Cepat | Manual Presisi | 0.0002 | Hedges_g=-3.001 CI[-4.28,-1.72] | Manual Presisi >= Manual Cepat |

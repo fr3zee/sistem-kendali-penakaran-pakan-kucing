@@ -18,7 +18,7 @@ Dataset final penelitian. 1 baris = 1 trial. 160 baris total (4 skenario x 4 set
 | FinalError_g | Galat akhir (g) |
 | RiseTime_10_90_s | Rise time 10-90% (s) |
 | WithinTolerance | TRUE jika galat akhir dalam toleransi 5% |
-| SettlingTime_s | Settling time (s), hanya untuk trial WithinTolerance=TRUE |
+| SettlingTime_s | Waktu pertama respons memasuki dan tetap berada dalam rentang ±5% setpoint hingga sampel akhir; NA apabila kondisi tersebut tidak tercapai |
 | BridgingCount | Jumlah aktivasi hammer reaktif (anti-bridging) |
 | Valid | TRUE jika trial memenuhi kriteria validasi |
 | StopReason | Alasan berhenti: TARGET (normal) |

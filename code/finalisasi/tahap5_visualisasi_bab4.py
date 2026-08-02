@@ -41,8 +41,10 @@ TAHAP4_DIR = BASE_DIR / "hasil" / "sintesis_hasil"
 
 import os as _os5v
 _out5v = _os5v.environ.get("PIPELINE_OUTPUT_DIR", str(BASE_DIR / "hasil" / "finalisasi"))
-
-# 9 input read-only
+_out5v_path = Path(_out5v)
+OUTPUT_DIR = (_out5v_path if _out5v_path.is_absolute() else BASE_DIR / _out5v_path).resolve()
+OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+TAHAP5_DIR = OUTPUT_DIR
 INPUT_MANIFEST = {
     'master':              MASTER_CSV,
     'omnibus_t3':          TAHAP3_DIR / "hasil_omnibus_tahap3.csv",
@@ -50,14 +52,12 @@ INPUT_MANIFEST = {
     'konsistensi_omni':    TAHAP3_DIR / "hasil_konsistensi_finalerror_omnibus.csv",
     'proporsi_omni':       TAHAP3_DIR / "hasil_proporsi_within_tolerance_omnibus.csv",
     'proporsi_post':       TAHAP3_DIR / "hasil_proporsi_within_tolerance_posthoc.csv",
-    'bridging':            TAHAP3_DIR / "hasil_bridging_deskriptif.csv",
+    'bridging':            TAHAP4_DIR / "hasil_bridging_deskriptif.csv",
     'primer_t4':           TAHAP4_DIR / "tahap4_profil_primer.csv",
     'tambahan_t4':         TAHAP4_DIR / "tahap4_profil_tambahan_kondisional.csv",
 }
 
-OUTPUT_DIR = Path(_out5v)
-OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
-TAHAP5_DIR = OUTPUT_DIR
+# 9 input read-only
 
 SCENARIOS = ["Manual Cepat", "Manual Presisi", "Fixed PID", "GS PID"]
 SETPOINTS = [15, 20, 25, 30]
@@ -150,8 +150,8 @@ def gambar_4_1(src):
         ax.errorbar(d['Setpoint_g'], d['MAE_pct'], yerr=d['SD_MAE_pct'],
                     marker=MARKERS[i], linestyle=LINESTYLES[i],
                     color=COLORS_GRAY[i], capsize=3, label=scen, linewidth=1.2)
-    ax.set_xlabel('Setpoint (g)'); ax.set_ylabel('MAE (%)')
-    ax.set_title('(A) MAE Kelompok', fontweight='bold', loc='left')
+    ax.set_xlabel('Setpoint (g)'); ax.set_ylabel('MAPE (%)')
+    ax.set_title('(A) MAPE Kelompok', fontweight='bold', loc='left')
     ax.legend(frameon=False, loc='best'); ax.grid(True, alpha=0.3, linestyle=':', linewidth=0.5)
     ax.set_xticks(SETPOINTS)
 

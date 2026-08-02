@@ -25,7 +25,7 @@ code/analisis_inferensial/        → KW, Welch ANOVA, Holm, Dunn, Games-Howell,
     ↓
 code/sintesis_hasil/ (tahap4)     → profil primer, tambahan kondisional
     ↓
-code/finalisasi/                  → narasi Bab IV dan gambar
+code/finalisasi/                  → visualisasi hasil dan validasi artefak akhir
 ```
 
 ## Tabel Proses
@@ -37,7 +37,7 @@ code/finalisasi/                  → narasi Bab IV dan gambar
 | Pemeriksaan asumsi | master_dataset_160.csv | tahap2_rekonstruksi_dan_verifikasi.py | hasil_shapiro_residual_per_setpoint.csv, hasil_brown_forsythe_per_setpoint.csv, rekomendasi_uji_tahap3.csv |
 | Analisis inferensial | master_dataset_160.csv + rekomendasi_uji | tahap3_analisis_inferensial.py + tahap3_generate_reports.py | hasil_omnibus_tahap3.csv, hasil_posthoc_tahap3.csv |
 | Sintesis hasil | master_dataset_160.csv + tahap3 outputs | tahap4_sintesis_multidimensi.py | tahap4_profil_primer.csv, tahap4_profil_tambahan_kondisional.csv |
-| Finalisasi | tahap3+tahap4 outputs | tahap5_*.py | narasi_bab4.md, gambar |
+| Finalisasi | tahap3+tahap4 outputs | tahap5_visualisasi_bab4.py | gambar 4.1–4.3 (PNG/SVG), audit_visual_tahap5.csv |
 
 ## Dataset Kanonis
 

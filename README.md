@@ -15,7 +15,7 @@
 | Pemeriksaan asumsi | tahap2_rekonstruksi_dan_verifikasi.py | ✅ (prasyarat: lihat bawah) |
 | Analisis inferensial | tahap3_analisis_inferensial.py + tahap3_generate_reports.py | ✅ |
 | Sintesis hasil | tahap4_sintesis_multidimensi.py | ✅ |
-| Finalisasi Bab IV | tahap5_generate_narasi_bab4.py + tahap5_visualisasi_bab4.py | ✅ |
+| Finalisasi Bab IV | tahap5_visualisasi_bab4.py | ✅ |
 | Skrip audit log↔dataset | — | ❌ MISSING |
 
 ---
@@ -43,7 +43,7 @@ code/analisis_inferensial/        → KW, Welch ANOVA, Holm, Dunn, Games-Howell,
     ↓
 code/sintesis_hasil/ (tahap4)     → profil primer, tambahan kondisional
     ↓
-code/finalisasi/                  → narasi Bab IV dan gambar
+code/finalisasi/                  → visualisasi hasil dan validasi artefak akhir
 ```
 
 ---

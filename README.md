@@ -2,7 +2,7 @@
 
 **Penulis:** Naufal Hilmi Fathul Ihsan
 **Program Studi:** Teknik Komputer, UNNES
-**Status:** PASS
+**Status:** PASS DENGAN CATATAN
 
 ---
 
@@ -13,7 +13,7 @@
 | Pembentukan dataset dari log | generate_master_dataset.py | ✅ |
 | Validasi dataset | tahap0_validasi_master_dataset.py | ✅ |
 | Statistik deskriptif | tahap1_statistik_deskriptif.py | ✅ |
-| Pemeriksaan asumsi | tahap2_rekonstruksi_dan_verifikasi.py | ✅ (prasyarat: lihat bawah) |
+| Pemeriksaan asumsi | tahap2_pemeriksaan_asumsi.py | ✅ |
 | Analisis inferensial | tahap3_analisis_inferensial.py | ✅ |
 | Sintesis hasil | tahap4_sintesis_multidimensi.py | ✅ |
 | Finalisasi Bab IV | tahap5_visualisasi_bab4.py | ✅ |
@@ -95,8 +95,7 @@ python code/validasi_dataset/tahap0_validasi_master_dataset.py
 
 python code/sintesis_hasil/tahap1_statistik_deskriptif.py
 
-# Pemeriksaan asumsi butuh baseline CSV — lihat code/pemeriksaan_asumsi/README.md
-python code/pemeriksaan_asumsi/tahap2_rekonstruksi_dan_verifikasi.py
+python code/pemeriksaan_asumsi/tahap2_pemeriksaan_asumsi.py
 
 python code/analisis_inferensial/tahap3_analisis_inferensial.py
 
@@ -110,7 +109,7 @@ python code/finalisasi/tahap5_visualisasi_bab4.py
 ## Dataset Kanonis
 
 - File: `data/pengujian_final/master_dataset_160.csv`
-- SHA-256: `79443B3F08AD6D42AA2FA6AF0A903CDB319D1CA32DE2FD0ACD37BFE76F99F31C`
+- SHA-256 (LF, publik): `69D57320EB1F56600CB8172241C0E941C630F2A5E67A2D99F18D01E811C2FFC6`
 - 160 baris, 16 kombinasi (4 skenario × 4 setpoint), 10 trial per kombinasi
 - Verifikasi: `python -c "import hashlib; print(hashlib.sha256(open('data/pengujian_final/master_dataset_160.csv','rb').read()).hexdigest().upper())"`
 
@@ -118,10 +117,10 @@ python code/finalisasi/tahap5_visualisasi_bab4.py
 
 ## Catatan Reproduksibilitas
 
-- Pembentukan dataset dari 160 log, analisis inferensial, sintesis hasil,
+- Pembentukan dataset dari 160 log, pemeriksaan asumsi, analisis inferensial, sintesis hasil,
   dan visualisasi telah dijalankan dan diverifikasi.
-- Dataset hasil regenerasi identik dengan dataset kanonis dengan SHA-256:
-  `79443B3F08AD6D42AA2FA6AF0A903CDB319D1CA32DE2FD0ACD37BFE76F99F31C`.
+- Dataset hasil regenerasi identik dengan dataset kanonis (SHA-256 LF publik):
+  `69D57320EB1F56600CB8172241C0E941C630F2A5E67A2D99F18D01E811C2FFC6`.
 - Rincian proses yang tersedia dan yang telah diverifikasi terdapat pada
   `reproducibility/verification_report.md`.
 

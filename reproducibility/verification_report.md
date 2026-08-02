@@ -2,9 +2,8 @@
 
 ## Status: PASS DENGAN CATATAN
 
-Ketujuh tahap tersedia dan skrip dapat dijalankan. Verifikasi eksekusi aktual
-mencakup pembentukan dataset, analisis inferensial, sintesis hasil, dan visualisasi.
-Validasi dataset, statistik deskriptif, dan pemeriksaan asumsi belum dijalankan ulang
+Verifikasi eksekusi aktual mencakup pembentukan dataset, pemeriksaan asumsi, analisis inferensial,
+sintesis hasil, dan visualisasi. Validasi dataset dan statistik deskriptif belum dijalankan ulang
 dalam sesi verifikasi terbaru — outputnya tersedia di folder `hasil/`.
 
 ## Tabel Proses
@@ -67,7 +66,9 @@ Rekomendasi uji: 16/16 baris identik dengan baseline terkunci.
 - `hasil_proporsi_within_tolerance_omnibus.csv`
 - `hasil_proporsi_within_tolerance_posthoc.csv`
 
-`hasil/sintesis_hasil/` — 4 CSV:
+`hasil/sintesis_hasil/` — 6 CSV:
+- `hasil_statistik_deskriptif_tahap1.csv`
+- `hasil_statistik_deskriptif_agregat_tahap1.csv`
 - `hasil_settlingtime_deskriptif.csv`
 - `hasil_bridging_deskriptif.csv`
 - `tahap4_profil_primer.csv`

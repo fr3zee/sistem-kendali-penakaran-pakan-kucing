@@ -6,8 +6,8 @@
 - Duplikat identitas: 0
 
 ## Hash SHA-256
-- Regenerasi: `79443B3F08AD6D42AA2FA6AF0A903CDB319D1CA32DE2FD0ACD37BFE76F99F31C`
-- Kanonis:    `79443B3F08AD6D42AA2FA6AF0A903CDB319D1CA32DE2FD0ACD37BFE76F99F31C`
+- Regenerasi : `69D57320EB1F56600CB8172241C0E941C630F2A5E67A2D99F18D01E811C2FFC6`
+- Kanonis    : `69D57320EB1F56600CB8172241C0E941C630F2A5E67A2D99F18D01E811C2FFC6`
 - Cocok: ✅ YA
 
 ## Audit vs Kanonis
@@ -16,4 +16,4 @@
 - NOT_VERIFIABLE: 0
 
 ## Status
-✅ Seluruh 160 baris dan 24 kolom cocok dengan dataset kanonis. Status MISSING dapat dihapus.
+✅ Seluruh 160 baris dan 22 kolom data cocok dengan dataset kanonis (No dan Notes dikecualikan dari audit).

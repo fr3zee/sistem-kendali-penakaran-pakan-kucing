@@ -21,7 +21,7 @@ python code/sintesis_hasil/tahap1_statistik_deskriptif.py
 ## 4. `pemeriksaan_asumsi/`
 Shapiro–Wilk, Brown–Forsythe, rekomendasi metode uji.
 ```
-python code/pemeriksaan_asumsi/tahap2_rekonstruksi_dan_verifikasi.py
+python code/pemeriksaan_asumsi/tahap2_pemeriksaan_asumsi.py
 ```
 
 ## 5. `analisis_inferensial/`

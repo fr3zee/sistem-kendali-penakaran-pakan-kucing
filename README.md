@@ -124,8 +124,7 @@ python code/finalisasi/tahap5_visualisasi_bab4.py
 
 ## Catatan Reproduksibilitas
 
-- Tahap 0–5: PASS pada `reproducibility/test_run/`
-- Tahap 2 butuh baseline CSV pre-existing — lihat `code/pemeriksaan_asumsi/README.md`
+- Pengujian reproduksi berhasil pada proses validasi dataset, statistik deskriptif, analisis inferensial, sintesis hasil, dan finalisasi. Pemeriksaan asumsi direproduksi menggunakan keluaran acuan yang telah dibekukan — lihat `code/pemeriksaan_asumsi/README.md`
 - Skrip audit log↔dataset: MISSING — dicatat di `docs/MISSING_CORE_FILES.md`
 - Pareto dan matriks dominasi diarsipkan di `archive/archived_outputs/` — tidak digunakan dalam analisis final
 

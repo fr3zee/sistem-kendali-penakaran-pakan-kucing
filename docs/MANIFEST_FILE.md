@@ -27,5 +27,5 @@
 - `hasil/finalisasi/` — visualisasi hasil Bab IV: gambar 4.1–4.3 (PNG/SVG), audit_visual_tahap5.csv
 
 ## Reproduksibilitas
-- `reproducibility/manifest_sha256.csv` — SHA-256 dataset kanonis
+- `reproducibility/manifest_sha256.csv` — SHA-256 seluruh artefak kanonis: dataset, log, firmware, kode, dan keluaran penelitian
 - `reproducibility/README.md` — status reproduksibilitas

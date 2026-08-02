@@ -23,4 +23,4 @@ Generator narasi Bab IV tidak disertakan dalam repositori publik.
 Generator DOCX kanonis belum tersedia.
 
 ## Hubungan dengan Skripsi
-Dokumen final Bab IV.
+Menghasilkan visualisasi yang digunakan pada Bab IV.

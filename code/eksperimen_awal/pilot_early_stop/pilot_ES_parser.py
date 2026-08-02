@@ -303,9 +303,9 @@ def main():
     print()
     
     if not RAW_DIR.exists():
-        print(f"ERROR: raw_log directory not found: {RAW_DIR}")
-        print("NOTE: Tahap ekstraksi pilot tidak sepenuhnya reproduktif — raw log kandidat tidak disertakan dalam repositori.")
-        return
+        raise FileNotFoundError(
+            "Raw log kandidat early stop tidak tersedia dalam repositori publik."
+        )
     
     # Scan and parse all files
     results = scan_and_parse_all(RAW_DIR)

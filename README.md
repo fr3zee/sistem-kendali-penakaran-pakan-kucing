@@ -115,7 +115,7 @@ python code/finalisasi/tahap5_visualisasi_bab4.py
 
 ## Catatan Reproduksibilitas
 
-- Pengujian reproduksi berhasil pada proses validasi dataset, statistik deskriptif, analisis inferensial, sintesis hasil, dan finalisasi. Pemeriksaan asumsi direproduksi menggunakan keluaran acuan yang telah dibekukan — lihat `code/pemeriksaan_asumsi/README.md`
+- Verifikasi eksekusi yang didokumentasikan mencakup analisis inferensial, sintesis hasil, dan visualisasi. Proses lainnya tersedia sebagai kode atau keluaran kanonis, tetapi tidak dijalankan dalam laporan verifikasi saat ini — lihat `reproducibility/verification_report.md`
 - Skrip audit log↔dataset: MISSING — dicatat di `docs/MISSING_CORE_FILES.md`
 
 ---

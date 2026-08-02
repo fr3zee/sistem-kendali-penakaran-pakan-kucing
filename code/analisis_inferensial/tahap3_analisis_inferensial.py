@@ -474,12 +474,12 @@ df_consistency = pd.DataFrame(consistency_results)
 print()
 
 # ============================================================
-# 5. PROPORSI WithinTolerance (Monte Carlo Exact Test)
+# 5. PROPORSI WithinTolerance (Pearson chi-square dengan p Monte Carlo)
 # ============================================================
-print(">>> 5. Proporsi WithinTolerance (Monte Carlo exact)")
+print(">>> 5. Proporsi WithinTolerance (Pearson chi-square dengan p Monte Carlo)")
 # N_MC already declared in CONFIG (baris 42)
 
-def monte_carlo_4x2_exact(table, n_sim=N_MC, seed=SEED):
+def pearson_chi_square_monte_carlo(table, n_sim=N_MC, seed=SEED):
     """Pearson chi-square dengan p Monte Carlo dan margin tetap (tabel 4×2).
     Fixed row & column marginals. Test statistic: Pearson chi-square."""
     table = np.asarray(table, dtype=int)
@@ -526,8 +526,8 @@ for sp_val in SETPOINTS:
     min_expected = expected.min()
     V = cramers_v(chi2_asym, n_total, ct.shape[0], ct.shape[1])
 
-    # Monte Carlo exact
-    chi2_obs, p_mc, _, count_extreme = monte_carlo_4x2_exact(table, n_sim=N_MC, seed=SEED)
+    # Pearson chi-square dengan p Monte Carlo
+    chi2_obs, p_mc, _, count_extreme = pearson_chi_square_monte_carlo(table, n_sim=N_MC, seed=SEED)
 
     prop_pvals_mc.append(p_mc)
 
@@ -563,7 +563,7 @@ for i, row in enumerate(prop_rows):
     row["Significant_holm"] = mc_holm[i] < ALPHA
     proportion_results.append(row)
 
-print("  Omnibus (Monte Carlo exact, seed=42, N=100k):")
+print("  Omnibus (Pearson chi-square dengan p Monte Carlo, seed=42, N=100k):")
 for r in proportion_results:
     sig = "***" if r["Significant_holm"] else ""
     print(f"    SP{r['Setpoint_g']}: chi2_asym={r['Statistic']:.4f} p_asym={r['p_asymptotic']} "

@@ -1,11 +1,6 @@
 # hasil/finalisasi
 
-Folder diisi setelah menjalankan skrip visualisasi:
-
-```powershell
-$env:PIPELINE_OUTPUT_DIR = "hasil\finalisasi"
-python code/finalisasi/tahap5_visualisasi_bab4.py
-```
+Folder ini berisi tiga visualisasi final dalam format PNG dan SVG serta satu audit visual.
 
 Output:
 - `gambar_4_1_outcome_primer.png/svg`

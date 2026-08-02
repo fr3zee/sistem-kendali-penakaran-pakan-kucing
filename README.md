@@ -89,6 +89,8 @@ code/finalisasi/                  → visualisasi hasil dan validasi artefak akh
 ## Cara Menjalankan
 
 ```powershell
+python code/pembentukan_dataset/generate_master_dataset.py
+
 python code/validasi_dataset/tahap0_validasi_master_dataset.py
 
 python code/sintesis_hasil/tahap1_statistik_deskriptif.py
@@ -116,8 +118,12 @@ python code/finalisasi/tahap5_visualisasi_bab4.py
 
 ## Catatan Reproduksibilitas
 
-- Verifikasi eksekusi yang didokumentasikan mencakup analisis inferensial, sintesis hasil, dan visualisasi. Proses lainnya tersedia sebagai kode atau keluaran kanonis, tetapi tidak dijalankan dalam laporan verifikasi saat ini — lihat `reproducibility/verification_report.md`
-- Skrip audit log↔dataset: MISSING — dicatat di `docs/MISSING_CORE_FILES.md`
+- Pembentukan dataset dari 160 log, analisis inferensial, sintesis hasil,
+  dan visualisasi telah dijalankan dan diverifikasi.
+- Dataset hasil regenerasi identik dengan dataset kanonis dengan SHA-256:
+  `79443B3F08AD6D42AA2FA6AF0A903CDB319D1CA32DE2FD0ACD37BFE76F99F31C`.
+- Rincian proses yang tersedia dan yang telah diverifikasi terdapat pada
+  `reproducibility/verification_report.md`.
 
 ---
 

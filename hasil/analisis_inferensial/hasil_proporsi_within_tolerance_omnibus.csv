@@ -1,5 +1,5 @@
 Setpoint_g,Test,Statistic,df,p_asymptotic,p_MonteCarlo,N_MC,Seed,Count_extreme,MinExpected,CramersV,Prop_ManualCepat,Prop_ManualPresisi,Prop_FixedPID,Prop_GSPID,n_ManualCepat_within,n_ManualPresisi_within,n_FixedPID_within,n_GSPID_within,p_holm,Significant_holm
-15,Monte Carlo exact (Fisher-Freeman-Halton equivalent),8.0,3,0.046012,0.057299,100000,42,5729,3.75,0.4472,0.3,0.6,0.7,0.9,3,6,7,9,0.114599,False
-20,Monte Carlo exact (Fisher-Freeman-Halton equivalent),4.8352,3,0.184273,0.234578,100000,42,23457,3.5,0.3477,0.4,0.6,0.8,0.8,4,6,8,8,0.234578,False
-25,Monte Carlo exact (Fisher-Freeman-Halton equivalent),11.2821,3,0.010295,0.01008,100000,42,1007,3.25,0.5311,0.3,0.6,0.9,0.9,3,6,9,9,0.03024,True
-30,Monte Carlo exact (Fisher-Freeman-Halton equivalent),14.1935,3,0.002653,0.00213,100000,42,212,2.25,0.5957,0.4,0.7,1.0,1.0,4,7,10,10,0.00852,True
+15,Pearson chi-square dengan p Monte Carlo,8.0,3,0.046012,0.057299,100000,42,5729,3.75,0.4472,0.3,0.6,0.7,0.9,3,6,7,9,0.114599,False
+20,Pearson chi-square dengan p Monte Carlo,4.8352,3,0.184273,0.234578,100000,42,23457,3.5,0.3477,0.4,0.6,0.8,0.8,4,6,8,8,0.234578,False
+25,Pearson chi-square dengan p Monte Carlo,11.2821,3,0.010295,0.01008,100000,42,1007,3.25,0.5311,0.3,0.6,0.9,0.9,3,6,9,9,0.03024,True
+30,Pearson chi-square dengan p Monte Carlo,14.1935,3,0.002653,0.00213,100000,42,212,2.25,0.5957,0.4,0.7,1.0,1.0,4,7,10,10,0.00852,True

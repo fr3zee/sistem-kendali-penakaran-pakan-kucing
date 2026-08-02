@@ -20,7 +20,7 @@ python code/finalisasi/tahap5_visualisasi_bab4.py
 
 ## Generator DOCX dan Narasi
 Generator narasi Bab IV tidak disertakan dalam repositori publik.
-Generator DOCX kanonis belum tersedia. Skrip versi lama dipindahkan ke `archive/legacy_finalisasi/`.
+Generator DOCX kanonis belum tersedia.
 
 ## Hubungan dengan Skripsi
 Dokumen final Bab IV.

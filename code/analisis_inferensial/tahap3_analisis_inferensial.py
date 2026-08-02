@@ -27,10 +27,6 @@ from statsmodels.stats.oneway import effectsize_oneway
 from statsmodels.stats.multitest import multipletests
 import pingouin as pg
 import scikit_posthocs as sp
-import openpyxl
-from docx import Document
-from docx.shared import Pt, Inches
-from docx.enum.text import WD_ALIGN_PARAGRAPH
 
 warnings.filterwarnings("ignore", category=FutureWarning)
 
@@ -50,6 +46,9 @@ REKOM_PATH   = BASE_DIR / "hasil" / "pemeriksaan_asumsi" / "rekomendasi_uji_taha
 OUTPUT_DIR   = Path(_os3.environ.get("PIPELINE_OUTPUT_DIR",
                str(BASE_DIR / "hasil" / "analisis_inferensial")))
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+# Deskriptif murni (settling + bridging) ke sintesis_hasil
+SINTESIS_DIR = BASE_DIR / "hasil" / "sintesis_hasil"
+SINTESIS_DIR.mkdir(parents=True, exist_ok=True)
 
 SCENARIOS = ["Manual Cepat", "Manual Presisi", "Fixed PID", "GS PID"]
 SETPOINTS = [15, 20, 25, 30]
@@ -65,8 +64,6 @@ VERSION_INFO = {
     "statsmodels": __import__('statsmodels').__version__,
     "pingouin": pg.__version__,
     "scikit_posthocs": sp.__version__,
-    "openpyxl": openpyxl.__version__,
-    "python-docx": __import__('docx').__version__,
     "OS": platform.platform(),
     "Timestamp": datetime.datetime.now().isoformat(),
     "Seed": SEED,
@@ -541,7 +538,7 @@ for sp_val in SETPOINTS:
 
     prop_rows.append({
         "Setpoint_g": sp_val,
-        "Test": "Monte Carlo exact (Fisher-Freeman-Halton equivalent)",
+        "Test": "Pearson chi-square dengan p Monte Carlo",
         "Statistic": round(chi2_asym, 4),
         "df": dof,
         "p_asymptotic": round(p_asym, 6),
@@ -707,80 +704,14 @@ df_consistency.to_csv(OUTPUT_DIR / "hasil_konsistensi_finalerror_omnibus.csv", i
 (OUTPUT_DIR / "hasil_konsistensi_finalerror_posthoc.csv").unlink(missing_ok=True)
 df_proportion.to_csv(OUTPUT_DIR / "hasil_proporsi_within_tolerance_omnibus.csv", index=False)
 df_proportion_ph.to_csv(OUTPUT_DIR / "hasil_proporsi_within_tolerance_posthoc.csv", index=False)
-df_settling.to_csv(OUTPUT_DIR / "hasil_settlingtime_deskriptif.csv", index=False)
-df_bridging.to_csv(OUTPUT_DIR / "hasil_bridging_deskriptif.csv", index=False)
+df_settling.to_csv(SINTESIS_DIR / "hasil_settlingtime_deskriptif.csv", index=False)
+df_bridging.to_csv(SINTESIS_DIR / "hasil_bridging_deskriptif.csv", index=False)
 print("  All CSV saved")
 print()
 
 # ============================================================
-# 9. SAVE XLSX
+# 9. VERIFIKASI FINAL
 # ============================================================
-print(">>> 9. Menyimpan XLSX")
-xlsx_path = OUTPUT_DIR / "hasil_lengkap_tahap3.xlsx"
-with pd.ExcelWriter(xlsx_path, engine="openpyxl") as writer:
-    cover = pd.DataFrame([{"Item": k, "Value": str(v)} for k, v in VERSION_INFO.items()])
-    cover.to_excel(writer, sheet_name="Info", index=False)
-    df_omnibus.to_excel(writer, sheet_name="Omnibus", index=False)
-    if len(df_posthoc) > 0:
-        df_posthoc.to_excel(writer, sheet_name="PostHoc", index=False)
-    df_consistency.to_excel(writer, sheet_name="Konsistensi_Omnibus", index=False)
-    df_proportion.to_excel(writer, sheet_name="Proporsi_Omnibus", index=False)
-    if len(df_proportion_ph) > 0:
-        df_proportion_ph.to_excel(writer, sheet_name="Proporsi_PostHoc", index=False)
-    df_settling.to_excel(writer, sheet_name="Settling_Deskriptif", index=False)
-    df_bridging.to_excel(writer, sheet_name="Bridging", index=False)
-print(f"  Saved: {xlsx_path.name}")
-print()
-
-
-
-# ============================================================
-# 11. LAPORAN DOCX UTAMA + LAMPIRAN TEKNIS
-# ============================================================
-print(">>> 11. Menyimpan Laporan Utama dan Lampiran Teknis DOCX")
-try:
-    from tahap3_generate_reports import generate_reports, validate_report_files
-except ModuleNotFoundError as exc:
-    if exc.name == "tahap3_generate_reports":
-        raise RuntimeError(
-            "Modul tahap3_generate_reports.py tidak ditemukan. "
-            "Artefak numerik mungkin sudah tersimpan, tetapi pipeline "
-            "belum selesai dan laporan belum dapat dianggap final."
-        ) from exc
-    raise
-
-report_paths = generate_reports(
-    results={
-        "assumption_residual":    df_shapiro_residual,
-        "assumption_homogeneity": df_homogeneity,
-        "test_recommendation":    df_recommendation,
-        "omnibus":            df_omnibus,
-        "posthoc":            df_posthoc,
-        "consistency":        df_consistency,
-        "proportion_omnibus": df_proportion,
-        "proportion_posthoc": df_proportion_ph,
-        "settling":           df_settling,
-        "bridging":           df_bridging,
-        "environment":        VERSION_INFO,
-        "config": {
-            "alpha":         ALPHA,
-            "seed":          SEED,
-            "n_monte_carlo": N_MC,
-            "n_bootstrap":   N_BOOTSTRAP,
-        },
-    },
-    output_dir=OUTPUT_DIR,
-)
-for p in report_paths:
-    print(f"  Saved: {p.name}")
-validate_report_files(report_paths)
-print("  Report validation PASSED")
-print()
-
-# ============================================================
-# 12. VERIFICATION
-# ============================================================
-print(">>> 12. Verifikasi Final")
 
 for _, omni in df_omnibus.iterrows():
     if omni.get("Significant_holm") and omni["Test"] != "SKIPPED":

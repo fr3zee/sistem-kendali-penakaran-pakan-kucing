@@ -45,5 +45,4 @@ code/finalisasi/                  → visualisasi hasil dan validasi artefak akh
 - SHA-256: `79443B3F08AD6D42AA2FA6AF0A903CDB319D1CA32DE2FD0ACD37BFE76F99F31C`
 - 160 baris, 16 kombinasi (4 skenario × 4 setpoint), 10 trial per kombinasi
 
-> Artefak audit lama tersedia di `archive/legacy_reproducibility/`. Tidak valid untuk dataset kanonis saat ini.
 > Tahap audit log–dataset belum dapat direproduksi; proses analisis lainnya tersedia.

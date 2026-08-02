@@ -1,7 +1,4 @@
 # Hasil Audit Awal
 
-Artefak audit dari pipeline lama tersedia pada
-`archive/legacy_reproducibility/`.
-
-Artefak tersebut tidak berlaku sebagai bukti audit terhadap
-dataset kanonis saat ini. Skrip audit log–dataset tidak ditemukan.
+Skrip audit langsung antara 160 log firmware dan dataset kanonis tidak ditemukan.
+Tahap audit log–dataset belum dapat direproduksi.

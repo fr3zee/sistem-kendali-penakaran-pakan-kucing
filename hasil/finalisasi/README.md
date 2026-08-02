@@ -14,4 +14,4 @@ Output:
 - `audit_visual_tahap5.csv`
 
 Generator narasi Bab IV tidak disertakan dalam repositori publik.
-Generator DOCX kanonis belum tersedia. Skrip versi lama dipindahkan ke `archive/legacy_finalisasi/`.
+Generator DOCX kanonis belum tersedia.

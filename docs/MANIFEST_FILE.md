@@ -29,4 +29,3 @@
 ## Reproduksibilitas
 - `reproducibility/manifest_sha256.csv` — SHA-256 dataset kanonis
 - `reproducibility/README.md` — status reproduksibilitas
-- `archive/legacy_reproducibility/` — audit artefak lama (bukan audit dataset kanonis)

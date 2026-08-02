@@ -12,9 +12,8 @@ Branch asal: `restructure-repository-canonical` → di-merge ke `master` (ca731b
 | code/tahap3/tahap3_analisis_inferensial.py | code/analisis_inferensial/ | Inferensial |
 | code/tahap3/tahap3_generate_reports.py | code/analisis_inferensial/ | Generate laporan inferensial |
 | code/tahap4/tahap4_sintesis_multidimensi.py | code/sintesis_hasil/ | Profil primer/tambahan |
-| code/tahap5/tahap5_generate_narasi_bab4.py | code/finalisasi/ | Narasi Bab IV |
-| code/tahap5/tahap5_generate_docx_bab4_revisi_terbatas.py | archive/legacy_finalisasi/ | DOCX Bab IV (diarsipkan; generator kanonis belum tersedia) |
+| code/tahap5/tahap5_generate_docx_bab4_revisi_terbatas.py | REMOVED | Generator DOCX lama tidak disertakan dalam repositori publik |
+| code/tahap5/tahap5_generate_narasi_bab4.py | REMOVED | Generator narasi tidak disertakan dalam repositori publik |
 | code/tahap5/tahap5_visualisasi_bab4.py | code/finalisasi/ | Gambar Bab IV |
 | data/master_dataset_160.csv | data/pengujian_final/master_dataset_160.csv | Satu lokasi kanonis |
 
-> Folder `archive/legacy_tahap_structure/` tidak disertakan karena file lama tidak tersedia dan Git tidak menyimpan direktori kosong.

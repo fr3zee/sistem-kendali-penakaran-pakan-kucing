@@ -77,7 +77,6 @@ code/finalisasi/                  → visualisasi hasil dan validasi artefak akh
 │   ├── analisis_inferensial/
 │   └── finalisasi/               # gambar Bab IV, narasi, DOCX
 ├── docs/                         # ALUR_REPRODUKSI.md, MANIFEST_FILE.md, dll.
-├── archive/                      # output arsip (Pareto, matriks dominasi)
 └── reproducibility/
     ├── README.md
     ├── manifest_sha256.csv
@@ -126,7 +125,6 @@ python code/finalisasi/tahap5_visualisasi_bab4.py
 
 - Pengujian reproduksi berhasil pada proses validasi dataset, statistik deskriptif, analisis inferensial, sintesis hasil, dan finalisasi. Pemeriksaan asumsi direproduksi menggunakan keluaran acuan yang telah dibekukan — lihat `code/pemeriksaan_asumsi/README.md`
 - Skrip audit log↔dataset: MISSING — dicatat di `docs/MISSING_CORE_FILES.md`
-- Pareto dan matriks dominasi diarsipkan di `archive/archived_outputs/` — tidak digunakan dalam analisis final
 
 ---
 

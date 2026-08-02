@@ -13,6 +13,8 @@ firmware/                         → firmware final 4 skenario
     ↓
 data/pengujian_final/log_160_trial/ → 160 trial (4 skenario × 4 SP × 10 trial)
     ↓
+code/pembentukan_dataset/generate_master_dataset.py → master_dataset_160.csv
+    ↓
 data/pengujian_final/master_dataset_160.csv  (SHA-256 lihat bawah)
     ↓
 code/validasi_dataset/            → integritas dataset
@@ -32,6 +34,7 @@ code/finalisasi/                  → visualisasi hasil dan validasi artefak akh
 
 | Proses | Input | Skrip | Output |
 |--------|-------|-------|--------|
+| Pembentukan dataset | log_160_trial/ | generate_master_dataset.py | master_dataset_160_regenerated.csv, audit_regenerated_vs_canonical.csv, ringkasan_pembentukan_dataset.md |
 | Validasi dataset | master_dataset_160.csv | tahap0_validasi_master_dataset.py | laporan_validasi_dataset.txt |
 | Statistik deskriptif | master_dataset_160.csv | tahap1_statistik_deskriptif.py | hasil_statistik_deskriptif_tahap1.csv |
 | Pemeriksaan asumsi | master_dataset_160.csv | tahap2_rekonstruksi_dan_verifikasi.py | hasil_shapiro_residual_per_setpoint.csv, hasil_brown_forsythe_per_setpoint.csv, rekomendasi_uji_tahap3.csv |
@@ -45,4 +48,4 @@ code/finalisasi/                  → visualisasi hasil dan validasi artefak akh
 - SHA-256: `79443B3F08AD6D42AA2FA6AF0A903CDB319D1CA32DE2FD0ACD37BFE76F99F31C`
 - 160 baris, 16 kombinasi (4 skenario × 4 setpoint), 10 trial per kombinasi
 
-> Tahap audit log–dataset belum dapat direproduksi; proses analisis lainnya tersedia.
+> Dataset kanonis dibentuk dari 160 log pengujian menggunakan `generate_master_dataset.py`. Skrip membaca deret waktu dan ringkasan setiap trial, menghitung metrik penelitian, dan menghasilkan dataset 160 baris yang diverifikasi identik (SHA-256 sama) dengan dataset final.

@@ -2,7 +2,7 @@
 
 **Penulis:** Naufal Hilmi Fathul Ihsan
 **Program Studi:** Teknik Komputer, UNNES
-**Status:** PASS DENGAN CATATAN — skrip audit log↔dataset belum tersedia
+**Status:** PASS
 
 ---
 
@@ -10,13 +10,13 @@
 
 | Proses | Skrip | Status |
 |--------|-------|--------|
+| Pembentukan dataset dari log | generate_master_dataset.py | ✅ |
 | Validasi dataset | tahap0_validasi_master_dataset.py | ✅ |
 | Statistik deskriptif | tahap1_statistik_deskriptif.py | ✅ |
 | Pemeriksaan asumsi | tahap2_rekonstruksi_dan_verifikasi.py | ✅ (prasyarat: lihat bawah) |
 | Analisis inferensial | tahap3_analisis_inferensial.py | ✅ |
 | Sintesis hasil | tahap4_sintesis_multidimensi.py | ✅ |
 | Finalisasi Bab IV | tahap5_visualisasi_bab4.py | ✅ |
-| Skrip audit log↔dataset | — | ❌ MISSING |
 
 ---
 
@@ -31,7 +31,7 @@ firmware/                         → firmware final 4 skenario
     ↓
 data/pengujian_final/log_160_trial/ → 160 trial (4 skenario × 4 SP × 10)
     ↓
-data/pengujian_final/master_dataset_160.csv
+code/pembentukan_dataset/         → generate_master_dataset.py → master_dataset_160.csv
     ↓
 code/validasi_dataset/            → integritas dataset
     ↓
@@ -65,6 +65,7 @@ code/finalisasi/                  → visualisasi hasil dan validasi artefak akh
 │       └── log_160_trial/        # 160 raw log (.txt)
 ├── code/
 │   ├── eksperimen_awal/          # MATLAB identifikasi plant
+│   ├── pembentukan_dataset/      # generate_master_dataset.py
 │   ├── validasi_dataset/         # tahap0
 │   ├── sintesis_hasil/           # tahap1 + tahap4
 │   ├── pemeriksaan_asumsi/       # tahap2

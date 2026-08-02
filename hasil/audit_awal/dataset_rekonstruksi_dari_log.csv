@@ -1,0 +1,161 @@
+Scenario,Setpoint_g,TrialNo,FinalMass_g,FinalError_g,AbsError_pct,MaxOvershoot_pct,Duration_s,RiseTime_10_90_s,SettlingTime_s,BridgingCount,WithinTolerance,StopReason,LogPath
+Fixed PID,15.0,1,14.89,-0.10999999999999943,0.7333333333333295,0.0,33.18,21.172,,1,True,TARGET,data/pengujian_final/log_160_trial/fixed_pid/SP15/Fixed PID_SP15_trial01.txt
+Fixed PID,15.0,2,14.54,-0.46000000000000085,3.066666666666672,0.0,15.881,11.102,13.902,1,True,TARGET,data/pengujian_final/log_160_trial/fixed_pid/SP15/Fixed PID_SP15_trial02.txt
+Fixed PID,15.0,3,14.75,-0.25,1.6666666666666667,0.0,26.981,20.654,25.261,3,True,TARGET,data/pengujian_final/log_160_trial/fixed_pid/SP15/Fixed PID_SP15_trial03.txt
+Fixed PID,15.0,4,14.84,-0.16000000000000014,1.0666666666666678,0.0,18.719,12.392,16.999,2,True,TARGET,data/pengujian_final/log_160_trial/fixed_pid/SP15/Fixed PID_SP15_trial04.txt
+Fixed PID,15.0,5,14.44,-0.5600000000000005,3.7333333333333365,0.0,15.105,10.328,13.127,0,True,TARGET,data/pengujian_final/log_160_trial/fixed_pid/SP15/Fixed PID_SP15_trial05.txt
+Fixed PID,15.0,6,16.82,1.8200000000000003,12.133333333333335,0.0,15.88,11.617,14.159,1,False,TARGET,data/pengujian_final/log_160_trial/fixed_pid/SP15/Fixed PID_SP15_trial06.txt
+Fixed PID,15.0,7,15.34,0.33999999999999986,2.2666666666666657,0.0,27.242,20.914,25.522,0,True,TARGET,data/pengujian_final/log_160_trial/fixed_pid/SP15/Fixed PID_SP15_trial07.txt
+Fixed PID,15.0,8,14.95,-0.05000000000000071,0.3333333333333381,0.0,24.66,11.102,,1,True,TARGET,data/pengujian_final/log_160_trial/fixed_pid/SP15/Fixed PID_SP15_trial08.txt
+Fixed PID,15.0,9,16.04,1.0399999999999991,6.933333333333327,0.0,16.656,8.52,14.935,0,False,TARGET,data/pengujian_final/log_160_trial/fixed_pid/SP15/Fixed PID_SP15_trial09.txt
+Fixed PID,15.0,10,19.28,4.280000000000001,28.53333333333334,0.0,15.106,,,1,False,TARGET,data/pengujian_final/log_160_trial/fixed_pid/SP15/Fixed PID_SP15_trial10.txt
+Fixed PID,20.0,1,19.03,-0.9699999999999989,4.849999999999994,0.0,22.941,16.526,21.65,0,True,TARGET,data/pengujian_final/log_160_trial/fixed_pid/SP20/Fixed PID_SP20_trial01.txt
+Fixed PID,20.0,2,19.82,-0.17999999999999972,0.8999999999999986,0.0,56.153,49.826,54.433,5,True,TARGET,data/pengujian_final/log_160_trial/fixed_pid/SP20/Fixed PID_SP20_trial02.txt
+Fixed PID,20.0,3,21.87,1.870000000000001,9.350000000000005,0.0,20.527,14.457,,0,False,TARGET,data/pengujian_final/log_160_trial/fixed_pid/SP20/Fixed PID_SP20_trial03.txt
+Fixed PID,20.0,4,20.23,0.23000000000000043,1.1500000000000021,0.0,31.117,23.24,,1,True,TARGET,data/pengujian_final/log_160_trial/fixed_pid/SP20/Fixed PID_SP20_trial04.txt
+Fixed PID,20.0,5,29.05,9.05,45.25,0.0,27.501,,,2,False,TARGET,data/pengujian_final/log_160_trial/fixed_pid/SP20/Fixed PID_SP20_trial05.txt
+Fixed PID,20.0,6,19.47,-0.5300000000000011,2.6500000000000057,0.0,33.699,24.53,27.331,1,True,TARGET,data/pengujian_final/log_160_trial/fixed_pid/SP20/Fixed PID_SP20_trial06.txt
+Fixed PID,20.0,7,20.85,0.8500000000000014,4.250000000000007,0.0,16.399,10.587,,0,True,TARGET,data/pengujian_final/log_160_trial/fixed_pid/SP20/Fixed PID_SP20_trial07.txt
+Fixed PID,20.0,8,19.58,-0.4200000000000017,2.1000000000000085,0.0,33.956,,,4,True,TARGET,data/pengujian_final/log_160_trial/fixed_pid/SP20/Fixed PID_SP20_trial08.txt
+Fixed PID,20.0,9,20.14,0.14000000000000057,0.7000000000000028,0.0,22.853,16.525,21.132,0,True,TARGET,data/pengujian_final/log_160_trial/fixed_pid/SP20/Fixed PID_SP20_trial09.txt
+Fixed PID,20.0,10,20.92,0.9200000000000017,4.6000000000000085,0.0,21.303,,,2,True,TARGET,data/pengujian_final/log_160_trial/fixed_pid/SP20/Fixed PID_SP20_trial10.txt
+Fixed PID,25.0,1,24.86,-0.14000000000000057,0.5600000000000023,0.0,41.448,35.119,37.661,4,True,TARGET,data/pengujian_final/log_160_trial/fixed_pid/SP25/Fixed PID_SP25_trial01.txt
+Fixed PID,25.0,2,24.75,-0.25,1.0,0.0,24.922,18.593,23.201,1,True,TARGET,data/pengujian_final/log_160_trial/fixed_pid/SP25/Fixed PID_SP25_trial02.txt
+Fixed PID,25.0,3,24.77,-0.23000000000000043,0.9200000000000017,0.0,64.172,48.289,57.803,7,True,TARGET,data/pengujian_final/log_160_trial/fixed_pid/SP25/Fixed PID_SP25_trial03.txt
+Fixed PID,25.0,4,24.38,-0.620000000000001,2.480000000000004,0.0,52.041,18.595,45.93,0,True,TARGET,data/pengujian_final/log_160_trial/fixed_pid/SP25/Fixed PID_SP25_trial04.txt
+Fixed PID,25.0,5,26.19,1.1900000000000013,4.760000000000005,0.0,31.119,,,4,True,TARGET,data/pengujian_final/log_160_trial/fixed_pid/SP25/Fixed PID_SP25_trial05.txt
+Fixed PID,25.0,6,25.6,0.6000000000000014,2.4000000000000057,0.0,30.863,20.919,28.368,0,True,TARGET,data/pengujian_final/log_160_trial/fixed_pid/SP25/Fixed PID_SP25_trial06.txt
+Fixed PID,25.0,7,31.19,6.190000000000001,24.760000000000005,0.0,58.491,52.163,,10,False,TARGET,data/pengujian_final/log_160_trial/fixed_pid/SP25/Fixed PID_SP25_trial07.txt
+Fixed PID,25.0,8,25.59,0.5899999999999999,2.3599999999999994,0.0,70.111,45.706,66.325,6,True,TARGET,data/pengujian_final/log_160_trial/fixed_pid/SP25/Fixed PID_SP25_trial08.txt
+Fixed PID,25.0,9,25.37,0.370000000000001,1.480000000000004,0.0,49.455,,,8,True,TARGET,data/pengujian_final/log_160_trial/fixed_pid/SP25/Fixed PID_SP25_trial09.txt
+Fixed PID,25.0,10,25.03,0.030000000000001137,0.12000000000000455,0.0,45.326,33.057,41.797,4,True,TARGET,data/pengujian_final/log_160_trial/fixed_pid/SP25/Fixed PID_SP25_trial10.txt
+Fixed PID,30.0,1,29.78,-0.21999999999999886,0.7333333333333295,0.0,80.692,13.685,76.649,1,True,TARGET,data/pengujian_final/log_160_trial/fixed_pid/SP30/Fixed_PID_SP30_trial01.txt
+Fixed PID,30.0,2,29.96,-0.03999999999999915,0.1333333333333305,0.0,39.113,30.721,35.844,4,True,TARGET,data/pengujian_final/log_160_trial/fixed_pid/SP30/Fixed_PID_SP30_trial02.txt
+Fixed PID,30.0,3,29.63,-0.370000000000001,1.2333333333333367,0.0,24.92,22.206,23.199,2,True,TARGET,data/pengujian_final/log_160_trial/fixed_pid/SP30/Fixed_PID_SP30_trial03.txt
+Fixed PID,30.0,4,30.14,0.14000000000000057,0.4666666666666685,0.0,33.183,18.591,29.655,1,True,TARGET,data/pengujian_final/log_160_trial/fixed_pid/SP30/Fixed_PID_SP30_trial04.txt
+Fixed PID,30.0,5,30.06,0.05999999999999872,0.19999999999999576,0.0,20.53,16.268,17.26,1,True,TARGET,data/pengujian_final/log_160_trial/fixed_pid/SP30/Fixed_PID_SP30_trial05.txt
+Fixed PID,30.0,6,30.21,0.21000000000000085,0.7000000000000028,0.0,24.661,17.559,20.359,1,True,TARGET,data/pengujian_final/log_160_trial/fixed_pid/SP30/Fixed_PID_SP30_trial06.txt
+Fixed PID,30.0,7,29.04,-0.9600000000000009,3.200000000000003,0.0,24.918,19.107,19.841,1,True,TARGET,data/pengujian_final/log_160_trial/fixed_pid/SP30/Fixed_PID_SP30_trial07.txt
+Fixed PID,30.0,8,30.71,0.7100000000000009,2.3666666666666694,0.0,33.18,26.852,31.46,1,True,TARGET,data/pengujian_final/log_160_trial/fixed_pid/SP30/Fixed_PID_SP30_trial08.txt
+Fixed PID,30.0,9,30.47,0.46999999999999886,1.5666666666666627,0.0,41.447,25.306,26.298,1,True,TARGET,data/pengujian_final/log_160_trial/fixed_pid/SP30/Fixed_PID_SP30_trial09.txt
+Fixed PID,30.0,10,30.48,0.4800000000000004,1.6000000000000014,0.0,22.596,14.718,19.068,0,True,TARGET,data/pengujian_final/log_160_trial/fixed_pid/SP30/Fixed_PID_SP30_trial10.txt
+GS PID,15.0,1,14.63,-0.3699999999999992,2.4666666666666615,0.0,12.008,,,1,True,TARGET,data/pengujian_final/log_160_trial/gs_pid/SP15/GSPID_SSP15_trial01.txt
+GS PID,15.0,2,14.76,-0.2400000000000002,1.6000000000000014,0.0,16.654,14.2,,0,True,TARGET,data/pengujian_final/log_160_trial/gs_pid/SP15/GSPID_SSP15_trial02.txt
+GS PID,15.0,3,15.16,0.16000000000000014,1.0666666666666678,0.0,13.556,10.069,10.803,1,True,TARGET,data/pengujian_final/log_160_trial/gs_pid/SP15/GSPID_SSP15_trial03.txt
+GS PID,15.0,4,14.93,-0.07000000000000028,0.4666666666666685,0.0,12.524,8.263,,0,True,TARGET,data/pengujian_final/log_160_trial/gs_pid/SP15/GSPID_SSP15_trial04.txt
+GS PID,15.0,5,16.03,1.0300000000000011,6.866666666666673,0.0,12.524,10.069,,1,False,TARGET,data/pengujian_final/log_160_trial/gs_pid/SP15/GSPID_SSP15_trial05.txt
+GS PID,15.0,6,14.72,-0.27999999999999936,1.8666666666666623,0.0,8.134,2.581,,0,True,TARGET,data/pengujian_final/log_160_trial/gs_pid/SP15/GSPID_SSP15_trial06.txt
+GS PID,15.0,7,15.04,0.03999999999999915,0.266666666666661,0.0,37.318,28.924,33.79,0,True,TARGET,data/pengujian_final/log_160_trial/gs_pid/SP15/GSPID_SSP15_trial07.txt
+GS PID,15.0,8,15.35,0.34999999999999964,2.333333333333331,0.0,14.592,12.395,12.871,0,True,TARGET,data/pengujian_final/log_160_trial/gs_pid/SP15/GSPID_SSP15_trial08.txt
+GS PID,15.0,9,14.82,-0.17999999999999972,1.1999999999999982,0.0,10.459,,,0,True,TARGET,data/pengujian_final/log_160_trial/gs_pid/SP15/GSPID_SSP15_trial09.txt
+GS PID,15.0,10,14.9,-0.09999999999999964,0.6666666666666643,0.0,16.657,12.653,14.679,0,True,TARGET,data/pengujian_final/log_160_trial/gs_pid/SP15/GSPID_SSP15_trial10.txt
+GS PID,20.0,1,20.55,0.5500000000000007,2.7500000000000036,0.0,20.536,12.397,14.94,0,True,TARGET,data/pengujian_final/log_160_trial/gs_pid/SP20/GS_PID_SP20_trial01.txt
+GS PID,20.0,2,20.93,0.9299999999999997,4.649999999999999,0.0,9.167,6.712,,1,True,TARGET,data/pengujian_final/log_160_trial/gs_pid/SP20/GS_PID_SP20_trial02.txt
+GS PID,20.0,3,22.1,2.1000000000000014,10.500000000000007,0.0,21.301,,,1,False,TARGET,data/pengujian_final/log_160_trial/gs_pid/SP20/GS_PID_SP20_trial03.txt
+GS PID,20.0,4,20.44,0.4400000000000013,2.2000000000000064,0.0,20.525,16.522,18.547,1,True,TARGET,data/pengujian_final/log_160_trial/gs_pid/SP20/GS_PID_SP20_trial04.txt
+GS PID,20.0,5,21.22,1.2199999999999989,6.099999999999994,0.0,20.789,17.043,,1,False,TARGET,data/pengujian_final/log_160_trial/gs_pid/SP20/GS_PID_SP20_trial05.txt
+GS PID,20.0,6,19.59,-0.41000000000000014,2.0500000000000007,0.0,18.983,16.27,17.262,1,True,TARGET,data/pengujian_final/log_160_trial/gs_pid/SP20/GS_PID_SP20_trial06.txt
+GS PID,20.0,7,19.87,-0.129999999999999,0.649999999999995,0.0,20.791,8.264,17.004,0,True,TARGET,data/pengujian_final/log_160_trial/gs_pid/SP20/GS_PID_SP20_trial07.txt
+GS PID,20.0,8,20.92,0.9200000000000017,4.6000000000000085,0.0,12.009,,,1,True,TARGET,data/pengujian_final/log_160_trial/gs_pid/SP20/GS_PID_SP20_trial08.txt
+GS PID,20.0,9,19.46,-0.5399999999999991,2.6999999999999957,0.0,14.593,11.621,12.872,0,True,TARGET,data/pengujian_final/log_160_trial/gs_pid/SP20/GS_PID_SP20_trial09.txt
+GS PID,20.0,10,19.78,-0.21999999999999886,1.0999999999999943,0.0,25.182,18.337,23.461,1,True,TARGET,data/pengujian_final/log_160_trial/gs_pid/SP20/GS_PID_SP20_trial10.txt
+GS PID,25.0,1,25.84,0.8399999999999999,3.359999999999999,0.0,15.109,12.654,,1,True,TARGET,data/pengujian_final/log_160_trial/gs_pid/SP25/GS_PID_SP25_trial01.txt
+GS PID,25.0,2,25.5,0.5,2.0,0.0,18.467,11.622,15.196,1,True,TARGET,data/pengujian_final/log_160_trial/gs_pid/SP25/GS_PID_SP25_trial02.txt
+GS PID,25.0,3,26.84,1.8399999999999999,7.359999999999999,0.0,10.461,6.198,8.74,0,False,TARGET,data/pengujian_final/log_160_trial/gs_pid/SP25/GS_PID_SP25_trial03.txt
+GS PID,25.0,4,25.02,0.019999999999999574,0.0799999999999983,0.0,39.389,24.795,31.727,1,True,TARGET,data/pengujian_final/log_160_trial/gs_pid/SP25/GS_PID_SP25_trial04.txt
+GS PID,25.0,5,24.14,-0.8599999999999994,3.4399999999999977,0.0,12.787,10.072,11.066,0,True,TARGET,data/pengujian_final/log_160_trial/gs_pid/SP25/GS_PID_SP25_trial05.txt
+GS PID,25.0,6,24.58,-0.4200000000000017,1.6800000000000068,0.0,16.66,12.139,14.94,1,True,TARGET,data/pengujian_final/log_160_trial/gs_pid/SP25/GS_PID_SP25_trial06.txt
+GS PID,25.0,7,25.88,0.879999999999999,3.519999999999996,0.0,32.931,20.404,29.403,0,True,TARGET,data/pengujian_final/log_160_trial/gs_pid/SP25/GS_PID_SP25_trial07.txt
+GS PID,25.0,8,25.45,0.4499999999999993,1.7999999999999972,0.0,26.734,22.471,23.721,0,True,TARGET,data/pengujian_final/log_160_trial/gs_pid/SP25/GS_PID_SP25_trial08.txt
+GS PID,25.0,9,24.54,-0.46000000000000085,1.8400000000000034,0.0,54.889,16.53,43.869,0,True,TARGET,data/pengujian_final/log_160_trial/gs_pid/SP25/GS_PID_SP25_trial09.txt
+GS PID,25.0,10,25.29,0.28999999999999915,1.1599999999999966,0.0,20.794,13.431,19.073,0,True,TARGET,data/pengujian_final/log_160_trial/gs_pid/SP25/GS_PID_SP25_trial10.txt
+GS PID,30.0,1,29.67,-0.3299999999999983,1.0999999999999943,0.0,31.108,14.715,19.578,0,True,TARGET,data/pengujian_final/log_160_trial/gs_pid/SP30/GS_PID_SP30_trial01.txt
+GS PID,30.0,2,30.83,0.8299999999999983,2.766666666666661,0.0,27.492,25.039,,2,True,TARGET,data/pengujian_final/log_160_trial/gs_pid/SP30/GS_PID_SP30_trial02.txt
+GS PID,30.0,3,29.88,-0.120000000000001,0.4000000000000033,0.0,18.459,8.519,14.932,0,True,TARGET,data/pengujian_final/log_160_trial/gs_pid/SP30/GS_PID_SP30_trial03.txt
+GS PID,30.0,4,29.56,-0.4400000000000013,1.466666666666671,0.0,25.687,20.136,22.934,1,True,TARGET,data/pengujian_final/log_160_trial/gs_pid/SP30/GS_PID_SP30_trial04.txt
+GS PID,30.0,5,29.73,-0.2699999999999996,0.8999999999999986,0.0,35.497,12.649,33.519,1,True,TARGET,data/pengujian_final/log_160_trial/gs_pid/SP30/GS_PID_SP30_trial05.txt
+GS PID,30.0,6,30.65,0.6499999999999986,2.166666666666662,0.0,34.98,18.586,25.257,2,True,TARGET,data/pengujian_final/log_160_trial/gs_pid/SP30/GS_PID_SP30_trial06.txt
+GS PID,30.0,7,29.88,-0.120000000000001,0.4000000000000033,0.0,20.523,12.907,14.931,0,True,TARGET,data/pengujian_final/log_160_trial/gs_pid/SP30/GS_PID_SP30_trial07.txt
+GS PID,30.0,8,29.86,-0.14000000000000057,0.4666666666666685,0.0,24.402,,,2,True,TARGET,data/pengujian_final/log_160_trial/gs_pid/SP30/GS_PID_SP30_trial08.txt
+GS PID,30.0,9,29.66,-0.33999999999999986,1.1333333333333329,0.0,26.978,20.651,23.708,1,True,TARGET,data/pengujian_final/log_160_trial/gs_pid/SP30/GS_PID_SP30_trial09.txt
+GS PID,30.0,10,29.85,-0.14999999999999858,0.4999999999999952,0.0,25.172,14.714,22.16,0,True,TARGET,data/pengujian_final/log_160_trial/gs_pid/SP30/GS_PID_SP30_trial10.txt
+Manual Cepat,15.0,1,15.33,0.33000000000000007,2.2000000000000006,0.0,3.058,,,0,True,TARGET,data/pengujian_final/log_160_trial/manual_cepat/SP15/ManualCepat_SP15_trial01.txt
+Manual Cepat,15.0,2,15.91,0.9100000000000001,6.066666666666667,0.0,5.123,,,0,False,TARGET,data/pengujian_final/log_160_trial/manual_cepat/SP15/ManualCepat_SP15_trial02.txt
+Manual Cepat,15.0,3,15.35,0.34999999999999964,2.333333333333331,0.0,4.865,,,0,True,TARGET,data/pengujian_final/log_160_trial/manual_cepat/SP15/ManualCepat_SP15_trial03.txt
+Manual Cepat,15.0,4,20.48,5.48,36.53333333333333,0.0,5.123,,,0,False,TARGET,data/pengujian_final/log_160_trial/manual_cepat/SP15/ManualCepat_SP15_trial04.txt
+Manual Cepat,15.0,5,22.17,7.170000000000002,47.80000000000001,0.0,17.258,,,2,False,TARGET,data/pengujian_final/log_160_trial/manual_cepat/SP15/ManualCepat_SP15_trial05.txt
+Manual Cepat,15.0,6,16.1,1.1000000000000014,7.333333333333343,0.0,1.25,,,0,False,TARGET,data/pengujian_final/log_160_trial/manual_cepat/SP15/ManualCepat_SP15_trial06.txt
+Manual Cepat,15.0,7,23.61,8.61,57.4,0.0,8.997,,,0,False,TARGET,data/pengujian_final/log_160_trial/manual_cepat/SP15/ManualCepat_SP15_trial07.txt
+Manual Cepat,15.0,8,14.92,-0.08000000000000007,0.5333333333333339,0.0,3.057,,,0,True,TARGET,data/pengujian_final/log_160_trial/manual_cepat/SP15/ManualCepat_SP15_trial08.txt
+Manual Cepat,15.0,9,18.01,3.0100000000000016,20.066666666666677,0.0,3.057,,,0,False,TARGET,data/pengujian_final/log_160_trial/manual_cepat/SP15/ManualCepat_SP15_trial09.txt
+Manual Cepat,15.0,10,21.43,6.43,42.86666666666667,0.0,11.579,,,1,False,TARGET,data/pengujian_final/log_160_trial/manual_cepat/SP15/ManualCepat_SP15_trial10.txt
+Manual Cepat,20.0,1,22.92,2.9200000000000017,14.600000000000007,0.0,11.062,,,0,False,TARGET,data/pengujian_final/log_160_trial/manual_cepat/SP20/ManualCepat_SP20_trial01.txt
+Manual Cepat,20.0,2,23.1,3.1000000000000014,15.500000000000009,0.0,4.865,,,0,False,TARGET,data/pengujian_final/log_160_trial/manual_cepat/SP20/ManualCepat_SP20_trial02.txt
+Manual Cepat,20.0,3,19.81,-0.19000000000000128,0.9500000000000064,0.0,11.582,,,0,True,TARGET,data/pengujian_final/log_160_trial/manual_cepat/SP20/ManualCepat_SP20_trial03.txt
+Manual Cepat,20.0,4,20.59,0.5899999999999999,2.9499999999999993,0.0,17.78,,,1,True,TARGET,data/pengujian_final/log_160_trial/manual_cepat/SP20/ManualCepat_SP20_trial04.txt
+Manual Cepat,20.0,5,22.21,2.210000000000001,11.050000000000004,0.0,13.131,,,0,False,TARGET,data/pengujian_final/log_160_trial/manual_cepat/SP20/ManualCepat_SP20_trial05.txt
+Manual Cepat,20.0,6,20.71,0.7100000000000009,3.5500000000000047,0.0,5.383,,,0,True,TARGET,data/pengujian_final/log_160_trial/manual_cepat/SP20/ManualCepat_SP20_trial06.txt
+Manual Cepat,20.0,7,20.74,0.7399999999999984,3.699999999999992,0.0,4.866,,,0,True,TARGET,data/pengujian_final/log_160_trial/manual_cepat/SP20/ManualCepat_SP20_trial07.txt
+Manual Cepat,20.0,8,23.26,3.2600000000000016,16.300000000000008,0.0,11.324,,,0,False,TARGET,data/pengujian_final/log_160_trial/manual_cepat/SP20/ManualCepat_SP20_trial08.txt
+Manual Cepat,20.0,9,21.52,1.5199999999999996,7.599999999999999,0.0,13.39,,,1,False,TARGET,data/pengujian_final/log_160_trial/manual_cepat/SP20/ManualCepat_SP20_trial09.txt
+Manual Cepat,20.0,10,23.26,3.2600000000000016,16.300000000000008,0.0,4.867,,,0,False,TARGET,data/pengujian_final/log_160_trial/manual_cepat/SP20/ManualCepat_SP20_trial10.txt
+Manual Cepat,25.0,1,28.24,3.2399999999999984,12.959999999999994,0.0,5.64,,,0,False,TARGET,data/pengujian_final/log_160_trial/manual_cepat/SP25/ManualCepat_SP25_trial01.txt
+Manual Cepat,25.0,2,31.57,6.57,26.280000000000005,0.0,9.256,,,0,False,TARGET,data/pengujian_final/log_160_trial/manual_cepat/SP25/ManualCepat_SP25_trial02.txt
+Manual Cepat,25.0,3,24.7,-0.3000000000000007,1.2000000000000028,0.0,9.774,,,0,True,TARGET,data/pengujian_final/log_160_trial/manual_cepat/SP25/ManualCepat_SP25_trial03.txt
+Manual Cepat,25.0,4,26.85,1.8500000000000014,7.400000000000005,0.0,13.131,,,0,False,TARGET,data/pengujian_final/log_160_trial/manual_cepat/SP25/ManualCepat_SP25_trial04.txt
+Manual Cepat,25.0,5,28.44,3.4400000000000013,13.760000000000005,0.0,15.197,,,0,False,TARGET,data/pengujian_final/log_160_trial/manual_cepat/SP25/ManualCepat_SP25_trial05.txt
+Manual Cepat,25.0,6,26.58,1.5799999999999983,6.319999999999994,0.0,7.191,,,0,False,TARGET,data/pengujian_final/log_160_trial/manual_cepat/SP25/ManualCepat_SP25_trial06.txt
+Manual Cepat,25.0,7,26.65,1.6499999999999986,6.599999999999994,0.0,9.258,,,0,False,TARGET,data/pengujian_final/log_160_trial/manual_cepat/SP25/ManualCepat_SP25_trial07.txt
+Manual Cepat,25.0,8,25.52,0.5199999999999996,2.0799999999999983,0.0,7.966,,,0,True,TARGET,data/pengujian_final/log_160_trial/manual_cepat/SP25/ManualCepat_SP25_trial08.txt
+Manual Cepat,25.0,9,25.08,0.0799999999999983,0.3199999999999932,0.0,11.581,,,0,True,TARGET,data/pengujian_final/log_160_trial/manual_cepat/SP25/ManualCepat_SP25_trial09.txt
+Manual Cepat,25.0,10,32.63,7.630000000000003,30.520000000000007,0.0,11.065,,,0,False,TARGET,data/pengujian_final/log_160_trial/manual_cepat/SP25/ManualCepat_SP25_trial10.txt
+Manual Cepat,30.0,1,33.19,3.1899999999999977,10.633333333333326,0.0,9.776,,,0,False,TARGET,data/pengujian_final/log_160_trial/manual_cepat/SP30/ManualCepat_SP30_trial01.txt
+Manual Cepat,30.0,2,30.92,0.9200000000000017,3.066666666666672,0.0,21.917,,,2,True,TARGET,data/pengujian_final/log_160_trial/manual_cepat/SP30/ManualCepat_SP30_trial02.txt
+Manual Cepat,30.0,3,32.5,2.5,8.333333333333332,0.0,29.926,,,2,False,TARGET,data/pengujian_final/log_160_trial/manual_cepat/SP30/ManualCepat_SP30_trial03.txt
+Manual Cepat,30.0,4,30.41,0.41000000000000014,1.3666666666666671,0.0,7.71,,,0,True,TARGET,data/pengujian_final/log_160_trial/manual_cepat/SP30/ManualCepat_SP30_trial04.txt
+Manual Cepat,30.0,5,32.18,2.1799999999999997,7.266666666666666,0.0,21.403,,,0,False,TARGET,data/pengujian_final/log_160_trial/manual_cepat/SP30/ManualCepat_SP30_trial05.txt
+Manual Cepat,30.0,6,30.79,0.7899999999999991,2.6333333333333306,0.0,22.177,,,0,True,TARGET,data/pengujian_final/log_160_trial/manual_cepat/SP30/ManualCepat_SP30_trial06.txt
+Manual Cepat,30.0,7,33.79,3.789999999999999,12.63333333333333,0.0,17.269,,,1,False,TARGET,data/pengujian_final/log_160_trial/manual_cepat/SP30/ManualCepat_SP30_trial07.txt
+Manual Cepat,30.0,8,32.93,2.9299999999999997,9.766666666666666,0.0,15.461,,,0,False,TARGET,data/pengujian_final/log_160_trial/manual_cepat/SP30/ManualCepat_SP30_trial08.txt
+Manual Cepat,30.0,9,30.31,0.3099999999999987,1.033333333333329,0.0,29.927,,,2,True,TARGET,data/pengujian_final/log_160_trial/manual_cepat/SP30/ManualCepat_SP30_trial09.txt
+Manual Cepat,30.0,10,35.39,5.390000000000001,17.96666666666667,0.0,19.336,,,0,False,TARGET,data/pengujian_final/log_160_trial/manual_cepat/SP30/ManualCepat_SP30_trial10.txt
+Manual Presisi,15.0,1,16.47,1.4699999999999989,9.799999999999992,0.0,23.46,,,3,False,TARGET,data/pengujian_final/log_160_trial/manual_presisi/SP15/ManualPresisi_SP15_trial01.txt
+Manual Presisi,15.0,2,15.43,0.4299999999999997,2.866666666666665,0.0,34.054,,,3,True,TARGET,data/pengujian_final/log_160_trial/manual_presisi/SP15/ManualPresisi_SP15_trial02.txt
+Manual Presisi,15.0,3,15.16,0.16000000000000014,1.0666666666666678,0.0,56.783,,,3,True,TARGET,data/pengujian_final/log_160_trial/manual_presisi/SP15/ManualPresisi_SP15_trial03.txt
+Manual Presisi,15.0,4,14.35,-0.6500000000000004,4.333333333333336,0.0,62.986,,,3,True,TARGET,data/pengujian_final/log_160_trial/manual_presisi/SP15/ManualPresisi_SP15_trial04.txt
+Manual Presisi,15.0,5,16.62,1.620000000000001,10.800000000000006,0.0,29.66,,,6,False,TARGET,data/pengujian_final/log_160_trial/manual_presisi/SP15/ManualPresisi_SP15_trial05.txt
+Manual Presisi,15.0,6,14.49,-0.5099999999999998,3.399999999999999,0.0,34.053,,,4,True,TARGET,data/pengujian_final/log_160_trial/manual_presisi/SP15/ManualPresisi_SP15_trial06.txt
+Manual Presisi,15.0,7,15.89,0.8900000000000006,5.933333333333337,0.0,15.198,,,1,False,TARGET,data/pengujian_final/log_160_trial/manual_presisi/SP15/ManualPresisi_SP15_trial07.txt
+Manual Presisi,15.0,8,14.66,-0.33999999999999986,2.2666666666666657,0.0,40.512,,,1,True,TARGET,data/pengujian_final/log_160_trial/manual_presisi/SP15/ManualPresisi_SP15_trial08.txt
+Manual Presisi,15.0,9,15.4,0.40000000000000036,2.6666666666666687,0.0,33.796,,,4,True,TARGET,data/pengujian_final/log_160_trial/manual_presisi/SP15/ManualPresisi_SP15_trial09.txt
+Manual Presisi,15.0,10,21.01,6.010000000000002,40.06666666666668,0.0,8.483,,,1,False,TARGET,data/pengujian_final/log_160_trial/manual_presisi/SP15/ManualPresisi_SP15_trial10.txt
+Manual Presisi,20.0,1,23.33,3.3299999999999983,16.64999999999999,0.0,67.878,,,14,False,TARGET,data/pengujian_final/log_160_trial/manual_presisi/SP20/ManualPresisi_SP20_trial01.txt
+Manual Presisi,20.0,2,19.68,-0.3200000000000003,1.6000000000000014,0.0,44.124,,,3,True,TARGET,data/pengujian_final/log_160_trial/manual_presisi/SP20/ManualPresisi_SP20_trial02.txt
+Manual Presisi,20.0,3,23.75,3.75,18.75,0.0,38.698,,,3,False,TARGET,data/pengujian_final/log_160_trial/manual_presisi/SP20/ManualPresisi_SP20_trial03.txt
+Manual Presisi,20.0,4,20.34,0.33999999999999986,1.6999999999999995,0.0,44.38,,,4,True,TARGET,data/pengujian_final/log_160_trial/manual_presisi/SP20/ManualPresisi_SP20_trial04.txt
+Manual Presisi,20.0,5,25.23,5.23,26.150000000000002,0.0,20.617,,,3,False,TARGET,data/pengujian_final/log_160_trial/manual_presisi/SP20/ManualPresisi_SP20_trial05.txt
+Manual Presisi,20.0,6,19.97,-0.030000000000001137,0.15000000000000568,0.0,42.312,,,4,True,TARGET,data/pengujian_final/log_160_trial/manual_presisi/SP20/ManualPresisi_SP20_trial06.txt
+Manual Presisi,20.0,7,19.95,-0.05000000000000071,0.25000000000000355,0.0,44.893,,,7,True,TARGET,data/pengujian_final/log_160_trial/manual_presisi/SP20/ManualPresisi_SP20_trial07.txt
+Manual Presisi,20.0,8,21.06,1.0599999999999987,5.299999999999994,0.0,65.041,,,2,False,TARGET,data/pengujian_final/log_160_trial/manual_presisi/SP20/ManualPresisi_SP20_trial08.txt
+Manual Presisi,20.0,9,19.38,-0.620000000000001,3.100000000000005,0.0,28.881,,,3,True,TARGET,data/pengujian_final/log_160_trial/manual_presisi/SP20/ManualPresisi_SP20_trial09.txt
+Manual Presisi,20.0,10,20.01,0.010000000000001563,0.050000000000007816,0.0,42.054,,,1,True,TARGET,data/pengujian_final/log_160_trial/manual_presisi/SP20/ManualPresisi_SP20_trial10.txt
+Manual Presisi,25.0,1,24.78,-0.21999999999999886,0.8799999999999953,0.0,81.581,,,3,True,TARGET,data/pengujian_final/log_160_trial/manual_presisi/SP25/ManualPresisi_SP25_trial01.txt
+Manual Presisi,25.0,2,27.38,2.379999999999999,9.519999999999996,0.0,32.505,,,4,False,TARGET,data/pengujian_final/log_160_trial/manual_presisi/SP25/ManualPresisi_SP25_trial02.txt
+Manual Presisi,25.0,3,32.6,7.600000000000001,30.400000000000006,0.0,38.964,,,6,False,TARGET,data/pengujian_final/log_160_trial/manual_presisi/SP25/ManualPresisi_SP25_trial03.txt
+Manual Presisi,25.0,4,30.12,5.120000000000001,20.480000000000004,0.0,20.366,,,3,False,TARGET,data/pengujian_final/log_160_trial/manual_presisi/SP25/ManualPresisi_SP25_trial04.txt
+Manual Presisi,25.0,5,24.9,-0.10000000000000142,0.40000000000000563,0.0,40.254,,,6,True,TARGET,data/pengujian_final/log_160_trial/manual_presisi/SP25/ManualPresisi_SP25_trial05.txt
+Manual Presisi,25.0,6,27.72,2.719999999999999,10.879999999999995,0.0,45.162,,,8,False,TARGET,data/pengujian_final/log_160_trial/manual_presisi/SP25/ManualPresisi_SP25_trial06.txt
+Manual Presisi,25.0,7,24.67,-0.3299999999999983,1.3199999999999932,0.0,51.875,,,6,True,TARGET,data/pengujian_final/log_160_trial/manual_presisi/SP25/ManualPresisi_SP25_trial07.txt
+Manual Presisi,25.0,8,24.88,-0.120000000000001,0.4800000000000039,0.0,60.919,,,5,True,TARGET,data/pengujian_final/log_160_trial/manual_presisi/SP25/ManualPresisi_SP25_trial08.txt
+Manual Presisi,25.0,9,24.84,-0.16000000000000014,0.6400000000000006,0.0,69.187,,,10,True,TARGET,data/pengujian_final/log_160_trial/manual_presisi/SP25/ManualPresisi_SP25_trial09.txt
+Manual Presisi,25.0,10,24.77,-0.23000000000000043,0.9200000000000017,0.0,83.656,,,10,True,TARGET,data/pengujian_final/log_160_trial/manual_presisi/SP25/ManualPresisi_SP25_trial10.txt
+Manual Presisi,30.0,1,31.11,1.1099999999999994,3.6999999999999984,0.0,72.799,,,11,True,TARGET,data/pengujian_final/log_160_trial/manual_presisi/SP30/ManualPresisi_SP30_trial01.txt
+Manual Presisi,30.0,2,30.14,0.14000000000000057,0.4666666666666685,0.0,52.395,,,4,True,TARGET,data/pengujian_final/log_160_trial/manual_presisi/SP30/ManualPresisi_SP30_trial02.txt
+Manual Presisi,30.0,3,30.0,0.0,0.0,0.0,51.88,,,6,True,TARGET,data/pengujian_final/log_160_trial/manual_presisi/SP30/ManualPresisi_SP30_trial03.txt
+Manual Presisi,30.0,4,30.46,0.46000000000000085,1.533333333333336,0.0,44.129,,,4,True,TARGET,data/pengujian_final/log_160_trial/manual_presisi/SP30/ManualPresisi_SP30_trial04.txt
+Manual Presisi,30.0,5,32.24,2.240000000000002,7.466666666666673,0.0,81.581,,,16,False,TARGET,data/pengujian_final/log_160_trial/manual_presisi/SP30/ManualPresisi_SP30_trial05.txt
+Manual Presisi,30.0,6,31.33,1.3299999999999983,4.433333333333327,0.0,62.721,,,7,True,TARGET,data/pengujian_final/log_160_trial/manual_presisi/SP30/ManualPresisi_SP30_trial06.txt
+Manual Presisi,30.0,7,37.25,7.25,24.166666666666668,0.0,82.094,,,13,False,TARGET,data/pengujian_final/log_160_trial/manual_presisi/SP30/ManualPresisi_SP30_trial07.txt
+Manual Presisi,30.0,8,29.96,-0.03999999999999915,0.1333333333333305,0.0,42.062,,,5,True,TARGET,data/pengujian_final/log_160_trial/manual_presisi/SP30/ManualPresisi_SP30_trial08.txt
+Manual Presisi,30.0,9,29.65,-0.3500000000000014,1.1666666666666714,0.0,56.007,,,8,True,TARGET,data/pengujian_final/log_160_trial/manual_presisi/SP30/ManualPresisi_SP30_trial09.txt
+Manual Presisi,30.0,10,31.59,1.5899999999999999,5.3,0.0,72.798,,,11,False,TARGET,data/pengujian_final/log_160_trial/manual_presisi/SP30/ManualPresisi_SP30_trial10.txt

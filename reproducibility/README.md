@@ -2,9 +2,10 @@
 
 Artefak hash kanonis tersedia pada `manifest_sha256.csv`.
 
-Skrip audit langsung antara 160 log firmware dan
-`master_dataset_160.csv` tidak ditemukan. Oleh karena itu,
-audit terhadap dataset kanonis saat ini belum dapat direproduksi.
+Dataset kanonis dibentuk dari 160 log pengujian menggunakan
+`code/pembentukan_dataset/generate_master_dataset.py`.
+Keterlacakan log–dataset dapat diverifikasi penuh; SHA-256 keluaran
+identik dengan dataset kanonis.
 
 Ruang lingkup dan hasil verifikasi eksekusi tersedia pada
 `verification_report.md`.

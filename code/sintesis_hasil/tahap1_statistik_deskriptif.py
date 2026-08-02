@@ -1,14 +1,7 @@
 """
 Tahap 1 — Statistik Deskriptif Dataset 160 Trial
 
-CATATAN REPRODUKSIBILITAS:
-Script ini merupakan implementasi ulang berdasarkan prosedur yang
-didokumentasikan pada laporan_tahap1_validasi_dan_statistik_deskriptif.docx
-dan tahap1_validasi_deskriptif.md.
-Script ini bukan file asli yang digunakan selama proses penelitian.
-Output yang dihasilkan ekuivalen terhadap artefak penelitian.
-
-Input  : data/master_dataset_160.csv
+Input  : data/pengujian_final/master_dataset_160.csv
 Output : hasil_statistik_deskriptif_tahap1.csv (per Scenario x Setpoint)
          hasil_statistik_deskriptif_agregat_tahap1.csv (per Scenario)
 """

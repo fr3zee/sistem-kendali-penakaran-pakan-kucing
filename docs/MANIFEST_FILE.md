@@ -21,6 +21,8 @@
 - `data/pilot_early_stop/kandidat_es/` — pilot ES 0.2/0.3/0.4g (74 trial, 4 skrip)
 
 ## Output Pipeline
+- `hasil/pembentukan_dataset/` — dataset regenerasi, audit vs kanonis
+- `hasil/validasi_dataset/` — laporan validasi struktur dataset
 - `hasil/pemeriksaan_asumsi/` — Shapiro, BF, rekomendasi uji
 - `hasil/analisis_inferensial/` — omnibus, posthoc, within-tolerance
 - `hasil/sintesis_hasil/` — deskriptif, profil primer/tambahan

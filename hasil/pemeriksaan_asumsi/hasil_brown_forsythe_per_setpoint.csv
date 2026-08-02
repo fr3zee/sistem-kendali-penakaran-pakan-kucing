@@ -1,17 +1,17 @@
-Metric,Setpoint_g,n_Manual_Cepat,n_Manual_Presisi,n_Fixed_PID,n_GS_PID,Test,Statistic,p_value,Keputusan,Catatan
-AbsError_pct,15,10,10,10,10,Brown-Forsythe (Levene median),6.5109,0.0012,Varians tidak homogen,
-AbsError_pct,20,10,10,10,10,Brown-Forsythe (Levene median),2.2190,0.1027,Tidak terdapat bukti signifikan perbedaan varians,
-AbsError_pct,25,10,10,10,10,Brown-Forsythe (Levene median),1.6153,0.2028,Tidak terdapat bukti signifikan perbedaan varians,
-AbsError_pct,30,10,10,10,10,Brown-Forsythe (Levene median),0.7254,0.5435,Tidak terdapat bukti signifikan perbedaan varians,
-MaxOvershoot_pct,15,10,10,10,10,Brown-Forsythe (Levene median),5.6318,0.0029,Varians tidak homogen,
-MaxOvershoot_pct,20,10,10,10,10,Brown-Forsythe (Levene median),1.6719,0.1903,Tidak terdapat bukti signifikan perbedaan varians,
-MaxOvershoot_pct,25,10,10,10,10,Brown-Forsythe (Levene median),1.3705,0.2673,Tidak terdapat bukti signifikan perbedaan varians,
-MaxOvershoot_pct,30,10,10,10,10,Brown-Forsythe (Levene median),0.6842,0.5676,Tidak terdapat bukti signifikan perbedaan varians,
-Duration_s,15,10,10,10,10,Brown-Forsythe (Levene median),2.7077,0.0596,Tidak terdapat bukti signifikan perbedaan varians,
-Duration_s,20,10,10,10,10,Brown-Forsythe (Levene median),1.6049,0.2053,Tidak terdapat bukti signifikan perbedaan varians,
-Duration_s,25,10,10,10,10,Brown-Forsythe (Levene median),4.8156,0.0064,Varians tidak homogen,
-Duration_s,30,10,10,10,10,Brown-Forsythe (Levene median),2.0054,0.1306,Tidak terdapat bukti signifikan perbedaan varians,
-RiseTime_10_90_s,15,10,10,10,10,Brown-Forsythe (Levene median),3.1433,0.0369,Varians tidak homogen,
-RiseTime_10_90_s,20,10,10,10,10,Brown-Forsythe (Levene median),5.4976,0.0033,Varians tidak homogen,
-RiseTime_10_90_s,25,10,10,10,10,Brown-Forsythe (Levene median),5.1524,0.0046,Varians tidak homogen,
-RiseTime_10_90_s,30,10,10,10,10,Brown-Forsythe (Levene median),3.8894,0.0166,Varians tidak homogen,
+Metric,Setpoint_g,BF_stat,p_value,Keputusan
+AbsError_pct,15,6.5109,0.0012,Varians tidak homogen
+AbsError_pct,20,0.7051,0.5552,Tidak terdapat bukti signifikan perbedaan varians
+AbsError_pct,25,1.6153,0.2028,Tidak terdapat bukti signifikan perbedaan varians
+AbsError_pct,30,3.5843,0.0230,Varians tidak homogen
+MaxOvershoot_pct,15,5.6318,0.0029,Varians tidak homogen
+MaxOvershoot_pct,20,0.5646,0.6419,Tidak terdapat bukti signifikan perbedaan varians
+MaxOvershoot_pct,25,1.3705,0.2673,Tidak terdapat bukti signifikan perbedaan varians
+MaxOvershoot_pct,30,3.9183,0.0161,Varians tidak homogen
+Duration_s,15,2.7077,0.0596,Tidak terdapat bukti signifikan perbedaan varians
+Duration_s,20,1.8,0.1646,Tidak terdapat bukti signifikan perbedaan varians
+Duration_s,25,4.8156,0.0064,Varians tidak homogen
+Duration_s,30,2.2396,0.1003,Tidak terdapat bukti signifikan perbedaan varians
+RiseTime_10_90_s,15,3.1433,0.0369,Varians tidak homogen
+RiseTime_10_90_s,20,3.9509,0.0156,Varians tidak homogen
+RiseTime_10_90_s,25,5.1524,0.0046,Varians tidak homogen
+RiseTime_10_90_s,30,5.4954,0.0033,Varians tidak homogen

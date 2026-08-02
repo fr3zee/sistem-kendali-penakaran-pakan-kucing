@@ -129,4 +129,4 @@ python code/finalisasi/tahap5_visualisasi_bab4.py
 
 ## Lisensi
 
-Hak cipta 2026 Naufal Hilmi. Dibuat untuk tugas akhir (skripsi) di Universitas Negeri Semarang (UNNES). Penggunaan ulang untuk keperluan akademik diperbolehkan dengan atribusi yang sesuai.
+Repositori ini menggunakan MIT License. Penggunaan, modifikasi, dan distribusi mengikuti ketentuan pada file LICENSE.

@@ -366,24 +366,28 @@ def main():
     assert dups.sum() == 0, f"Duplikat ditemukan: {dups.sum()}"
     print(f"  Struktur OK: {len(df)} baris, 0 duplikat")
 
-    # 4. Tulis CSV regenerasi
+    # 4. Tulis CSV regenerasi (LF line ending untuk konsistensi lintas platform)
     out_csv = OUT_DIR / "master_dataset_160_regenerated.csv"
-    df.to_csv(out_csv, index=False)
+    df.to_csv(out_csv, index=False, lineterminator="\n")
     print(f"  Ditulis: {out_csv}")
 
-    # 5. Hash
-    sha = hashlib.sha256(out_csv.read_bytes()).hexdigest().upper()
-    print(f"  SHA-256: {sha}")
-    canonical_hash = "79443B3F08AD6D42AA2FA6AF0A903CDB319D1CA32DE2FD0ACD37BFE76F99F31C"
-    hash_match = sha == canonical_hash
+    # 5. Hash — bandingkan regenerasi vs kanonis secara dinamis (tidak ada konstanta hardcode)
+    sha_regen = hashlib.sha256(out_csv.read_bytes()).hexdigest().upper()
+    sha_canon = hashlib.sha256(CANONICAL.read_bytes()).hexdigest().upper()
+    print(f"  SHA-256 regenerasi : {sha_regen}")
+    print(f"  SHA-256 kanonis    : {sha_canon}")
+    hash_match = sha_regen == sha_canon
 
     # 6. Audit vs kanonis
+    # Audit memeriksa 22 kolom data; No (nomor urut) dan Notes (semua kosong) dikecualikan.
     print("Audit vs dataset kanonis...")
+    assert len(pd.read_csv(CANONICAL)) == 160, "Dataset kanonis bukan 160 baris"
+    assert not pd.read_csv(CANONICAL).duplicated(["Scenario","Setpoint_g","TrialNo"]).any(), "Duplikat di kanonis"
     canon = pd.read_csv(CANONICAL)
     audit_rows = audit(df, canon)
     df_audit = pd.DataFrame(audit_rows)
     audit_csv = OUT_DIR / "audit_regenerated_vs_canonical.csv"
-    df_audit.to_csv(audit_csv, index=False)
+    df_audit.to_csv(audit_csv, index=False, lineterminator="\n")
 
     n_match    = (df_audit["Status"] == "MATCH").sum()
     n_mismatch = (df_audit["Status"] == "MISMATCH").sum()
@@ -407,8 +411,8 @@ def main():
         f"- Duplikat identitas: 0",
         "",
         f"## Hash SHA-256",
-        f"- Regenerasi: `{sha}`",
-        f"- Kanonis:    `{canonical_hash}`",
+        f"- Regenerasi : `{sha_regen}`",
+        f"- Kanonis    : `{sha_canon}`",
         f"- Cocok: {'✅ YA' if hash_match else '⚠️ TIDAK — nilai tetap diaudit per-sel'}",
         "",
         f"## Audit vs Kanonis",
@@ -427,13 +431,13 @@ def main():
     ]
     if n_mismatch == 0 and n_nv == 0:
         summary_lines.append(
-            "✅ Seluruh 160 baris dan 24 kolom cocok dengan dataset kanonis. "
-            "Status MISSING dapat dihapus."
+            "✅ Seluruh 160 baris dan 22 kolom data cocok dengan dataset kanonis "
+            "(No dan Notes dikecualikan dari audit)."
         )
     else:
         summary_lines.append(
             f"⚠️ Ditemukan {n_mismatch} MISMATCH dan {n_nv} NOT_VERIFIABLE. "
-            "Periksa audit_regenerated_vs_canonical.csv sebelum menghapus status MISSING."
+            "Periksa audit_regenerated_vs_canonical.csv."
         )
 
     (OUT_DIR / "ringkasan_pembentukan_dataset.md").write_text(
@@ -447,6 +451,17 @@ def main():
     else:
         print(f"PERIKSA: {n_mismatch} mismatch, {n_nv} not-verifiable.")
     print("=" * 60)
+
+    # Exit dengan kode berbeda agar pipeline CI dapat membedakan jenis kegagalan
+    if n_mismatch > 0 or n_nv > 0:
+        raise SystemExit(
+            f"Audit data gagal: {n_mismatch} mismatch, {n_nv} not-verifiable."
+        )
+    if not hash_match:
+        raise SystemExit(
+            "Audit nilai cocok, tetapi serialisasi file tidak identik "
+            "(hash berbeda — kemungkinan perbedaan line ending atau format float)."
+        )
 
 
 if __name__ == "__main__":

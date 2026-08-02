@@ -11,9 +11,11 @@ from typing import Tuple
 
 
 # Configuration
-INPUT_CSV = Path(r"D:\SKRIPSI\draft\3. dok trial hasil\02_PILOT_EARLY_STOP\pilot_ES_master.csv")
-OUTPUT_ALL_VALID = Path(r"D:\SKRIPSI\draft\3. dok trial hasil\02_PILOT_EARLY_STOP\pilot_ES_summary_all_valid.csv")
-OUTPUT_BALANCED = Path(r"D:\SKRIPSI\draft\3. dok trial hasil\02_PILOT_EARLY_STOP\pilot_ES_summary_balanced_3trial.csv")
+REPO_ROOT = Path(__file__).resolve().parents[3]
+PILOT_DIR = REPO_ROOT / "data" / "pilot_early_stop" / "kandidat_es"
+INPUT_CSV = PILOT_DIR / "pilot_ES_master.csv"
+OUTPUT_ALL_VALID = PILOT_DIR / "pilot_ES_summary_all_valid.csv"
+OUTPUT_BALANCED = PILOT_DIR / "pilot_ES_summary_balanced_3trial.csv"
 
 
 def load_and_filter_data(csv_path: Path) -> pd.DataFrame:

@@ -48,7 +48,7 @@ VERSION_INFO = {
     "numpy": np.__version__,
     "OS": platform.platform(),
     "Timestamp": datetime.now().isoformat(),
-    "Revision": "Paket Lengkap dengan Matriks Dominasi dan Workbook Extended"
+    "Revision": "Profil primer dan tambahan kondisional"
 }
 
 # ============================================================

@@ -480,7 +480,7 @@ print(">>> 5. Proporsi WithinTolerance (Monte Carlo exact)")
 # N_MC already declared in CONFIG (baris 42)
 
 def monte_carlo_4x2_exact(table, n_sim=N_MC, seed=SEED):
-    """Monte Carlo exact test for 4x2 table (Fisher-Freeman-Halton equivalent).
+    """Pearson chi-square dengan p Monte Carlo dan margin tetap (tabel 4×2).
     Fixed row & column marginals. Test statistic: Pearson chi-square."""
     table = np.asarray(table, dtype=int)
     chi2_obs, _, _, expected = chi2_contingency(table, correction=False)

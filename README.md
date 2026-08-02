@@ -13,7 +13,7 @@
 | Validasi dataset | tahap0_validasi_master_dataset.py | ✅ |
 | Statistik deskriptif | tahap1_statistik_deskriptif.py | ✅ |
 | Pemeriksaan asumsi | tahap2_rekonstruksi_dan_verifikasi.py | ✅ (prasyarat: lihat bawah) |
-| Analisis inferensial | tahap3_analisis_inferensial.py + tahap3_generate_reports.py | ✅ |
+| Analisis inferensial | tahap3_analisis_inferensial.py | ✅ |
 | Sintesis hasil | tahap4_sintesis_multidimensi.py | ✅ |
 | Finalisasi Bab IV | tahap5_visualisasi_bab4.py | ✅ |
 | Skrip audit log↔dataset | — | ❌ MISSING |
@@ -75,12 +75,12 @@ code/finalisasi/                  → visualisasi hasil dan validasi artefak akh
 │   ├── sintesis_hasil/
 │   ├── pemeriksaan_asumsi/
 │   ├── analisis_inferensial/
-│   └── finalisasi/               # gambar Bab IV, narasi, DOCX
+│   └── finalisasi/               # visualisasi hasil Bab IV
 ├── docs/                         # ALUR_REPRODUKSI.md, MANIFEST_FILE.md, dll.
 └── reproducibility/
     ├── README.md
     ├── manifest_sha256.csv
-    └── test_run/
+    └── verification_report.md
 ```
 
 ---
@@ -88,25 +88,17 @@ code/finalisasi/                  → visualisasi hasil dan validasi artefak akh
 ## Cara Menjalankan
 
 ```powershell
-# Setiap skrip mendukung PIPELINE_OUTPUT_DIR untuk output test
-$env:PIPELINE_OUTPUT_DIR = "reproducibility\test_run\validasi_dataset"
 python code/validasi_dataset/tahap0_validasi_master_dataset.py
 
-$env:PIPELINE_OUTPUT_DIR = "reproducibility\test_run\sintesis_hasil"
 python code/sintesis_hasil/tahap1_statistik_deskriptif.py
 
-# Tahap 2 butuh baseline CSV di hasil/pemeriksaan_asumsi/ — lihat code/pemeriksaan_asumsi/README.md
+# Pemeriksaan asumsi butuh baseline CSV — lihat code/pemeriksaan_asumsi/README.md
 python code/pemeriksaan_asumsi/tahap2_rekonstruksi_dan_verifikasi.py
 
-$env:PIPELINE_OUTPUT_DIR = "reproducibility\test_run\analisis_inferensial"
 python code/analisis_inferensial/tahap3_analisis_inferensial.py
-python code/analisis_inferensial/tahap3_generate_reports.py
 
-$env:PIPELINE_OUTPUT_DIR = "reproducibility\test_run\sintesis_hasil"
 python code/sintesis_hasil/tahap4_sintesis_multidimensi.py
 
-$env:PIPELINE_OUTPUT_DIR = "reproducibility\test_run\finalisasi"
-python code/finalisasi/tahap5_generate_narasi_bab4.py
 python code/finalisasi/tahap5_visualisasi_bab4.py
 ```
 

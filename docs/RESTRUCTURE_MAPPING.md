@@ -10,7 +10,7 @@ Branch asal: `restructure-repository-canonical` → di-merge ke `master` (ca731b
 | code/tahap1/hasil_statistik_deskriptif_agregat_tahap1.csv | hasil/sintesis_hasil/ | Output deskriptif agregat |
 | code/tahap2/tahap2_rekonstruksi_dan_verifikasi.py | code/pemeriksaan_asumsi/ | Shapiro, BF, rekomendasi uji |
 | code/tahap3/tahap3_analisis_inferensial.py | code/analisis_inferensial/ | Inferensial |
-| code/tahap3/tahap3_generate_reports.py | code/analisis_inferensial/ | Generate laporan inferensial |
+| code/tahap3/tahap3_generate_reports.py | REMOVED | Dihapus dari repositori publik |
 | code/tahap4/tahap4_sintesis_multidimensi.py | code/sintesis_hasil/ | Profil primer/tambahan |
 | code/tahap5/tahap5_generate_docx_bab4_revisi_terbatas.py | REMOVED | Generator DOCX lama tidak disertakan dalam repositori publik |
 | code/tahap5/tahap5_generate_narasi_bab4.py | REMOVED | Generator narasi tidak disertakan dalam repositori publik |

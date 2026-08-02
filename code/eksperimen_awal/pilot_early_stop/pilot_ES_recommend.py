@@ -10,9 +10,11 @@ from pathlib import Path
 
 
 # Configuration
-INPUT_ALL_VALID = Path(r"D:\SKRIPSI\draft\3. dok trial hasil\02_PILOT_EARLY_STOP\pilot_ES_summary_all_valid.csv")
-INPUT_BALANCED = Path(r"D:\SKRIPSI\draft\3. dok trial hasil\02_PILOT_EARLY_STOP\pilot_ES_summary_balanced_3trial.csv")
-OUTPUT_REPORT = Path(r"D:\SKRIPSI\draft\3. dok trial hasil\02_PILOT_EARLY_STOP\pilot_ES_rekomendasi.md")
+REPO_ROOT = Path(__file__).resolve().parents[3]
+PILOT_DIR = REPO_ROOT / "data" / "pilot_early_stop" / "kandidat_es"
+INPUT_ALL_VALID = PILOT_DIR / "pilot_ES_summary_all_valid.csv"
+INPUT_BALANCED = PILOT_DIR / "pilot_ES_summary_balanced_3trial.csv"
+OUTPUT_REPORT = PILOT_DIR / "pilot_ES_rekomendasi.md"
 
 
 def load_summaries() -> tuple:

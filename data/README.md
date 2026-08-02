@@ -12,8 +12,8 @@ Dataset final penelitian. 1 baris = 1 trial. 160 baris total (4 skenario x 4 set
 | Setpoint_g | Target massa (g): 15, 20, 25, 30 |
 | TrialNo | Nomor ulangan (1-10) |
 | FinalMass_g | Massa akhir yang tercapai (g) |
-| MAE_pct | Galat absolut persentase per trial terhadap setpoint (1 baris = 1 trial) |
-| Overshoot_pct | Overshoot maksimum (%) |
+| AbsError_pct | Galat absolut persentase per trial terhadap setpoint (1 baris = 1 trial) |
+| MaxOvershoot_pct | Overshoot maksimum (%) |
 | Duration_s | Durasi proses (s) |
 | FinalError_g | Galat akhir (g) |
 | RiseTime_10_90_s | Rise time 10-90% (s) |

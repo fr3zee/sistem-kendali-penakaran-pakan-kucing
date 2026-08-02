@@ -12,8 +12,10 @@ from typing import Dict, List, Optional, Tuple
 
 
 # Configuration
-BASE_DIR = Path(r"D:\SKRIPSI\draft\3. dok trial hasil\02_PILOT_EARLY_STOP")
-OUTPUT_CSV = Path(r"D:\SKRIPSI\draft\3. dok trial hasil\02_PILOT_EARLY_STOP\pilot_ES_master.csv")
+REPO_ROOT = Path(__file__).resolve().parents[3]
+PILOT_DIR = REPO_ROOT / "data" / "pilot_early_stop" / "kandidat_es"
+RAW_DIR = PILOT_DIR / "raw_log"
+OUTPUT_CSV = PILOT_DIR / "pilot_ES_master.csv"
 
 # Field definitions with expected types
 FIELDS_COMMON = [
@@ -128,7 +130,7 @@ def extract_metadata_from_path(file_path: Path) -> Dict[str, str]:
     parts = file_path.parts
     
     metadata = {
-        'FilePath': str(file_path),
+        'FilePath': str(file_path.relative_to(REPO_ROOT).as_posix()),
         'FileName': file_path.name,
         'ControllerFolder': '',
         'SetpointFolder': '',
@@ -296,16 +298,17 @@ def main():
     print("=" * 60)
     print("Pilot Early Stop Data Parser")
     print("=" * 60)
-    print(f"Base directory: {BASE_DIR}")
+    print(f"Base directory: {RAW_DIR}")
     print(f"Output CSV: {OUTPUT_CSV}")
     print()
     
-    if not BASE_DIR.exists():
-        print(f"ERROR: Base directory not found: {BASE_DIR}")
+    if not RAW_DIR.exists():
+        print(f"ERROR: raw_log directory not found: {RAW_DIR}")
+        print("NOTE: Tahap ekstraksi pilot tidak sepenuhnya reproduktif — raw log kandidat tidak disertakan dalam repositori.")
         return
     
     # Scan and parse all files
-    results = scan_and_parse_all(BASE_DIR)
+    results = scan_and_parse_all(RAW_DIR)
     
     # Write to CSV
     write_to_csv(results, OUTPUT_CSV)

@@ -2,21 +2,22 @@
 
 ## Tujuan
 Kruskal-Wallis / Welch ANOVA, koreksi Holm, post-hoc Dunn/Games-Howell, ukuran efek.
+Uji proporsi 4×2: Pearson chi-square dengan p Monte Carlo; post-hoc 2×2 Fisher exact dengan koreksi Holm.
 
 ## Input
 `data/pengujian_final/master_dataset_160.csv`, `hasil/pemeriksaan_asumsi/rekomendasi_uji_tahap3.csv`
 
 ## Skrip Utama
-1. `tahap3_analisis_inferensial.py` — analisis utama
-2. `tahap3_generate_reports.py` — generate laporan CSV
+`tahap3_analisis_inferensial.py` — analisis utama (satu skrip kanonis)
 
 ## Output
-`hasil/analisis_inferensial/`: hasil_omnibus_tahap3.csv, hasil_posthoc_tahap3.csv, hasil_proporsi_within_tolerance_*.csv
+`hasil/analisis_inferensial/`: hasil_omnibus_tahap3.csv, hasil_posthoc_tahap3.csv, hasil_proporsi_within_tolerance_*.csv, hasil_konsistensi_finalerror_omnibus.csv
+
+`hasil/sintesis_hasil/`: hasil_settlingtime_deskriptif.csv, hasil_bridging_deskriptif.csv
 
 ## Cara Menjalankan
 ```
 python code/analisis_inferensial/tahap3_analisis_inferensial.py
-python code/analisis_inferensial/tahap3_generate_reports.py
 ```
 
 ## Hubungan dengan Skripsi

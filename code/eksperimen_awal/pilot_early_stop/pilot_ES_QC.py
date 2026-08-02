@@ -13,8 +13,10 @@ import numpy as np
 
 
 # Configuration
-INPUT_CSV = Path(r"D:\SKRIPSI\draft\3. dok trial hasil\02_PILOT_EARLY_STOP\pilot_ES_master.csv")
-OUTPUT_REPORT = Path(r"D:\SKRIPSI\draft\3. dok trial hasil\02_PILOT_EARLY_STOP\pilot_ES_QC_report.md")
+REPO_ROOT = Path(__file__).resolve().parents[3]
+PILOT_DIR = REPO_ROOT / "data" / "pilot_early_stop" / "kandidat_es"
+INPUT_CSV = PILOT_DIR / "pilot_ES_master.csv"
+OUTPUT_REPORT = PILOT_DIR / "pilot_ES_QC_report.md"
 
 
 def load_master_csv(csv_path: Path) -> pd.DataFrame:

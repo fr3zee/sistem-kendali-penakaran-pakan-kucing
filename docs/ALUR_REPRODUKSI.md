@@ -17,13 +17,13 @@ data/pengujian_final/master_dataset_160.csv  (SHA-256 lihat bawah)
     ↓
 code/validasi_dataset/            → integritas dataset
     ↓
-code/sintesis_hasil/ (tahap1)     → statistik deskriptif dasar
+code/sintesis_hasil/            → statistik deskriptif dasar
     ↓
 code/pemeriksaan_asumsi/          → Shapiro-Wilk, Brown-Forsythe, rekomendasi uji
     ↓
 code/analisis_inferensial/        → KW, Welch ANOVA, Holm, Dunn, Games-Howell, ES
     ↓
-code/sintesis_hasil/ (tahap4)     → profil primer, tambahan kondisional
+code/sintesis_hasil/            → profil primer, tambahan kondisional
     ↓
 code/finalisasi/                  → visualisasi hasil dan validasi artefak akhir
 ```
@@ -35,7 +35,7 @@ code/finalisasi/                  → visualisasi hasil dan validasi artefak akh
 | Validasi dataset | master_dataset_160.csv | tahap0_validasi_master_dataset.py | laporan_validasi_dataset.txt |
 | Statistik deskriptif | master_dataset_160.csv | tahap1_statistik_deskriptif.py | hasil_statistik_deskriptif_tahap1.csv |
 | Pemeriksaan asumsi | master_dataset_160.csv | tahap2_rekonstruksi_dan_verifikasi.py | hasil_shapiro_residual_per_setpoint.csv, hasil_brown_forsythe_per_setpoint.csv, rekomendasi_uji_tahap3.csv |
-| Analisis inferensial | master_dataset_160.csv + rekomendasi_uji | tahap3_analisis_inferensial.py + tahap3_generate_reports.py | hasil_omnibus_tahap3.csv, hasil_posthoc_tahap3.csv |
+| Analisis inferensial | master_dataset_160.csv + rekomendasi_uji | tahap3_analisis_inferensial.py | hasil_omnibus_tahap3.csv, hasil_posthoc_tahap3.csv, hasil_proporsi_within_tolerance_*.csv |
 | Sintesis hasil | master_dataset_160.csv + tahap3 outputs | tahap4_sintesis_multidimensi.py | tahap4_profil_primer.csv, tahap4_profil_tambahan_kondisional.csv |
 | Finalisasi | tahap3+tahap4 outputs | tahap5_visualisasi_bab4.py | gambar 4.1–4.3 (PNG/SVG), audit_visual_tahap5.csv |
 
